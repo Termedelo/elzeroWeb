@@ -1,0 +1,14 @@
+.container{
+    background-color: #aaa;
+    display:grid;
+    grid-template-columns:repeat(auto-fit , minmax(100px , 1fr));
+    grid-template-rows:repeat(auto-fit , minmax(50px , 1fr));
+    gap: 10px;
+}
+.item{
+    background-color: red;
+    color:white;
+    font-size: 100px;
+    text-align:center;
+    height:100px;
+}

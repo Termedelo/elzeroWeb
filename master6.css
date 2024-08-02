@@ -1,0 +1,28 @@
+.container{
+    display:grid;
+    background-color: #aaa;
+    width:900px;
+    height:300px;
+    margin:50px auto;
+    grid-template-columns: repeat(6 , 1fr);
+    grid-template-rows: repeat(4 , 1fr);
+    gap: 10px 10px;
+    text-align: center;
+    color: white;
+}
+.container div{
+    background-color: red;
+    border:solid black 2px;
+}
+.item1{
+    background-color: blue !important;
+    grid-row: span 3 ;
+}
+.item8{
+    background-color: green !important;
+    grid-row: span 2 ;
+}
+.item13{
+    background-color: yellow !important;
+    grid-column: span 3 ;
+}

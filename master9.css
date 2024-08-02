@@ -1,0 +1,23 @@
+.shape {
+  height: 200px;
+  width:200px;
+  border: solid black 10px;
+  background-color: red;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+  margin:200px auto;
+}
+.text{
+  color:white;
+  font-size: 50px;
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+  background-color: #aaaaaa9d;
+  width:200px;
+  height:200px;
+  transform: rotateX(90deg);
+}
+.shape:hover .text{
+  transform: rotateX(0deg);
+  transition: 2s;
+}

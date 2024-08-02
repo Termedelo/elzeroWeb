@@ -1,0 +1,20 @@
+.container-flex {
+    width: 800px;
+  height: 400px;
+  display: flex;
+  background-color: #aaa;
+  margin: 20px auto;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+.item {
+  width: 200px;
+  height: 100px;
+  flex-basis: 200px;
+  border: solid black 5px;
+  background-color: red;
+  color: white;
+}
+* {
+  box-sizing: border-box;
+}
