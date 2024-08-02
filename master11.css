@@ -16,28 +16,33 @@
   transition: 1s;
   animation-name: Span;
   animation-timing-function: linear;
-  animation-duration:2s;
+  animation-duration:3s;
   animation-iteration-count:infinite;
 }
 @keyframes Span {
     0%{
         transform:rotate(0deg);
+        border-radius: 50%;
         border-color: red;
     }
     25%{
         transform:rotate(90deg);
+        border-radius: 25%;
         border-color: blue;
     }
     50%{
         transform:rotate(180deg);
+        border-radius: 10%;
         border-color: green;
     }
     75%{
         transform:rotate(270deg);
+        border-radius: 25%;
         border-color: yellow;
     }
     100%{
         transform:rotate(360deg);
+        border-radius: 50%;
         border-color: orangered;
     }
 }

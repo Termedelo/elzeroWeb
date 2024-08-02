@@ -1,0 +1,51 @@
+* {
+  box-sizing: border-box;
+}
+.shape {
+  background-color: transparent;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200px;
+  height: 200px;
+  margin-left: -120px;
+  margin-top: -50px;
+  border: solid red 5px;
+  border-radius: 50%;
+  animation-name: Span;
+  animation-timing-function: linear;
+  animation-duration:1s;
+  animation-iteration-count:infinite;
+}
+@keyframes Span {
+    0%{
+        border-top-color: transparent;
+        border-right-color: red;
+        border-bottom-color: red;
+        border-left-color: red;
+    }
+    25%{
+        border-top-color: blue;
+        border-right-color:transparent;
+        border-bottom-color: blue;
+        border-left-color: blue;
+    }
+    50%{
+        border-top-color: green;
+        border-right-color:green;
+        border-bottom-color: transparent;
+        border-left-color: green;
+    }
+    75%{
+        border-top-color: orangered;
+        border-right-color:orangered;
+        border-bottom-color: orangered;
+        border-left-color: transparent;
+    }
+    100%{
+        border-top-color: transparent;
+        border-right-color: red;
+        border-bottom-color: red;
+        border-left-color: red;
+    }
+}
