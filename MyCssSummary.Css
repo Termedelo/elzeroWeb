@@ -698,6 +698,15 @@
     // Css units , % , keywords(Top -> 0%, Center -> 50%, Bottom -> 100%).
     ~ 6.1) transform-origin:X Y Z; this is the 3D transform.
     ! this is the origin point of the transform with default values (50% 50% 0).
+    ~ 7) backFace-visibility:hidden; 
+    ~ 7.1) backFace-visibility:visible; (the default value)
+    // this attribute is responsible for hiding the element after flipping it 90deg or what is equivalent.
+    ~ 8) transform-style:flat; 
+    ~ 8.1) transform-style:preserve-3d;
+    sets whether children of an element are positioned in the 3D space 
+    or are flattened in the plane of the element.
+    // this attribute must be used with the value (preserve-3d) when we work on a 3d space.
+    % check the test10.html and master10.css files to understand the last two attributes. 
     //--------------------------------------------------------------------------------------
     ? Variables in Css:
     // there is two types of variables in Css:
