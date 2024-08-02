@@ -708,6 +708,22 @@
     // this attribute must be used with the value (preserve-3d) when we work on a 3d space.
     % check the test10.html and master10.css files to understand the last two attributes. 
     //--------------------------------------------------------------------------------------
+    ? Css Animation:
+    // the animation in Css has three steps to get it done:
+    ~ 1) you need to write your keyFrame and its will be written it three ways:
+    // @keyframe animation-Name1{from{...} to{...}}  
+    // @keyframe animation-Name2{0%{...} 100%{...}}  
+    // @keyframe animation-Name3{0%{...} 1%{...} 2%{...} n%{...} 99%{...} 100%{...}}
+    ~ 2) to link yor items with the animation use the animation-name attribute at the item:
+    // animation-name: animation-Name1;
+    ~ 3) to control the animation-duration attribute:
+    // animation-duration: number (s , ms , ...);
+    ~ 4) to control the number of time that the animation will repeat we will use:
+    // animation-iteration-count: infinite;
+    // animation-iteration-count: number;
+    ~ 5) to control the way that the animation will occur we use:
+    // animation-timing-function: (ease , linear , ...);
+    //--------------------------------------------------------------------------------------
     ? Variables in Css:
     // there is two types of variables in Css:
     // 1) Local variable that is inside the Declaration Block.
