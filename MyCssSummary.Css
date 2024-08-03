@@ -723,6 +723,28 @@
     // animation-iteration-count: number;
     ~ 5) to control the way that the animation will occur we use:
     // animation-timing-function: (ease , linear , ...);
+    ~ 6) to control the animation direction use:
+    // animation-direction: normal; (the default value).
+    // animation-direction: reverse; (it will go the opposite direction).
+    // animation-direction: alternate; (it will go forward and then backward).
+    // animation-direction: alternate-reverse; (it will go backward and then forward).
+    ~ 7) to delay you animation use animation-delay:
+    // animation-delay: number (s , ms , ...);
+    % it can take a negative value suppose that:
+    % animation-duration:5s; and animation-delay:-3;
+    % it means that the animation-duration will be 2s.
+    ~ 8) when you need any keyframe attributes to stick to your element use : 
+    // animation-fill-mode: none; (the default value).
+    // animation-fill-mode: forwards; (the last keyframe attributes will stick).
+    // animation-fill-mode: backwards; (the first keyframe attributes will stick).
+    // animation-fill-mode: both; (the last or first keyframe attributes will stick according to the direction)
+    ~ 9) you can control the state of the animation using the animation-play-state:
+    // animation-play-state: running; (the default value).
+    // animation-play-state: paused; (this will stop the animation).
+    ! there are a shorthand for the animation that contains:
+    Animation: Animation-delay Animation-direction Animation-duration 
+               Animation-fill-mode Animation-iteration-count Animation-name
+               Animation-play-state Animation-timeline Animation-timing-function;
     //--------------------------------------------------------------------------------------
     ? Variables in Css:
     // there is two types of variables in Css:
