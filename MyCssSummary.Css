@@ -499,7 +499,70 @@
     ~ iii) grid-template-columns||rows: repeat(auto-fit , minmax(number , 1fr));
     // here we are having the responsiveness to even more higher level.    
     //--------------------------------------------------------------------------------------
-    ? nesting in Css :
+    ? Types of CSS Selectors
+    ~ 1) all element selector: 
+    // * {...}
+    ~ 2) all one Element type selector: 
+    // element {...}
+    ~ 3) all one Element type selector inside and element: 
+    // Element1 Element2 {...}
+    ~ 4) all elements with a class: 
+    // .class-name {...}
+    ~ 5) exactly one element with an id: 
+    // #id-name {...}
+    ~ 6) nesting classes it may contain something between them: 
+    // .parent .child {...}
+    ~ 7) one element with any number of classes: 
+    // .class-one.class-two.class-n {...}
+    ~ 8) to select a type of element inside an element with a class: 
+    // .class-name element {...}
+    ~ 9) to select a one type of element with a class: 
+    // element.class-name {...}
+    ~ 10) to select the direct child of a parent: 
+    // .parent > .child {...}
+    ~ 11) to select the direct next element: 
+    // Element1 + Element2 + ... {...}
+    ~ 12) to select the sibling elements of an element in the same parent: 
+    // Element ~ Other Elements {...}
+    ~ 13) to select all elements that have an attribute: 
+    // [Attribute] {...}
+    ~ 14) to select an element that has an attribute: 
+    // Element[Attribute] {...}
+    ~ 15) to select all elements that have an attribute with a value: 
+    // [Attribute=Value]
+    ~ 16) to an element that has an attribute with a value: 
+    // Element[Attribute=Value] {...}
+    ~ 17) to select all elements with the attribute that contains a value that value contains a word:
+    // [Attribute~=word] {...}
+    ~ 18) to select all elements with the attribute that contains a value that value contains a String:
+    // [Attribute*=word] {...}
+    ~ 19) to select all elements with the attribute that contains a value that value starts with a Sting: 
+    // [Attribute^=Value] {...}
+    ! the main condition is : to select the element that must be of type element.
+    ~ 20) *the main condition* and the first child: 
+    // element:first-child
+    ~ 21) *the main condition* and the last child:  
+    // element:last-child
+    ~ 22) *the main condition* and the first of its type:
+    // element:first-of-type
+    ~ 23) *the main condition* and the last of its type:
+    // element:last-of-type
+    ~ 24) *the main condition* and the only child of its parent:
+    // element:only-child
+    ~ 25) *the main condition* and the only child with type element in its parent:
+    // element:only-of-type
+    ~ 26) *the main condition* and it must not satisfy the selector: 
+    // element:not(Selectors)
+    ~ 27) *the main condition* and it must be element number n counting (top-down):
+    // element:nth-child(n)
+    ~ 28) *the main condition* and it must be element number n counting (bottom-up):
+    // element:nth-last-child(n)
+    ~ 29) *the main condition* and it must be the element number n from its type counting (top-down)
+    // element:nth-of-type(n)
+    ~ 30) *the main condition* and it must be the element number n from its type counting (bottom-up)
+    // element:nth-last-of-type(n)
+    //--------------------------------------------------------------------------------------
+    ? nesting in Css:
     // the css selector is used like so:
        % selector {...}
     // then you can do selectors grouping like so:
@@ -508,7 +571,7 @@
        % parent-selector{...}
        % parent-selector child-selector ...{...} 
        % parent-selector{ child-selector {...} ....}
-    ! we can use the (&) sign to refer to the parent of the tag (just once).    
+    ! we can use the (&) sign to refer to the parent of the tag (just once).
     //--------------------------------------------------------------------------------------
     ? the cursor attribute in css:
     // it could be changed into many shapes as you like.
