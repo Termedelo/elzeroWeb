@@ -561,6 +561,15 @@
     // element:nth-of-type(n)
     ~ 30) *the main condition* and it must be the element number n from its type counting (bottom-up)
     // element:nth-last-of-type(n)
+    ~ 31) element:root {...}
+    ~ 32) element:checked {...}
+    ~ 33) element:empty {...}
+    ~ 34) element:disabled {...}
+    ~ 35) element:required {...}
+    ~ 36) element:focus {...}
+    ~ 37) element::selection {...}
+    ~ 38) element::placeholder {...}
+    ! the selectors 31...38 are easy to understand.
     //--------------------------------------------------------------------------------------
     ? nesting in Css:
     // the css selector is used like so:
@@ -809,6 +818,43 @@
                Animation-fill-mode Animation-iteration-count Animation-name
                Animation-play-state Animation-timeline Animation-timing-function;
     //--------------------------------------------------------------------------------------
+    ? Media Queries And Responsive Designs:
+    // this is a tag that we use to create a design that will be active if a specific condition occurred.
+    ! we have many types of Media Queries:
+    ~ 1) in any css file we can use the tag like so:
+    // @media Condition {...}
+    ~ 2) using the media attribute in the html style tag like so:
+    // <style media = "AnyCondition">...</style>
+    ~ 3) using the media attribute in the html link tag like so:
+    // <link media = "AnyCondition">...</link>
+    ! the media tag condition have a number of logical operates:
+    ~ 1) @media condition and condition and ... {...}
+    ~ 2) @media condition or condition or ... {...}
+    ~ 3) @media not(condition) {...}
+    ~ 4) @media only(condition) {...}
+    ! some rules you must know:
+    // operates can't be combined at the same level you need to use parenthesis to separate expressions.
+    // you can use a comma (,) to have a list of expressions if one statement returns true the media is true.
+    // in media query level 3 not was not able to negate a single expression it will simply negate query.
+    ! the most used conditions for responsive pages are:
+    ~ 1) @media (min-width:...) {...}
+    ~ 2) @media (max-width:...) {...}
+    // you can combine these two to create a range of widths and so on.
+    % to see the standard media queries for devices follow the link: 
+    % https://css-tricks.com/snippets/css/media-queries-for-standard-devices/
+    //--------------------------------------------------------------------------------------
+    ? creating your own framework:
+    // what is the meaning of a framework in web development?
+    * its a pre-builded ready to use components to save you time and effort (e.g. Bootstrap). 
+    // why do you sometimes need have a framework from your own creation?
+    * sometimes you will need something that dose not exist in any framework.
+    // how to create you framework:
+    ~ 1) you need to create a class in css  that do something (e.g. centralizing an element).
+    ~ 2) give that class a meaningful name.
+    ~ 3) add this class to any element in html that you need it to be affected.
+    ! avoid creating classes with one attribute try more complex tasks.
+    ! the main goal here is to avoid Reimplementing the same thing again and again. 
+    //--------------------------------------------------------------------------------------
     ? Variables in Css:
     // there is two types of variables in Css:
     // 1) Local variable that is inside the Declaration Block.
@@ -820,6 +866,19 @@
     ! you can call the variable like so:
     // attribute:var(varName , defaultValue);
     % the local variable is higher in priority then the global one. 
+    //--------------------------------------------------------------------------------------
+    ? Global variables in css: we have 4 different types of global variables 
+    ~ 1) attribute:inherit;
+    // this value makes the attribute get its value by inheritance from its parents.
+    ~ 2) attribute:initial;
+    // this value will return the value of the attribute to its initial value.
+    ~ 3) attribute:unset;
+    // If the value of the attribute can be Inherited the unset value will work like the inherit value.
+    // If the value of the attribute can't be Inherited the unset value will work like the initial value.
+    ~ 4) attribute:revert;
+    // this value will return the value of the attribute to its user agent initial value.
+    ! all:(inherit or initial or unset or revert);
+    // we use this value to target all attribute in any container its clear.
     //--------------------------------------------------------------------------------------
     ? filters in Css:
     ~ 1) filter:grayScale(number);
