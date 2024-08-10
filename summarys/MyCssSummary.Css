@@ -443,7 +443,7 @@
     ? the Grid box:
     ~ 7) display:grid;
     ~ 7.2) display:inline-grid;
-    // this is an attribute to like a grid positioning to the page (rows and columns).
+    // this is an attribute make a grid positioning to the page (rows and columns).
     ~ 1) grid-template-columns: WidthOfColumn1 WidthOfColumn2 WidthOfColumn3 ...;
     // we use this attribute to specify the number and the width of the columns in the grid.
     ~ 1.1) grid-template-columns:repeat(numberOfColumns , widthOfColumns);
