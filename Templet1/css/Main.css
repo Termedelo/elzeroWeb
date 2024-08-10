@@ -44,22 +44,43 @@ body {
   color: #c5c5c5;
   letter-spacing: -3px;
   margin: -70px 0 0;
-} 
+}
 .Special-heading + p {
   text-align: center;
   font-size: 25px;
   margin-top: -36px;
   color: #777;
-} 
-@media (max-Width:767px){
- .Special-heading{
-  font-size:80px;
- }
- .Special-heading + p{
-  font-size:10px;
- }
-
 }
+@media (max-width: 767px) {
+  .Special-heading {
+    font-size: 80px;
+  }
+  .Special-heading + p {
+    font-size: 10px;
+  }
+}
+/* Start of this thing*/
+.GeneralItem {
+  display: flex;
+  flex-wrap: wrap;
+  width: 382px;
+  margin: 40px 0 0 60px;
+}
+.GeneralItem h3 {
+  margin: 0 30px;
+  font-weight: 800;
+}
+.GeneralItem p {
+  margin: -20px 40px;
+  color: #ababab;
+  line-height: 1.8;
+}
+.GeneralItem i {
+  color: var(--main-color);
+  margin-left: -33px;
+  font-size: 45px;
+}
+/* End of this thing*/
 /* End of reusable components */
 /*Start Header*/
 header {
@@ -197,5 +218,33 @@ header .links ul::before {
 }
 /* End of features */
 /* Start of Service */
-
+.containerGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(382px, 390px));
+}
+.Service .container {
+  margin-top: 66px;
+  position: relative;
+}
+.image {
+  background-image: url(../images/services.jpg);
+  width: 260px;
+  height: 346px;
+  position: absolute;
+  top: 158px;
+  left: 853px;
+  border-radius:30px;
+}
+.image::before {
+  content: "";
+  display: inline-block;
+  width: 100px;
+  height: 405px;
+  background-color: var(--main-color);
+  z-index: -1;
+  position: absolute;
+  top: -25px;
+  left: calc(100% - 41px);
+  border-radius: 150px;
+}
 /* End of Service */
