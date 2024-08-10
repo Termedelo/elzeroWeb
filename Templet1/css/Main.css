@@ -1,6 +1,7 @@
 /*Start Variables*/
 :root {
   --main-color: #10cab7;
+  scroll-behavior: smooth;
 }
 /*End Variables*/
 /*Start Global Rule*/
