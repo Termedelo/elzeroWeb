@@ -60,7 +60,7 @@ body {
     font-size: 10px;
   }
 }
-/* Start of this thing*/
+/* Start of Services components */
 .GeneralItem {
   display: flex;
   flex-wrap: wrap;
@@ -81,7 +81,28 @@ body {
   margin-left: -33px;
   font-size: 45px;
 }
-/* End of this thing*/
+/* End of Services components*/
+/* Start of portfolio components*/
+.portfolio .container .card{
+  display: flex;
+  flex-direction: column;
+}
+.portfolio .container .card img{
+  width:330px;
+  height:230px;
+  border-radius: 20px;
+}
+.portfolio .container .card img + h4{
+  margin: 10px 0 0;
+  padding-left: 10px;
+  font-weight: 800;
+}
+.portfolio .container .card img + h4 + p{
+  color:#ababab;
+  padding-left: 10px;
+  width:330px;
+}
+/* End of portfolio components*/
 /* End of reusable components */
 /*Start Header*/
 header {
@@ -249,3 +270,17 @@ header .links ul::before {
   border-radius: 150px;
 }
 /* End of Service */
+/* Start of Portfolio*/
+.portfolio .container{
+  background-color: #f6f6f6;
+  min-width: 100%;
+  margin-top: 208px;
+}
+.portfolio .container .cards{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin-top: 70px;
+}
+/* End of Portfolio*/
