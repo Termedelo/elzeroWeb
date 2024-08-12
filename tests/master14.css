@@ -1,0 +1,92 @@
+.container {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.container::after {
+  content: "";
+  color: black;
+  font-size: 20px;
+  position: absolute;
+  left: 71px;
+  top: 91px;
+}
+.container {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  width: 200px;
+  height: 200px;
+}
+.shape {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: 150px;
+  border: solid 5px;
+  border-color: transparent blue transparent transparent;
+  animation-name: Spin;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+@keyframes Spin {
+  to {
+    transform: rotate(1turn);
+  }
+}
+/*X small (this type wont help us a lot at work)*/
+/*small (landscape phones, 576px and up)*/
+@media screen and (min-width: 576px) {
+  .shape {
+    border-color: transparent green transparent transparent;
+  }
+  .container::after {
+    content: "small";
+  }
+}
+/*! screenWidth >= 576px*/
+/*medium (tablets, 768px and up)*/
+@media screen and (min-width: 768px) {
+  .shape {
+    border-color: transparent yellow transparent transparent;
+  }
+  .container::after {
+    content: "medium";
+  }
+}
+/*! screenWidth >= 768px*/
+/*large (desktops, 992px and up)*/
+@media screen and (min-width: 992px) {
+  .shape {
+    border-color: transparent black transparent transparent;
+  }
+  .container::after {
+    content: "large";
+  }
+}
+/*! screenWidth >= 992px*/
+/* X large (large desktops, 1200px and up)*/
+@media screen and (min-width: 1200px) {
+  .shape {
+    border-color: transparent red transparent transparent;
+  }
+  .container::after {
+    content: "X large";
+  }
+}
+/*! screenWidth >= 1200px*/
+/* XX large (larger desktops, 1400px and up)*/
+@media screen and (min-width: 1400px) {
+  .shape {
+    border-color: transparent rebeccapurple transparent transparent;
+  }
+  .container::after {
+    content: "XX large";
+  }
+}
+/*! screenWidth >= 1400px*/
