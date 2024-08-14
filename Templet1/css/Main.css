@@ -4,6 +4,8 @@
   scroll-behavior: smooth;
 }
 /*End Variables*/
+
+
 /*Start Global Rule*/
 * {
   box-sizing: border-box;
@@ -38,6 +40,8 @@ body {
   }
 }
 /*End Global Rule*/
+
+
 /* Start of reusable components */
 .Special-heading {
   text-align: center;
@@ -103,10 +107,9 @@ body {
   width: 330px;
 }
 /* End of portfolio components*/
-/* Start Centralize component*/
-
-/* End Centralize component*/
 /* End of reusable components */
+
+
 /*Start Header*/
 header {
   padding: 20px;
@@ -189,6 +192,8 @@ header .links ul::before {
   top: -20px;
 }
 /*End Header*/
+
+
 /*start of landing*/
 .landing {
   height: calc(100vh - 64px);
@@ -216,6 +221,8 @@ header .links ul::before {
   line-height: 1.8;
 }
 /*end of landing*/
+
+
 /* Start of features */
 .features {
   padding-top: 60px;
@@ -242,6 +249,8 @@ header .links ul::before {
   color: #777;
 }
 /* End of features */
+
+
 /* Start of Service */
 .containerGrid {
   display: grid;
@@ -285,14 +294,29 @@ header .links ul::before {
   .GeneralItem h3 {
     margin: 7px -38px;
   }
-  .GeneralItem p {
-    margin: 4px -34px;
+  .GeneralItem #p1 {
+    margin: -2px -37px 0;
+    width: 315px;
+  }
+  .GeneralItem #p2 {
+    margin: 32px -69px 0;
+    width: 321px;
+  }
+  .GeneralItem #p3 {
+    margin: 32px -30px 0;
+    width: 330px;
+  }
+  .GeneralItem #p4 {
+    margin: 30px -130px 0;
+    width: 275px;
   }
   .GeneralItem i {
     display: none;
   }
 } /* ! screenWidth <= 576px */
 /* End of Service */
+
+
 /* Start of Portfolio*/
 .portfolio .container {
   background-color: #f6f6f6;
@@ -307,6 +331,8 @@ header .links ul::before {
   margin-top: 70px;
 }
 /* End of Portfolio*/
+
+
 /* Start of About*/
 .About .container {
   margin-top: 145px;
@@ -399,15 +425,16 @@ header .links ul::before {
   .About .container .AboutThing .texts p:first-child,
   .About .container .AboutThing .texts p:nth-child(2) {
     width: 350px;
-    margin-left: 25px;
+    margin-left: 9px;
     margin-top: 60px;
   }
   .About .container .AboutThing .texts p:first-child::after {
     top: 274px;
-    left: 25px;
   }
 } /* ! screenWidth <= 576px */
 /* End of About*/
+
+
 /* Start of Contact*/
 .Contact {
   text-align: center;
@@ -456,5 +483,14 @@ header .links ul::before {
 }
 .Contact .footer span {
   color: var(--main-color);
+}
+@media (max-width: 576px){
+  .Contact .container .textsContainer h2{
+    font-size: 28px;
+    margin-top: 38px;
+  }
+  .Contact .container .textsContainer a{
+    font-size: 26px;
+  }
 }
 /* End of Contact*/
