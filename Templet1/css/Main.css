@@ -272,6 +272,26 @@ header .links ul::before {
   left: calc(100% - 41px);
   border-radius: 150px;
 }
+/* Small devices (landscape phones, 576px and up) */
+@media (max-width: 576px) {
+  .image::before,
+  .image {
+    display: none;
+  }
+  .GeneralItem {
+    width: 297px;
+    margin: 23px 0 0 51px;
+  }
+  .GeneralItem h3 {
+    margin: 7px -38px;
+  }
+  .GeneralItem p {
+    margin: 4px -34px;
+  }
+  .GeneralItem i {
+    display: none;
+  }
+} /* ! screenWidth <= 576px */
 /* End of Service */
 /* Start of Portfolio*/
 .portfolio .container {
@@ -359,6 +379,34 @@ header .links ul::before {
   color: #777777;
   line-height: 1.9;
 }
+@media (max-width: 576px) {
+  .About .container .AboutThing .imageShapes::after,
+  .About .container .AboutThing .imageShapes::before,
+  .About .container .AboutThing .imageShapes span {
+    display: none;
+  }
+  .About .container .AboutThing img {
+    margin-left: 53px;
+    margin-top: 40px;
+  }
+  .About .container .AboutThing {
+    flex-direction: column;
+  }
+  .About .container .AboutThing .texts {
+    margin-left: 0;
+    margin-top: -60px;
+  }
+  .About .container .AboutThing .texts p:first-child,
+  .About .container .AboutThing .texts p:nth-child(2) {
+    width: 350px;
+    margin-left: 25px;
+    margin-top: 60px;
+  }
+  .About .container .AboutThing .texts p:first-child::after {
+    top: 274px;
+    left: 25px;
+  }
+} /* ! screenWidth <= 576px */
 /* End of About*/
 /* Start of Contact*/
 .Contact {
