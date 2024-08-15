@@ -1,3 +1,8 @@
+/* Start of Global Variables*/
+:root{
+    --main-color:#00c7fc;
+}
+/* End of Global Variables*/
 /* Start of Global Rules*/
 * {
   -webkit-box-sizing: border-box;
@@ -14,6 +19,9 @@ body {
 }
 ul {
   list-style: none;
+}
+a{
+    text-decoration: none;
 }
 .container {
   padding-left: 15px;
@@ -37,3 +45,32 @@ ul {
   }
 }
 /* End of Global Rules*/
+/* Start of Header*/
+.container{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.container .pageLogo{
+    width:200px;
+}
+.container .nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 400px;
+    margin-top: 35px;
+    margin-left: 487px;
+}
+.container .nav li i{
+    font-size: 25px;
+    margin-left: 10px;
+}
+.bar{
+    background-color: black;
+    width: 87%;
+    height: 2px;
+    margin-left: 132px;
+    margin-top: 5px;
+}
+/* End of Header*/
