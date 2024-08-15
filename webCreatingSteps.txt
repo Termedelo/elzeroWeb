@@ -1,0 +1,50 @@
+how to create the basic elements in a webPage:
+1) create a file called (index.html) this is the main skeleton of your page.
+2) create a folder called (css) this file need to have:
+   A) Awesome font icons Css file called (all.min.css).
+   B) Render normal Css  file called (Normalize.css).
+   C) the main Css file call it any name.
+3) you need to know the name of the font used in the page and get it as a link from (https://fonts.google.com)
+4) go to the main Css file and write the following:
+/* Start of Global Rules*/
+*{
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin:0;
+  padding:0;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    family-font: .. , .. , ...;
+}
+ul{
+    list-style:none;
+}
+.container{
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* Small */
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+/* Medium */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+/* Large */
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+/* End of Global Rules*/
