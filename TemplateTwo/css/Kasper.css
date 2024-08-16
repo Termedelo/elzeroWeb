@@ -1,9 +1,9 @@
-/* Start of Global Variables*/
-:root{
-    --main-color:#00c7fc;
+/*Start of Global Variables*/
+:root {
+  --main-color: #19c8fa;
 }
-/* End of Global Variables*/
-/* Start of Global Rules*/
+/*End of Global Variables*/
+/*Start of Global Rules*/
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -20,8 +20,8 @@ body {
 ul {
   list-style: none;
 }
-a{
-    text-decoration: none;
+a {
+  text-decoration: none;
 }
 .container {
   padding-left: 15px;
@@ -44,33 +44,56 @@ a{
     width: 1170px;
   }
 }
-/* End of Global Rules*/
-/* Start of Header*/
-.container{
-    display:flex;
-    flex-direction: row;
-    justify-content: space-between;
+/*End of Global Rules*/
+/*Start of Header*/
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
 }
-.container .pageLogo{
-    width:200px;
+header .container::after {
+  content: "";
+  width: calc(100% - 52px);
+  height: 2px;
+  position: absolute;
+  top: 85px;
+  left: 40px;
+  background-color: black;
 }
-.container .nav{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 400px;
-    margin-top: 35px;
-    margin-left: 487px;
+header .container img {
+  height: 85px;
 }
-.container .nav li i{
-    font-size: 25px;
-    margin-left: 10px;
+header .container nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
-.bar{
-    background-color: black;
-    width: 87%;
-    height: 2px;
-    margin-left: 132px;
-    margin-top: 5px;
+header .container nav ul {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
 }
-/* End of Header*/
+header .container nav ul li {
+  padding-left: 30px;
+}
+header .container nav ul li a {
+  padding-bottom: 34px;
+  border-bottom: solid 2px var(--main-color);
+}
+header .container nav i {
+  padding-left: 30px;
+  font-size: 25px;
+  position: relative;
+}
+header .container nav i::after {
+  content: "";
+  width: 2px;
+  height: calc(100% + 4px);
+  position: absolute;
+  top: -4px;
+  left: 20px;
+  background-color: black;
+}
+/*End of Header*/
