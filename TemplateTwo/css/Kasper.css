@@ -122,5 +122,51 @@ header .container nav i::after {
   background-color: black;
 }
 /* Start of the Responsive part of the header */
+header .container .bars {
+  visibility: hidden;
+}
+@media screen and (max-width: 768px) {
+  header .container .bars {
+    font-size: 30px;
+    visibility: visible;
+  }
+  header .container {
+    visibility: visible;
+  }
+  header .container nav ul,
+  header .container nav i::after {
+    display: none;
+  }
+  /* header .container .bars:hover + ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: absolute;
+    margin-left: -650px;
+    top: 100px;
+    width:100%;
+    li #home::after{
+      visibility: hidden;
+    }
+    li{
+     margin-bottom: 15px;
+     background-color: red;
+     width: calc(100% - 100px);
+    }
+  } */
+  header .container::after {
+    content: "";
+    width: calc(100% - 38px);
+    height: 2px;
+    position: absolute;
+    top: 65px;
+    left: 22px;
+    background-color: black;
+  }
+  header .container img {
+    height: 70px;
+    margin-left: -15px;
+  }
+}
 /* End of the Responsive part of the header */
 /*End of Header*/
