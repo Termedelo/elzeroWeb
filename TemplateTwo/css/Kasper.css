@@ -3,6 +3,7 @@
   --main-color: #19c8fa;
 }
 /*End of Global Variables*/
+
 /*Start of Global Rules*/
 * {
   -webkit-box-sizing: border-box;
@@ -45,9 +46,13 @@ a {
   }
 }
 /*End of Global Rules*/
+
 /*Start of Header*/
 header {
+  position: absolute;
   margin-top: 15px;
+  width: 100%;
+  z-index: 3;
 }
 header .container {
   display: flex;
@@ -62,10 +67,12 @@ header .container::after {
   position: absolute;
   top: 85px;
   left: 34px;
-  background-color: black;
+  background-color: white;
 }
 header .container img {
-  height: 70px;
+  width: 186px;
+  padding-left: 20px;
+  padding-top: 20px;
 }
 header .container nav {
   display: flex;
@@ -83,7 +90,7 @@ header .container nav ul li {
 }
 header .container nav ul li a {
   position: relative;
-  color: black;
+  color: white;
 }
 header .container nav ul li a::after {
   content: "";
@@ -110,6 +117,7 @@ header .container nav ul li #home::after {
 header .container nav i {
   padding-left: 30px;
   font-size: 25px;
+  color: white;
   position: relative;
 }
 header .container nav i::after {
@@ -118,8 +126,8 @@ header .container nav i::after {
   height: calc(100% + 4px);
   position: absolute;
   top: -4px;
-  left: 20px;
-  background-color: black;
+  left: 15px;
+  background-color: white;
 }
 /* Start of the Responsive part of the header */
 header .container .bars {
@@ -161,12 +169,92 @@ header .container .bars {
     position: absolute;
     top: 65px;
     left: 22px;
-    background-color: black;
+    background-color: white;
   }
   header .container img {
     height: 70px;
     margin-left: -15px;
+    margin-top: -11px;
   }
 }
 /* End of the Responsive part of the header */
 /*End of Header*/
+
+/*Start of Landing*/
+.landing {
+  background-image: url(/TemplateTwo/images/landing.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  height: 100vh;
+}
+.landing .threeCircles {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 90px;
+  height: 35px;
+  position: absolute;
+  left: calc(50% - 56px);
+  bottom: 20px;
+}
+.landing .threeCircles .circle{
+  width:20px;
+  height:20px;
+  border-radius: 150px;
+  background-color: var(--main-color);
+}
+.landing .threeCircles .circleH{
+  background-color: transparent;
+  border: solid 2px white;
+}
+.landing .texts {
+  position: absolute;
+  background-color: rgb(15 116 143/70%);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50%;
+  height: 328px;
+}
+.landing .texts .content::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-width: 7px;
+  position: absolute;
+  border-style: solid;
+  border-color: transparent transparent white white;
+  transform: rotate(45deg);
+  left: 24px;
+  top: 145px;
+  border-radius: 5px;
+}
+.landing .texts .content {
+  color: white;
+  padding-top: 52px;
+  padding-left: 152px;
+}
+.landing .texts .content::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-width: 7px;
+  position: absolute;
+  border-style: solid;
+  border-color: white white transparent transparent;
+  transform: rotate(45deg);
+  left: calc(100% + 700px);
+  top: 145px;
+  border-radius: 5px;
+}
+.landing .texts .content h2 {
+  font-weight: normal;
+  font-size: 31px;
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+.landing .texts .content p {
+  width: 533px;
+  line-height: 1.9;
+}
+/*End of Landing*/
