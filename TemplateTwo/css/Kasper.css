@@ -4,6 +4,56 @@
 }
 /*End of Global Variables*/
 
+/*Start of reusable components*/
+.ReusableHead::before {
+  content: "";
+  position: absolute;
+  width: 178px;
+  height: 2px;
+  top: calc(50% + 48px);
+  left: calc(50% - 2px);
+  transform: translate(-50%, -50%);
+  background-color: black;
+}
+.ReusableHead {
+  position: relative;
+  font-size: 40px;
+  margin-top: 50px;
+  font-weight: normal;
+  text-align: center;
+  letter-spacing: 3px;
+}
+.ReusableHead::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: calc(50% + 48px);
+  left: calc(50% - 2px);
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: solid 2px black;
+  background-color: white;
+}
+.ReusablePar {
+  color: #777;
+  font-size: 18px;
+  width: 506px;
+  text-align: center;
+  margin-left: 320px;
+  margin-top: 46px;
+  line-height: 2;
+}
+/*Start of responsive reusable components*/
+@media screen and (max-width: 768px) {
+  .ReusablePar {
+    margin-left: 13px;
+    width: 318px;
+  }
+}
+/*End of responsive reusable components*/
+/*End of reusable components*/
+
 /*Start of Global Rules*/
 * {
   -webkit-box-sizing: border-box;
@@ -186,7 +236,7 @@ header .container .bars {
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-  height: 100vh;
+  min-height: 100vh;
 }
 .landing .threeCircles {
   display: flex;
@@ -195,23 +245,23 @@ header .container .bars {
   width: 90px;
   height: 35px;
   position: absolute;
-  left: calc(50% - 56px);
+  left: calc(50% - 46px);
   bottom: 20px;
 }
-.landing .threeCircles .circle{
-  width:20px;
-  height:20px;
+.landing .threeCircles .circle {
+  width: 20px;
+  height: 20px;
   border-radius: 150px;
   background-color: var(--main-color);
 }
-.landing .threeCircles .circleH{
+.landing .threeCircles .circleH {
   background-color: transparent;
   border: solid 2px white;
 }
 .landing .texts {
   position: absolute;
   background-color: rgb(15 116 143/70%);
-  top: 50%;
+  top: calc(50% + 30px);
   transform: translateY(-50%);
   width: 50%;
   height: 328px;
@@ -232,7 +282,7 @@ header .container .bars {
 .landing .texts .content {
   color: white;
   padding-top: 52px;
-  padding-left: 152px;
+  padding-left: 99px;
 }
 .landing .texts .content::after {
   content: "";
@@ -243,7 +293,7 @@ header .container .bars {
   border-style: solid;
   border-color: white white transparent transparent;
   transform: rotate(45deg);
-  left: calc(100% + 700px);
+  left: calc(100% + 635px);
   top: 145px;
   border-radius: 5px;
 }
@@ -257,4 +307,121 @@ header .container .bars {
   width: 533px;
   line-height: 1.9;
 }
+/* Start of the Responsive part of the landing*/
+@media (max-width: 768px) {
+  .landing {
+    min-height: 100vh;
+  }
+  .landing .texts .content::after,
+  .landing .texts .content::before {
+    display: none;
+  }
+  .landing .texts {
+    min-width: 100%;
+  }
+  .landing .texts .content {
+    padding-top: 40px;
+    padding-left: 15px;
+    width: 360px;
+  }
+  .landing .texts .content h2 {
+    font-size: 26px;
+    width: 360px;
+  }
+  .landing .texts .content p {
+    width: 360px;
+  }
+}
+/* End of the Responsive part of the landing*/
 /*End of Landing*/
+
+/*Start of Services*/
+.Service {
+  position: relative;
+}
+.Service .container .items {
+  position: relative;
+  display: grid;
+  row-gap: 20px;
+  column-gap: 96px;
+  grid-template-columns: repeat(auto-fill, minmax(415px, 1fr));
+  margin-left: 150px;
+  margin-top: 40px;
+}
+.Service .container .items .item {
+  width: 415px;
+}
+.Service .container .items .item i {
+  position: absolute;
+  margin-left: -70px;
+}
+.Service .container .items .item h2 {
+  color: var(--main-color);
+  font-weight: 400;
+  margin: 0;
+}
+.Service .container .items .item p {
+  color: #777;
+  line-height: 2;
+}
+/* Start of the Responsive part of the Services part1*/
+@media screen and (max-width: 768px) {
+  .Service .container .items {
+    margin-left: 77px;
+  }
+  .Service .container .items .item {
+    width: 290px;
+    margin-top: -10px;
+  }
+}
+/* End of the Responsive part of the Services part1*/
+.Service .image {
+  width: 1349px;
+  height: 550px;
+  border-radius: 8%;
+  margin-top: 60px;
+  overflow: hidden;
+  position: relative;
+  background-image: url(/TemplateTwo/images/design-features.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.Service .image img {
+  position: absolute;
+  left: 150px;
+  top: 160px;
+}
+.Service .image .Texts {
+  position: absolute;
+  width: 50%;
+  height: 328px;
+  background-color: rgb(15 116 143/70%);
+  left: 50%;
+  top: calc(50% + 30px);
+  transform: translateY(-50%);
+}
+.Service .image .Content {
+  color: white;
+  margin-left: 50px;
+  margin-top: 50px;
+}
+.Service .image .Content h2{
+  font-weight: normal;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+.Service .image .Content ul{
+  margin-top: 26px;
+}
+.Service .image .Content ul li{
+  margin-bottom: 25px;
+}
+.Service .image .Content ul li i{
+  font-size: 25px;
+}
+.Service .image .Content ul li span{
+  font-size: 20px;
+  font-weight: normal;
+  padding-left: 10px;
+}
+/*End of Services*/
