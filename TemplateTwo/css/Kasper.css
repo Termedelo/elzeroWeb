@@ -345,7 +345,7 @@ header .container .bars {
   row-gap: 20px;
   column-gap: 96px;
   grid-template-columns: repeat(auto-fill, minmax(415px, 1fr));
-  margin-left: 150px;
+  margin-left: 135px;
   margin-top: 40px;
 }
 .Service .container .items .item {
@@ -405,23 +405,84 @@ header .container .bars {
   margin-left: 50px;
   margin-top: 50px;
 }
-.Service .image .Content h2{
+.Service .image .Content h2 {
   font-weight: normal;
   text-transform: uppercase;
   letter-spacing: 4px;
 }
-.Service .image .Content ul{
+.Service .image .Content ul {
   margin-top: 26px;
 }
-.Service .image .Content ul li{
+.Service .image .Content ul li {
   margin-bottom: 25px;
 }
-.Service .image .Content ul li i{
+.Service .image .Content ul li i {
   font-size: 25px;
 }
-.Service .image .Content ul li span{
+.Service .image .Content ul li span {
   font-size: 20px;
   font-weight: normal;
   padding-left: 10px;
 }
 /*End of Services*/
+
+/*Start of Portfolio*/
+.Portfolio .container .PortfolioBar {
+  display: flex;
+  width: 250px;
+  margin-left: 444px;
+  margin-top: 60px;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.Portfolio .container .PortfolioBar p:first-child {
+  color: white;
+  background-color: var(--main-color);
+  width: 38px;
+  height: 38px;
+  padding-top: 10px;
+  margin-top: -9px;
+  padding-left: 10px;
+}
+.Portfolio .gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(337px, 1fr));
+  row-gap: 5px;
+  margin-top: 40px;
+}
+.Portfolio .gallery .PhotosContainer {
+  width: 337px;
+  height: 225px;
+  position: relative;
+  overflow: hidden;
+}
+.Portfolio .gallery .PhotosContainer .GImages {
+  width: 337px;
+  height: 225px;
+  transition: 0.5s;
+  overflow: hidden;
+}
+.Portfolio .gallery .GImages:hover {
+  transform: rotate(5deg) scale(1.1);
+}
+.Portfolio .gallery .PhotosContainer .overFlowText {
+  position: absolute;
+  z-index: 1;
+  width: 337px;
+  height: 80px;
+  bottom: -100px;
+  transition: 0.5s;
+  background-color: white;
+}
+.Portfolio .gallery .PhotosContainer .overFlowText p{
+  padding-left: 30px;
+  padding-top: 20px;
+}
+.Portfolio .gallery .PhotosContainer .overFlowText span{
+  color:var(--main-color);
+  padding-left: 30px;
+}
+.Portfolio .gallery .PhotosContainer:hover .overFlowText{
+  bottom: 0.2%;
+}
+/*End of Portfolio*/
