@@ -427,6 +427,9 @@ header .container .bars {
 /*End of Services*/
 
 /*Start of Portfolio*/
+.Portfolio {
+  position: relative;
+}
 .Portfolio .container .PortfolioBar {
   display: flex;
   width: 250px;
@@ -474,15 +477,75 @@ header .container .bars {
   transition: 0.5s;
   background-color: white;
 }
-.Portfolio .gallery .PhotosContainer .overFlowText p{
+.Portfolio .gallery .PhotosContainer .overFlowText p {
   padding-left: 30px;
   padding-top: 20px;
 }
-.Portfolio .gallery .PhotosContainer .overFlowText span{
-  color:var(--main-color);
+.Portfolio .gallery .PhotosContainer .overFlowText span {
+  color: var(--main-color);
   padding-left: 30px;
 }
-.Portfolio .gallery .PhotosContainer:hover .overFlowText{
+.Portfolio .gallery .PhotosContainer:hover .overFlowText {
   bottom: 0.2%;
+}
+.Portfolio .more {
+  width: 85px;
+  height: 48px;
+  color: white;
+  position: absolute;
+  left: 50%;
+  margin-top: 30px;
+  transform: translateX(-50%);
+  background-color: var(--main-color);
+}
+.Portfolio .more a {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+.Portfolio .video {
+  position: relative;
+}
+.Portfolio .video video {
+  width: 100%;
+  height: 900px;
+  margin-top: 100px;
+}
+.Portfolio .video .TextOnTheVideo {
+  position: absolute;
+  width: 100%;
+  height: 287px;
+  background-color: rgb(15 116 143 / 70%);
+  left: 50%;
+  top: calc(50% + 50px);
+  transform: translate(-50%, -50%);
+}
+.Portfolio .video .TextOnTheVideo h2{
+  color: white;
+  text-align: center;
+  font-weight: 100;
+  text-transform: uppercase;
+  padding-top: 85px;
+}
+.Portfolio .video .TextOnTheVideo p{
+  color: white;
+  position: relative;
+  text-align: center;
+  font-weight: 100;
+  text-transform: capitalize;
+  padding-top: 35px;
+}
+.Portfolio .video .TextOnTheVideo p::after{
+  content: "SEE MORE";
+  position: absolute;
+  width: 113px;
+  height: 36px;
+  left: 50%;
+  padding-top: 15px;
+  top: calc(50% + 70px);
+  background-color: black;
+  transform: translate(-50%, -50%);
 }
 /*End of Portfolio*/
