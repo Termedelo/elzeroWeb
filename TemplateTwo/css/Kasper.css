@@ -265,6 +265,8 @@ header .container .bars {
   transform: translateY(-50%);
   width: 50%;
   height: 328px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
 }
 .landing .texts .content::before {
   content: "";
@@ -399,6 +401,8 @@ header .container .bars {
   left: 50%;
   top: calc(50% + 30px);
   transform: translateY(-50%);
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
 }
 .Service .image .Content {
   color: white;
@@ -522,14 +526,14 @@ header .container .bars {
   top: calc(50% + 50px);
   transform: translate(-50%, -50%);
 }
-.Portfolio .video .TextOnTheVideo h2{
+.Portfolio .video .TextOnTheVideo h2 {
   color: white;
   text-align: center;
   font-weight: 100;
   text-transform: uppercase;
   padding-top: 85px;
 }
-.Portfolio .video .TextOnTheVideo p{
+.Portfolio .video .TextOnTheVideo p {
   color: white;
   position: relative;
   text-align: center;
@@ -537,7 +541,7 @@ header .container .bars {
   text-transform: capitalize;
   padding-top: 35px;
 }
-.Portfolio .video .TextOnTheVideo p::after{
+.Portfolio .video .TextOnTheVideo p::after {
   content: "SEE MORE";
   position: absolute;
   width: 113px;
@@ -549,3 +553,69 @@ header .container .bars {
   transform: translate(-50%, -50%);
 }
 /*End of Portfolio*/
+
+/*Start of About*/
+.About .container {
+  position: relative;
+}
+.About .container img {
+  position: absolute;
+  z-index: -1;
+  margin-top: 70px;
+  left: calc(50% - 37px);
+  transform: translateX(-50%);
+}
+.About .stats {
+  width: 100%;
+  height: 470px;
+  margin-top: 315px;
+  background-image: url(/TemplateTwo/images/stats.png);
+  background-repeat: no-repeat;
+  position: relative;
+}
+.About .stats::before {
+  content: "";
+  width: 100%;
+  height: 470px;
+  background-color: rgb(0 0 0 / 70%);
+  position: absolute;
+  z-index: 1;
+}
+.About .stats .statsText {
+  position: absolute;
+  left: 50%;
+  top: calc(50% + 40px);
+  transform: translate(-50%, -50%);
+  width: 85%;
+  height: 300px;
+  background-color: rgb(15 116 143 / 70%);
+  z-index: 1;
+  border-radius: 25px;
+}
+.About .stats .statsText .statsContent {
+  display: flex;
+  flex-direction: row;
+  width:calc(100% - 100px);
+  justify-content: space-around;
+  margin-top: 74px;
+  margin-left: 61px;
+}
+.About .stats .statsText .statsContent .ContentOfStats {
+  text-align: center;
+  color: white;
+}
+.About .stats .statsText .statsContent .ContentOfStats i {
+  background-color: black;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  padding-top: 10px;
+}
+.About .stats .statsText .statsContent .ContentOfStats h1 {
+  font-size: 50px;
+  margin: 30px 0 20px;
+}
+.About .stats .statsText .statsContent .ContentOfStats p {
+  font-size: 14px;
+}
+/*End of About*/
