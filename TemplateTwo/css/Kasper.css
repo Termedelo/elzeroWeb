@@ -558,7 +558,7 @@ header .container .bars {
 .About .container {
   position: relative;
 }
-.About .container img {
+.About .container .AboutImg {
   position: absolute;
   z-index: -1;
   margin-top: 70px;
@@ -595,7 +595,7 @@ header .container .bars {
 .About .stats .statsText .statsContent {
   display: flex;
   flex-direction: row;
-  width:calc(100% - 100px);
+  width: calc(100% - 100px);
   justify-content: space-around;
   margin-top: 74px;
   margin-left: 61px;
@@ -617,5 +617,260 @@ header .container .bars {
 }
 .About .stats .statsText .statsContent .ContentOfStats p {
   font-size: 14px;
+}
+.About .CeoSection .Testimonials .info1 {
+  width: 100%;
+  text-align: center;
+  margin-top: 70px;
+  position: relative;
+}
+.About .CeoSection .Testimonials .info1 h3 {
+  font-weight: normal;
+  text-transform: uppercase;
+}
+.About .CeoSection .Testimonials .info1 .info1-p {
+  color: #777;
+  margin-top: 20px;
+  line-height: 2;
+  margin-left: 125px;
+  width: 441px;
+}
+.About .CeoSection .Testimonials .info1 .CEO {
+  position: relative;
+  margin-top: 50px;
+  margin-left: 87px;
+  text-align: start;
+}
+.About .CeoSection .Testimonials .info1 .CEO .Ceo-p {
+  width: 332px;
+  margin-left: 144px;
+  line-height: 2;
+  padding-bottom: 20px;
+  border-bottom: solid #ccc 2px;
+}
+.About .CeoSection .Testimonials .info1 .CEO .Ceo-p::after {
+  content: "John Doe, CEO";
+  color: #777;
+  margin-left: 152px;
+}
+.About .CeoSection .Testimonials .info1 .CEO .Ceo-pic {
+  width: 100px;
+  position: absolute;
+  top: 0px;
+  left: 15px;
+  border-radius: 50%;
+}
+.About .CeoSection .Testimonials .info1 .threeCirclesA {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 90px;
+  height: 35px;
+  position: absolute;
+  left: 50%;
+  margin-top: 13px;
+}
+.About .CeoSection .Testimonials .info1 .threeCirclesA .circleA {
+  width: 15px;
+  height: 15px;
+  border-radius: 150px;
+  background-color: var(--main-color);
+}
+.About .CeoSection .Testimonials .info1 .threeCirclesA .circleHA {
+  background-color: transparent;
+  border: solid 1px #777;
+}
+/*!----------------------------------------------------------------*/
+.About .CeoSection {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
+}
+/*!----------------------------------------------------------------*/
+.About .CeoSection .Skills .info2 {
+  width: 50%;
+  text-align: center;
+  margin-top: 70px;
+}
+.About .CeoSection .Skills .info2 h3 {
+  font-weight: normal;
+  text-transform: uppercase;
+  margin-left: 50%;
+  width: 100%;
+}
+.About .CeoSection .Skills .info2 .info2-p {
+  color: #777;
+  margin-top: 20px;
+  line-height: 2;
+  margin-left: 125px;
+  width: 441px;
+}
+.About .CeoSection .Skills .info2 .measures {
+  text-align: start;
+  margin-left: 76px;
+  margin-top: 40px;
+}
+.About .CeoSection .Skills .info2 .measures .Measure p {
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+.About .CeoSection .Skills .info2 .measures .Measure .M1 {
+  width: 500px;
+  height: 30px;
+  background-color: #ccc;
+  border-radius: 10px;
+}
+.About .CeoSection .Skills .info2 .measures .Measure .M2 {
+  height: 30px;
+  margin-top: -30px;
+  background-color: var(--main-color);
+  border-radius: 10px;
+  position: relative;
+}
+.About .CeoSection .Skills .info2 .measures .Measure .Adobe {
+  width: 450px;
+}
+.About .CeoSection .Skills .info2 .measures .Measure .Adobe::before {
+  content: "90%";
+  position: absolute;
+  top: -34px;
+  left: calc(100% - 26px);
+  background-color: black;
+  color: white;
+  width: 35px;
+  padding-left: 5px;
+  height: 22px;
+  border-radius: 5px;
+  padding-top: 3px;
+}
+.About .CeoSection .Skills .info2 .measures .Measure .Adobe::after {
+  content: "";
+  width: 2px;
+  height: 2px;
+  border: solid 5px;
+  border-color: transparent black black transparent;
+  transform: rotate(45deg);
+  position: absolute;
+  left: calc(100% - 12px);
+  top: -16px;
+}
+.About .CeoSection .Skills .info2 .measures .Measure .HC {
+  width: 425px;
+}
+.About .CeoSection .Skills .info2 .measures .Measure .HC::before {
+  content: "85%";
+  position: absolute;
+  top: -34px;
+  left: calc(100% - 26px);
+  background-color: black;
+  color: white;
+  width: 35px;
+  padding-left: 5px;
+  height: 22px;
+  border-radius: 5px;
+  padding-top: 3px;
+}
+.About .CeoSection .Skills .info2 .measures .Measure .HC::after {
+  content: "";
+  width: 2px;
+  height: 2px;
+  border: solid 5px;
+  border-color: transparent black black transparent;
+  transform: rotate(45deg);
+  position: absolute;
+  left: calc(100% - 12px);
+  top: -16px;
+}
+.About .CeoSection .Skills .info2 .measures .Measure .JavaScript {
+  width: 400px;
+}
+.About .CeoSection .Skills .info2 .measures .Measure .JavaScript::before {
+  content: "80%";
+  position: absolute;
+  top: -34px;
+  left: calc(100% - 26px);
+  background-color: black;
+  color: white;
+  width: 35px;
+  padding-left: 5px;
+  height: 22px;
+  border-radius: 5px;
+  padding-top: 3px;
+}
+.About .CeoSection .Skills .info2 .measures .Measure .JavaScript::after {
+  content: "";
+  width: 2px;
+  height: 2px;
+  border: solid 5px;
+  border-color: transparent black black transparent;
+  transform: rotate(45deg);
+  position: absolute;
+  left: calc(100% - 12px);
+  top: -16px;
+}
+.About .CeoSection .Skills .info2 .measures .Measure .Php {
+  width: 450px;
+}
+.About .CeoSection .Skills .info2 .measures .Measure .Php::before {
+  content: "90%";
+  position: absolute;
+  top: -34px;
+  left: calc(100% - 26px);
+  background-color: black;
+  color: white;
+  width: 35px;
+  padding-left: 5px;
+  height: 22px;
+  border-radius: 5px;
+  padding-top: 3px;
+}
+.About .CeoSection .Skills .info2 .measures .Measure .Php::after {
+  content: "";
+  width: 2px;
+  height: 2px;
+  border: solid 5px;
+  border-color: transparent black black transparent;
+  transform: rotate(45deg);
+  position: absolute;
+  left: calc(100% - 12px);
+  top: -16px;
+}
+.About .Quote {
+  width: 100%;
+  height: 300px;
+  margin-top: 150px;
+  position: relative;
+  background-image: url(/TemplateTwo/images/quote.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.Quote::before {
+  content: "";
+  width: 100%;
+  height: 300px;
+  position: absolute;
+  background-color: rgb(0 0 0 / 70%);
+  z-index: 1;
+}
+.About .Quote q {
+  color: white;
+  width: 1000px;
+  text-align: center;
+  font-size: 30px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+.About .Quote q::before {
+  content: "John Doe";
+  color: white;
+  position: absolute;
+  top: calc(50% + 56px);
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  font-size: 17px;
 }
 /*End of About*/
