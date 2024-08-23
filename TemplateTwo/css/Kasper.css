@@ -837,7 +837,7 @@ header .container .bars {
 }
 .About .Quote {
   width: 100%;
-  height: 300px;
+  height: 250px;
   margin-top: 150px;
   position: relative;
   background-image: url(/TemplateTwo/images/quote.jpg);
@@ -847,7 +847,7 @@ header .container .bars {
 .Quote::before {
   content: "";
   width: 100%;
-  height: 300px;
+  height: 250px;
   position: absolute;
   background-color: rgb(0 0 0 / 70%);
   z-index: 1;
@@ -874,3 +874,167 @@ header .container .bars {
   font-size: 17px;
 }
 /*End of About*/
+
+/*Start of Pricing*/
+.pricing .container {
+  position: relative;
+}
+.pricing .container .Prices {
+  margin-top: 100px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  column-gap: 46px;
+}
+.pricing .container .Prices .subscription {
+  width: 250px;
+  height: 200px;
+  text-align: center;
+  border-top: solid 2px var(--main-color);
+  border-bottom: solid 2px var(--main-color);
+}
+.pricing .container .Prices .subscription h3 {
+  font-size: 20px;
+  font-weight: normal;
+  text-transform: uppercase;
+  margin-top: 45px;
+}
+.pricing .container .Prices .subscription h1 {
+  font-size: 70px;
+  font-weight: 500;
+  margin-top: 20px;
+  position: relative;
+}
+.pricing .container .Prices .subscription h1::before {
+  content: "$";
+  font-size: 30px;
+  font-weight: normal;
+  position: absolute;
+  top: -11px;
+  left: 60px;
+}
+.pricing .container .Prices .subscription h1::after {
+  content: "/Mo";
+  font-size: 20px;
+  position: absolute;
+  top: 45px;
+  left: 175px;
+}
+.pricing .container .Prices .subscription p {
+  padding: 20px;
+  margin: 0 37px;
+  border-bottom: solid 2px var(--main-color);
+}
+.pricing .container .Prices .subscription p:nth-child(6) {
+  margin: 0;
+}
+.pricing .container .Prices .subscription a {
+  width: 100px;
+  height: 60px;
+  display: block;
+  margin-left: 75px;
+  margin-top: 20px;
+  padding-top: 20px;
+  border: solid 2px var(--main-color);
+  border-radius: 10px;
+}
+.pricing .container .foot {
+  text-align: center;
+  margin-top: 400px;
+}
+.pricing .container .foot p {
+  font-size: 20px;
+  text-transform: uppercase;
+}
+.pricing .container .foot a {
+  width: 150px;
+  height: 50px;
+  display: inline-block;
+  margin-top: 20px;
+  padding-top: 18px;
+  color: black;
+  background-color: white;
+  border: solid 1px black;
+  border-radius: 10px;
+  transition: 0.5s;
+}
+.pricing .container .foot a:hover {
+  color: white;
+  border-color: transparent;
+  background-color: var(--main-color);
+  transform: rotateX(1turn);
+}
+.pricing .enterEmail {
+  width: 100%;
+  height: 200px;
+  margin-top: 70px;
+  background-image: url(../images/subscribe.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+}
+.pricing .enterEmail::before {
+  content: "";
+  width: 100%;
+  height: 200px;
+  position: absolute;
+  background-color: rgb(0 0 0 / 70%);
+  z-index: 1;
+}
+.pricing .enterEmail form {
+  position: absolute;
+  left: 285px;
+  top: calc(50% + 20px);
+  text-align: center;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+.pricing .enterEmail form input {
+  width: 300px;
+  height: 50px;
+  color: white;
+  padding-left: 50px;
+  border: solid 1px white;
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+  border-right-color: transparent;
+  background-color: transparent;
+}
+.pricing .enterEmail form input::placeholder {
+  color: white;
+  padding: 50px;
+  padding-left: 0px;
+}
+.pricing .enterEmail form::before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f0e0";
+  font-weight: 900;
+  font-size: 25px;
+  color: white;
+  position: absolute;
+  left: 20px;
+  top: 10px;
+}
+.pricing .enterEmail form a {
+  color: white;
+  width: 130px;
+  height: 50px;
+  padding-top: 15px;
+  margin-left: -5px;
+  display: inline-block;
+  border: solid 1px white;
+  border-left-color: transparent;
+  text-transform: uppercase;
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+  background-color: var(--main-color);
+}
+.pricing .enterEmail p {
+  color: white;
+  line-height: 2;
+  position: absolute;
+  left: 525px;
+  top: calc(50% - 16px);
+  font-size: 19px;
+  z-index: 2;
+}
+/*End of Pricing*/
