@@ -30,7 +30,7 @@
     % all things inside the {} called DeclarationBlock.
     % a single selector and the DeclarationBlock are called RuleSet.
     } 
-   //--------------------------------------------------------------------------------------
+   #-------------------------------------------------------------------------------------
    ! the selector types:
    // 1) tag name: it will be applied to all elements with that name.
    // 2) class: we use it to select a set of elements to apply the CSS code on them.
@@ -109,25 +109,25 @@
     // C) BackGround-color: rgb([0,255] , [0,255] , [0,255]);
     % if you did write more then 255 it will be considered as 255.
     % we can use these three coloring methods to any coloring attribute.
-    //--------------------------------------------------------------------------------------
+    #-------------------------------------------------------------------------------------
     ~ 2) BackGround-Image: it has two ways to write it
     // A) BackGround-Image: url(absolutePath or relativePath);
     // B) BackGround-Image: url(absolutePath or relativePath) , url(absolutePath or relativePath) , ...;
     % this attribute will override the images on top of each other.
     % if the image was too small it will go top left position by default.
-    //--------------------------------------------------------------------------------------
+    #-------------------------------------------------------------------------------------
     ~ 3) BackGround-repeat: it has two ways to write it
     // A) BackGround-repeat:repeat;
     // B) BackGround-repeat:no-repeat;
     // C) BackGround-repeat:repeat-x;
     // D) BackGround-repeat:repeat-y;
     % the backGround selector is the bodyTag.
-    //--------------------------------------------------------------------------------------
+    #-------------------------------------------------------------------------------------
     ~ 4) BackGround-attachment: it has two ways to write it
     // A) BackGround-attachment:scroll;
     // B) BackGround-attachment:fixed;
     % the default value is scroll.
-    //--------------------------------------------------------------------------------------
+    #-------------------------------------------------------------------------------------
     ~ 5) Background-Position: it takes two values (X , Y)
     ~ 5.1) Background-Position-x
     ~ 5.2) Background-Position-y
@@ -142,7 +142,7 @@
     // I) Background-Position:center bottom;	
     % If you only specify one keyword, the other value will be "center".	
     // J) Background-Position:x% y%;
-    //--------------------------------------------------------------------------------------
+    #-------------------------------------------------------------------------------------
     ~ 6) BackGround-size: it has 
     // A) BackGround-size:auto; 
     % this will keep the image it its original size (the default value).
@@ -153,13 +153,13 @@
     % it will resize the image to make sure that its always fully visible.
     // D) BackGround-size:WidthPx HightPx;
     // E) BackGround-size:Width% Hight%;
-    //--------------------------------------------------------------------------------------    
+    #-------------------------------------------------------------------------------------    
     ! Font properties:
     ~ 1) font-family: it has two ways to write it
     // A) font-family: "fontType";
     // B) font-family: "fontType" , "fontType" , ...; 
     % the second way will apply the second type if the first one was not supported.
-    //--------------------------------------------------------------------------------------
+    #-------------------------------------------------------------------------------------
     ~ 2) font-weight: it has mean ways to write it
     // A) font-weight: bold;
     // B) font-weight: normal;
@@ -167,11 +167,11 @@
     // D) font-weight: 400; -> this is the normal
     // E) font-weight: 700 or 550; -> this is the bold
     // F) font-weight: bolder;
-    //--------------------------------------------------------------------------------------
+    #-------------------------------------------------------------------------------------
     ~ 3) font-Style: it has two ways
     // A) font-style: italic;
     // B) font-style: normal;
-    //--------------------------------------------------------------------------------------
+    #-------------------------------------------------------------------------------------
     ~ 4) font-size: (Number)px;
     // the default size for web pages is 16px.
     // we have a number of measurement units in css:
@@ -181,34 +181,34 @@
     // percentage: it takes the percent of the parent inherited value.
     // vm: it stands for view port width its 1% of the view port width:
     //     if the port width was 1000px then 5vm is 100px. (Dynamic unit)            
-    //--------------------------------------------------------------------------------------
+    #-------------------------------------------------------------------------------------
     ! Box model properties:
     ~ 1) width:
     // A) width:(number) px;
     // B) width:(number) %;
     // C) width:fit-content;
-    //--------------------------------------------------------------------------------------
+    #-------------------------------------------------------------------------------------
     ~ 2) min-width:
     // A) width:(number) px;
     // B) width:(number) %;
-    //--------------------------------------------------------------------------------------
+    #-------------------------------------------------------------------------------------
     ~ 3) max-width:
     // A) width:(number) px;
     // B) width:(number) %;
-    //--------------------------------------------------------------------------------------
+    #-------------------------------------------------------------------------------------
     ~ 5) height:
     // A) height:(number) px;
     // B) height:(number) %;
     % if you did not specified neither px nor % it will be considered pixels.
-    //--------------------------------------------------------------------------------------
+    #-------------------------------------------------------------------------------------
     ~ 6) min-height:
     // A) height:(number) px;
     // B) height:(number) %;
-    //--------------------------------------------------------------------------------------
+    #-------------------------------------------------------------------------------------
     ~ 7) max-height:
     // A) height:(number) px;
     // B) height:(number) %;
-    //--------------------------------------------------------------------------------------
+    #-------------------------------------------------------------------------------------
     ~ 8) overflow:
     // A) overflow:visible;
     // B) overflow:hidden;
@@ -216,13 +216,13 @@
     // D) overflow:auto;
     // we can also use overflow-x , overflow-y.
     // we use this to handle the content overflow in any div.
-    //--------------------------------------------------------------------------------------
+    #-------------------------------------------------------------------------------------
     ~ 9) padding: the inside space
     // A) padding: number; (in includes the top right bottom left)
     // B) padding: number1 number2 number3 number4;
     %                top    right  bottom   left
     % we can't use a negative values in the padding the start point is 0.
-    //--------------------------------------------------------------------------------------
+    #-------------------------------------------------------------------------------------
     ~ 10) margin: the outside space
     // A) margin: number; (in includes the top right bottom left)
     // B) margin: number1 number2 number3 number4;
@@ -236,37 +236,37 @@
     ~  2- Bigger Margin Wins when having two elements on top of each others
     ~  3- Margin Collapsing occurs between elements that don't have any elements in between.
     ~  4- using div Nesting Does Not Prevent Collapse.
-    //--------------------------------------------------------------------------------------
+    #-------------------------------------------------------------------------------------
     ~ 11) border: style width color;
     //  A) border-top-Style:solid;
     //  B) border-bottom-Style:dashed;
     //  C) border-right-Style:groove;
     //  D) border-left-Style:double;
-    //--------------------------------------------------------------------------------------
+    #-------------------------------------------------------------------------------------
     ! to make the border topped open or bottomed open or left open or right open use:
     //  A) border-top-width:0px;
     //  B) border-bottom-width:0px;
     //  C) border-right-width:0px;
     //  D) border-left-width:0px;
-    //--------------------------------------------------------------------------------------
+    #-------------------------------------------------------------------------------------
     //  A) border-top-color:red;
     //  B) border-bottom-color:yellow;
     //  C) border-right-color:blue;
     //  D) border-left-color:green;
-    //--------------------------------------------------------------------------------------
+    #-------------------------------------------------------------------------------------
     //  A) border-top-left-radius:10px;
     //  B) border-top-right-radius:20px;
     //  C) border-bottom-left-radius:30px;
     //  D) border-bottom-right-radius:40px;
     ! the default value here is zero.
-    //--------------------------------------------------------------------------------------
+    #-------------------------------------------------------------------------------------
     ~ 12) outline: style width color;
     // this is an element that is just like border but its outside the element size.
     % the problem here that it can't take more than one direction (left , right , top , bottom). 
-    //--------------------------------------------------------------------------------------
+    #-------------------------------------------------------------------------------------
     ~ 13) box-shadow: H-shadow V-shadow Blur   Spread color (inset or outset);
     //    box-shadow: number   number   number number color (inset or outset);
-    //--------------------------------------------------------------------------------------
+    #-------------------------------------------------------------------------------------
     ~ 14) box-sizing:...;
     // box-sizing:content-box;
     %  this attribute will behave like so:
@@ -275,69 +275,69 @@
     // box-sizing:content-box;
     %  this attribute will behave like so:
     %  it will not add any border , padding to the width and the height of the box.
-    //--------------------------------------------------------------------------------------
+    #-------------------------------------------------------------------------------------
     ! text properties:
     ~ 1) color: its the font color and it has three ways to write it
     // A) Color: colorName;
     // B) Color: #hexadecimalCode;
     // C) Color: rgb([0,255] , [0,255] , [0,255]);
-    //--------------------------------------------------------------------------------------
+    #-------------------------------------------------------------------------------------
     ~ 2) text-align: its the text positioning and it has four ways to write it
     // A) text-align: left;
     // B) text-align: right;
     // C) text-align: center;
     // D) text-align: justify;
-    //--------------------------------------------------------------------------------------
+    #-------------------------------------------------------------------------------------
     ~ 3) direction : its the text writing direction and it has two ways to write it
     // A) direction: ltr; (left to right)
     // B) direction: rtl; (right to left)
-    //--------------------------------------------------------------------------------------
+    #-------------------------------------------------------------------------------------
     ~ 4) text-decoration: it has four ways to write it
     // A) text-decoration: underLine; -> its equivalent to the <u></u> tag
     // B) text-decoration: overLine;
     // C) text-decoration: line-through; -> its equivalent to the <strike></strike> tag
     // D) text-decoration: none;
-    //--------------------------------------------------------------------------------------
+    #-------------------------------------------------------------------------------------
     ~ 5) letter-spacing: (number) px;
     // this is the space between letters.
-    //--------------------------------------------------------------------------------------
+    #-------------------------------------------------------------------------------------
     ~ 6) word-spacing: (number) px;
     // this is the space between words.
-    //--------------------------------------------------------------------------------------
+    #-------------------------------------------------------------------------------------
     ~ 7) text-indent:(number)px;
     // its like the space before the text.
-    //--------------------------------------------------------------------------------------
+    #-------------------------------------------------------------------------------------
     ~ 8) text-transform: it has two ways to write it
     // A) text-transform: uppercase;
     // B) text-transform: lowercase;
-    //--------------------------------------------------------------------------------------
+    #-------------------------------------------------------------------------------------
     ~ 9) text-shadow: (number)px (number)px (number)px color;
     //                horizontal  vertical    blur    color
     // if you didn't write the blur number the text will be duplicated.
     // you can add more than one shadow to the same text just like background (,).
     // the horizontal shadow and the vertical shadow is a required attributes and negative values are allowed.
-    //--------------------------------------------------------------------------------------
+    #-------------------------------------------------------------------------------------
     ~ 10) line-height:number;
     // it takes numbers like (1 , 2 , 1.6(the best)) its the spacing between lines.
-    //--------------------------------------------------------------------------------------
+    #-------------------------------------------------------------------------------------
     ~ 11) white-space
     //    white-space: normal;
     //    white-space: nowrap;
-    //--------------------------------------------------------------------------------------
+    #-------------------------------------------------------------------------------------
     ~ 12) word-break
     //    word-break: normal;
     //    word-break: break-all;
     //    word-break: keep-all;
     //    word-break: break-word;
     // this attribute is used to brake text to not overflow from its container. 
-    //--------------------------------------------------------------------------------------
+    #-------------------------------------------------------------------------------------
     ~ 13) text-overflow: ellipsis;
     // this attribute will be used turn text overflow from this (ahmadIsmail) to (ahmadisma...) 
     // its used to fit the text into the container. 
-    //--------------------------------------------------------------------------------------
+    #-------------------------------------------------------------------------------------
     ! there is an interesting value for almost all Css attributes its (inherit).
     // this value will be used allow an element to inherit a value from its parent container if possible. 
-    //--------------------------------------------------------------------------------------
+    #-------------------------------------------------------------------------------------
     ? display of Elements in in Html:
     ! display attribute: its the ability of displaying an element in html.
     ~ 1) display:Block 
@@ -357,7 +357,7 @@
     // this attribute will make the element invisible but it will keep it within its place in the page.
     ~ 5.2) visibility: visible
     // this attribute will make the element visible in the page.
-    //--------------------------------------------------------------------------------------
+    #-------------------------------------------------------------------------------------
     ? the flex box:
     ~ 6) display:flex
     // to start a flexible box its clear that this box will be more helpful to use in the parent div.
@@ -439,7 +439,7 @@
     % 4) min-Width or max-Width. (highest one)
     // the min-width is the longest word in the content.
     // the max-width is the longest space that the content requires to appear as one line.
-    //--------------------------------------------------------------------------------------
+    #-------------------------------------------------------------------------------------
     ? the Grid box:
     ~ 7) display:grid;
     ~ 7.2) display:inline-grid;
@@ -498,7 +498,7 @@
     // here we are having the responsiveness to a higher level.
     ~ iii) grid-template-columns||rows: repeat(auto-fit , minmax(number , 1fr));
     // here we are having the responsiveness to even more higher level.    
-    //--------------------------------------------------------------------------------------
+    #-------------------------------------------------------------------------------------
     ? Types of CSS Selectors
     ~ 1) all element selector: 
     // * {...}
@@ -570,7 +570,7 @@
     ~ 37) element::selection {...}
     ~ 38) element::placeholder {...}
     ! the selectors 31...38 are easy to understand.
-    //--------------------------------------------------------------------------------------
+    #-------------------------------------------------------------------------------------
     ? nesting in Css:
     // the css selector is used like so:
        % selector {...}
@@ -581,18 +581,18 @@
        % parent-selector child-selector ...{...} 
        % parent-selector{ child-selector {...} ....}
     ! we can use the (&) sign to refer to the parent of the tag (just once).
-    //--------------------------------------------------------------------------------------
+    #-------------------------------------------------------------------------------------
     ? the cursor attribute in css:
     // it could be changed into many shapes as you like.
     // follow that this link (https://developer.mozilla.org/en-US/docs/Web/CSS/cursor).  
-    //--------------------------------------------------------------------------------------
+    #-------------------------------------------------------------------------------------
     ! i don't understand way the hell do we need the float and the clear attributes but:
     // float : "left" or "right"; we use it to make elements float outside there containers
     // clear : "left" or "right" or "both"; we use it to fix the float problems.
-    //--------------------------------------------------------------------------------------
+    #-------------------------------------------------------------------------------------
     ~ opacity:[0 , 1];
     // this attribute is responsible for the opacity of the whole page.
-    //--------------------------------------------------------------------------------------
+    #-------------------------------------------------------------------------------------
     ? positioning in Css :
     ~ the attribute position have many values to all sorts of usage:
     ~ there are more attributes to move elements (top , bottom , left , right).  
@@ -619,7 +619,7 @@
     // if two element has the same z-index it will have the ordinary tags order.
     // the z-index attribute will not work if we don't used the position attribute.
     // it takes negative values.
-    //--------------------------------------------------------------------------------------
+    #-------------------------------------------------------------------------------------
     ? pseudo classes in Css: 
     ? it is a keyword added to a selector that specifies a special state of the selected element.
     // we write it like so:
@@ -638,7 +638,7 @@
     // we use 4.1 to select all empty elements.
     ~ 5) selector:focus{} 
     // this state will occur when we are clicking in an input to write in it.
-    //--------------------------------------------------------------------------------------
+    #-------------------------------------------------------------------------------------
     ? Transitions in Css:
     // follow the link to see the properties that support animations:
     // https://udn.realityripple.com/docs/Web/CSS/CSS_animated_properties
@@ -665,7 +665,7 @@
     // this is the short hand below:
     // transition: property duration Timing-function delay;
     // transition: property duration Timing-function delay  , ...;
-    //--------------------------------------------------------------------------------------
+    #-------------------------------------------------------------------------------------
     ? pseudo elements in Css: 
     ? it is a keyword added to a selector that lets you style a specific part of the selected element.
     // we write it like so:
@@ -690,13 +690,13 @@
     // content:"Name";
     // 3) place as you like using the position.
     ! the content can treat the attributes like a pseudo element using the function attr(attributeName).
-    //--------------------------------------------------------------------------------------
+    #-------------------------------------------------------------------------------------
     ! notice that you can have pseudo class and pseudo element together like so:
     // selector:PseudoClass::PseudoElement{...}
-    //--------------------------------------------------------------------------------------
+    #-------------------------------------------------------------------------------------
     ! you can use the keyword (!important) to upgrade the priority of an attribute to the hightest.
     // selector{ attribute: value !important}; 
-    //--------------------------------------------------------------------------------------
+    #-------------------------------------------------------------------------------------
     ? Vendors Prefixes: we have a number of browsers e.g.
     //  Chrome
     //  Safari
@@ -713,7 +713,7 @@
     // the prefixes are written before the features.
     // e.g. -webkit-border-reduce:10px;
     // follow this like to search for supported features https://caniuse.com/.
-    //--------------------------------------------------------------------------------------
+    #-------------------------------------------------------------------------------------
     ? 2D and 3D Transform Elements in Css:
     ! here we are moving the elements to the in the dimensions of the page using attribute called transform.
     // transform has many different values that we can be using to move elements.
@@ -779,7 +779,7 @@
     or are flattened in the plane of the element.
     // this attribute must be used with the value (preserve-3d) when we work on a 3d space.
     % check the test10.html and master10.css files to understand the last two attributes. 
-    //--------------------------------------------------------------------------------------
+    #-------------------------------------------------------------------------------------
     ? Css Animation:
     // the animation in Css has three steps to get it done:
     ~ 1) you need to write your keyFrame and its will be written it three ways:
@@ -817,7 +817,7 @@
     Animation: Animation-delay Animation-direction Animation-duration 
                Animation-fill-mode Animation-iteration-count Animation-name
                Animation-play-state Animation-timeline Animation-timing-function;
-    //--------------------------------------------------------------------------------------
+    #-------------------------------------------------------------------------------------
     ? Media Queries And Responsive Designs:
     // this is a tag that we use to create a design that will be active if a specific condition occurred.
     ! we have many types of Media Queries:
@@ -856,7 +856,7 @@
     ! @media (min-width: 1200px) { ... }
     // XX-Large devices (larger desktops, 1400px and up)
     ! @media (min-width: 1400px) { ... }
-    //--------------------------------------------------------------------------------------
+    #-------------------------------------------------------------------------------------
     ? creating your own framework:
     // what is the meaning of a framework in web development?
     * its a pre-builded ready to use components to save you time and effort (e.g. Bootstrap). 
@@ -868,7 +868,7 @@
     ~ 3) add this class to any element in html that you need it to be affected.
     ! avoid creating classes with one attribute try more complex tasks.
     ! the main goal here is to avoid Reimplementing the same thing again and again. 
-    //--------------------------------------------------------------------------------------
+    #-------------------------------------------------------------------------------------
     ? Variables in Css:
     // there is two types of variables in Css:
     // 1) Local variable that is inside the Declaration Block.
@@ -880,7 +880,7 @@
     ! you can call the variable like so:
     // attribute:var(varName , defaultValue);
     % the local variable is higher in priority then the global one. 
-    //--------------------------------------------------------------------------------------
+    #-------------------------------------------------------------------------------------
     ? Global variables in css: we have 4 different types of global variables 
     ~ 1) attribute:inherit;
     // this value makes the attribute get its value by inheritance from its parents.
@@ -893,7 +893,7 @@
     // this value will return the value of the attribute to its user agent initial value.
     ! all:(inherit or initial or unset or revert);
     // we use this value to target all attribute in any container its clear.
-    //--------------------------------------------------------------------------------------
+    #-------------------------------------------------------------------------------------
     ? filters in Css:
     ~ 1) filter:grayScale(number);
     // this will turn the picture to Black and White.
@@ -902,14 +902,14 @@
     ~ 3) filter:invert(number);
     // this will turn the picture to blur.
     you can search for more filter online.
-    //--------------------------------------------------------------------------------------
+    #-------------------------------------------------------------------------------------
     ? colors Gradients in Css:
     ~ background-image: linear-gradient(Direction (T , B , R , L) , color1 , color2 , ...);
     ~ background-image: linear-gradient(Direction (T , B , R , L) , color1 number% , color2 number%, ...);
     ~ background-image: linear-gradient(angle(deg) , color1 , color2 , ...);
     ~ background-image: linear-gradient(angle(deg) , color1 number%, color2 number%, ...);
     // gradient can't be animated at any browser.
-    //--------------------------------------------------------------------------------------
+    #-------------------------------------------------------------------------------------
     ! short hands:
     % we can use a short hand attribute in the BackGround like so:
     backGround: background-color background-image background-repeat;
