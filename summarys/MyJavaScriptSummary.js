@@ -34,4 +34,11 @@
 // non-primitive data types:
 ~ 1) object -> it could be array or an regular object.
 ~ 2) function -> function FunName(){}.
+# ---------------------------------------------------------------------------------------------
+? Variables in javaScript:
+// java script is a loosely type language that you don't need to define the type of the variable.
+! how to declare a variable in js : var VAriableName = VariableValue;
+// the variable name in java Script is case sensitive.
+// the ID of all html tags is a global variable.
+   
 */
