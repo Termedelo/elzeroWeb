@@ -37,8 +37,22 @@
 # ---------------------------------------------------------------------------------------------
 ? Variables in javaScript:
 // java script is a loosely type language that you don't need to define the type of the variable.
-! how to declare a variable in js : var VAriableName = VariableValue;
 // the variable name in java Script is case sensitive.
 // the ID of all html tags is a global variable.
-   
+? how to declare a variable in js : we have three ways we can that vary in many things 
+~ 1) var VAriableName = VariableValue;
+  * it can be Re-Declared.
+  * when you try to Access Before Declare it will output -> Undefined.
+  * when declaring a variable using var it will be added to the Window obj causing a (Variable Scope Drama).
+  * non-Block Scope and function Block Scope
+~ 2) let VAriableName = VariableValue;
+  * it can't be Re-Declared.
+  * when you try to Access Before Declare it will output -> error.
+  * it doesn't cause a (Variable Scope Drama)
+  * Block Scope and function Block Scope
+~ 3) const VAriableName = VariableValue;
+  * it can't be Re-Declared or Modify its value.
+  * when you try to Access Before Declare it will output -> error.
+  * it doesn't cause a (Variable Scope Drama)
+  * Block Scope and function Block Scope
 */
