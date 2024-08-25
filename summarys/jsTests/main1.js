@@ -12,6 +12,7 @@ console.group("Groupe 2");
 console.log("Message One");
 console.log("Message Two");
 console.log("Iam In Console");
+console.groupEnd();
 console.table(["Ahmad" , "ali" , "elzero" , "mohamad" , "sara"]);
 console.error("------------------------");
 console.log(typeof "ahmad");
@@ -24,3 +25,13 @@ console.log(typeof undefined);
 console.log(typeof function f1(){});
 console.log(typeof {name:"ali" , num:1});
 console.log(typeof ["ahmad" , 10 , 20000]);
+
+let Title = "Elzero",
+  Description = "Web School",
+  Date = "25/8";
+let div = `<div>
+           <h3>${Title}</h3>
+           <p>${Description}</p>
+           <span>${Date}</span>
+           </div>`;
+document.write(`${div.repeat(4)}`);

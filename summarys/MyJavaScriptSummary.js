@@ -55,4 +55,41 @@
   * when you try to Access Before Declare it will output -> error.
   * it doesn't cause a (Variable Scope Drama)
   * Block Scope and function Block Scope
+? the Escape character an the concatenation in javaScript:
+// you can use: 
+// (\^, \$, \\, \., \*, \+, \?, \(, \), \[, \], \{, \}, \|, \/) 
+// or (\f, \n, \r, \t, \v) or (\)
+// to do concatenation in js we use (+) between Strings or something and string.
+# now we have the ECMAScript6 that makes this thing easer for us like so:
+# console.log(`${Variable} ${MathExpression} ${AnyThing} ...`);
+# let v = `hello world my name is ${name} and my age is {10 + 11}`
+# here we can write the spaces and the symbols without the need to Escape or concatenation.
+? Arithmetic Operations in javaScript:
+// we can use (+ , - , * , / , % , ** (exp ES7) , ++ , --).
+// NaN in javaScript stands for (Not a Number) and fun fact its from type number.
+? Unary Plus and Unary Negation
+// Unary Plus [Return Number If Its Not Number]
+~ console.log(+100); -> 100
+~ console.log(+"100"); -> 100
+~ console.log(+"-100"); -> -100
+~ console.log(+"Osama"); -> NaN
+~ console.log(+"15.5"); -> 15.5
+~ console.log(+0xff); -> 255
+~ console.log(+null); -> 0
+~ console.log(+false); -> 0
+~ console.log(+true); -> 1
+// Unary Negation [Return Number If Its Not Number and Negates It]
+~ console.log(-100); -> -100
+~ console.log(-"100"); -> -100
+~ console.log(-"-100"); -> 100
+~ console.log(-"Osama"); -> NaN
+~ console.log(-"15.5"); -> -15.5
+~ console.log(-0xff); -> -255
+~ console.log(-null); -> -0
+~ console.log(-false); -> -0
+~ console.log(-true); -> -1
+// Type Coercion (Type Casting):
+~ here the language will cast any thing according to its type:
+
+
 */
