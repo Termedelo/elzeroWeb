@@ -65,7 +65,7 @@
 # let v = `hello world my name is ${name} and my age is {10 + 11}`
 # here we can write the spaces and the symbols without the need to Escape or concatenation.
 ? Arithmetic Operations in javaScript:
-// we can use (+ , - , * , / , % , ** (exp ES7) , ++ , --).
+// we can use (+ , - , * , / , % , ** (exp ES7) , ++ , -- , += , -= , /= , *=).
 // NaN in javaScript stands for (Not a Number) and fun fact its from type number.
 ? Unary Plus and Unary Negation
 // Unary Plus [Return Number If Its Not Number]
@@ -88,8 +88,9 @@
 ~ console.log(-null); -> -0
 ~ console.log(-false); -> -0
 ~ console.log(-true); -> -1
-// Type Coercion (Type Casting):
+# ---------------------------------------------------------------------------------------------
+// Type Coercion (Type Casting): 
 ~ here the language will cast any thing according to its type:
-
-
+! come back here and learn more...
+# ---------------------------------------------------------------------------------------------
 */
