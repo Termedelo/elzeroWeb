@@ -24,16 +24,87 @@
 ? data types in javaScript:
 ! we can use the TypeOf operator to know the type of any data e.g. (typeOf 500).
 // primitive data types:
-~ 1) string -> "Ahmad"
-~ 2) number -> 2000 or 2000.998
-~ 3) boolean -> true or false
-~ 4) bigint -> 
-~ 5) symbol -> 
-~ 6) null -> its an object
+~ 1) string 
+! let name = "Ahmad";
+// 1) Access With Index 
+% name[0 , ...] , name[5] returns undefined.
+// 2) Access With charAt() 
+% name.charAt(0 , ...) name.charAt(5) returns nothing.
+// 3) length 
+% name.length() starts from one.
+// 4) trim() 
+% name.trim() it removes the before and after spaces .
+// 5) toUpperCase() 
+% name.toUpperCase()
+// 6) toLowerCase() 
+% name.toLowerCase()
+// 7) indexOf(Value [Mandatory], Start [Optional] indexNumber)
+// 8) lastIndexOf(Value [Mandatory], Start [Optional] Length)
+% these two method returns a number and if the char is not exist they return -1.
+// 9) slice(Start [Mandatory], End [Optional] Not Include End)
+% this function dose not include the last index if you entered it.
+% it takes a negative values to start from the end and it starts from zero.
+// 10) repeat(Times) [ES6]
+// 11) split(Separator [Optional], Limit [Optional])
+% it takes the string and return it as an array of strings.
+// 12) substring(Start [Mandatory], End [Optional] Not Including End)
+% if the Start > End it will Swap
+% if the Start < 0 It Starts From 0
+% we can Use Length To Get Last Character since it doesn't take negative numbers
+// 13) substr(Start [Mandatory], Characters To Extract)
+% if the Start >= Length it will return "" 
+% Negative Start From End like the slice.
+// 14) includes(Value [Mandatory], Start [Optional] Default 0) [ES6]
+% it returns true or false.
+// 15) startsWith(Value [Mandatory], Start [Optional] Default 0) [ES6]
+% it returns true or false.
+// 16) endsWith(Value [Mandatory], Length [Optional] Default Full Length) [ES6]
+% it returns true or false.
+~ 2) Number 
+! let x = 2000 or 2000.998;
+// (Syntactic Sugar "_") (e)
+// 1) toString() 
+% (x.toString()); or (x..toString());
+// 2) toFixed(num) 
+% (x.toFixed(num)); 
+// 3) parseInt() 
+% (parseInt("String"));
+// 4) parseFloat() 
+% (parseFloat("String"));
+// 5) isInteger() [ES6] 
+% (Number.isInteger(IntegerNumber)); true
+// 6) isNaN() [ES6] 
+% (Number.isNaN(anyNaN)); -> true
+~ 3) boolean 
+% true or false
+~ 4) bigint 
+~ 5) symbol 
+~ 6) null 
+% its an object
 ~ 7) undefined
 // non-primitive data types:
-~ 1) object -> it could be array or an regular object.
-~ 2) function -> function FunName(){}.
+~ 1) object 
+% it could be array or an regular object.
+~ 2) function 
+% function FunName(){}.
+# ---------------------------------------------------------------------------------------------
+? Math Object in javaScript:
+// 1) Math.round(); 
+% Math.Round(99.2); -> 99 , math.Round(99.5); -> 100
+// 2) Math.ceil(); 
+% Math.ceil(99.1); -> 100
+// 3) Math.floor(); 
+% Math.floor(99.9) -> 99
+// 4) Math.min(); 
+% Math.min(1 , 2 , 3 , 4 , 5); -> 1
+// 5) Math.max(); 
+% Math.max(1 , 2 , 3 , 4 , 5); -> 5
+// 6) Math.pow(); 
+% Math.pow(2 , 4); -> 16
+// 7) Math.random(); 
+% Math.random(); -> any random number
+// 8) Math.trunc(); [Es6] 
+% Math.trunc(99.199);-> 99 , Math.trunc(10.8989); > 10
 # ---------------------------------------------------------------------------------------------
 ? Variables in javaScript:
 // java script is a loosely type language that you don't need to define the type of the variable.
@@ -55,6 +126,7 @@
   * when you try to Access Before Declare it will output -> error.
   * it doesn't cause a (Variable Scope Drama)
   * Block Scope and function Block Scope
+# ---------------------------------------------------------------------------------------------
 ? the Escape character an the concatenation in javaScript:
 // you can use: 
 // (\^, \$, \\, \., \*, \+, \?, \(, \), \[, \], \{, \}, \|, \/) 
@@ -67,6 +139,7 @@
 ? Arithmetic Operations in javaScript:
 // we can use (+ , - , * , / , % , ** (exp ES7) , ++ , -- , += , -= , /= , *=).
 // NaN in javaScript stands for (Not a Number) and fun fact its from type number.
+# ---------------------------------------------------------------------------------------------
 ? Unary Plus and Unary Negation
 // Unary Plus [Return Number If Its Not Number]
 ~ console.log(+100); -> 100

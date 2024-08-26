@@ -57,3 +57,45 @@
 // // Do Not Use Variable Twice
 // console.log(-d * +e); // 2000
 // console.log(++e * + ++g + -d + ++f); //173
+// let elzero = document.getElementById("elzero");
+// console.log(elzero.innerHTML); // object
+// console.log(typeof elzero); // object
+
+// let a = 100;
+// let b = 2_00.5;
+// let c = 1e2;
+// let d = 2.4;
+
+// // Find Smallest Number In All Variables And Return Integer
+// console.log(Math.min(a , b , c , d));
+
+// // Use Variables a + d One Time To Get The Needed Output
+// console.log(Math.pow(a , Math.trunc(d))); // 10000
+
+// // Get Integer "2" From d Variable With 4 Methods
+// console.log(Math.round(d));
+// console.log(Math.floor(d));
+// console.log(Math.trunc(d));
+// console.log(Number.parseInt(d.toFixed(0)));
+
+// // Use Variables b + d To Get This Values
+// console.log((parseInt(b) / Math.ceil(d)).toFixed(2)); // 66.67 => String
+// console.log(Math.ceil((parseInt(b) / Math.ceil(d)))); // 67 => Number
+
+let a = "Elzero Web School";
+
+// Include This Method In Your Solution [slice, charAt]
+console.log(a.charAt(2).toUpperCase()+a.slice(3 , 7)); // Zero
+
+// 8 H
+console.log(a.charAt(13).repeat(8).toUpperCase()); // HHHHHHHH
+
+// Return Array
+console.log(a.split(" " , 1)); // ["Elzero"]
+
+// Use Only "substr" Method + Template Literals In Your Solution
+console.log(`${a.substr(0 , 7)}${a.substr(-6 , 6)}`); // Elzero School
+let b = "ahmad";
+// Solution Must Be Dynamic Because String May Changes
+console.log(b.charAt(0).toLowerCase() + b.substring(1 , b.length-1).toUpperCase() + b.charAt(length+1).toLowerCase()); 
+// eLZERO WEB SCHOOl
