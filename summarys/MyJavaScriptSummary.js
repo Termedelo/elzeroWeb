@@ -166,4 +166,44 @@
 ~ here the language will cast any thing according to its type:
 ! come back here and learn more...
 # ---------------------------------------------------------------------------------------------
+? comparison in javaScript:
+// normal equality : value == value 
+% here we are comparing the equality of the values without looking at the type.
+// normal inequality : value != value 
+% here we are comparing the inequality of the values without looking at the type.
+// strict equality : value === value 
+% here we are comparing the equality of the values and the equality of the type.
+// strict inequality : value !== value 
+% here we are comparing the inequality of the values and the inequality of the type.
+// also you can use (< , <= , > , >=).
+// we can also use (and (&&) , or (||) , not (!) , Nullish (??)).
+// we can use the ( Or (||) ) to solve the cases when we need true or real value for something.
+% e.g. Null || Undefined || Any Falsy Value (0 , false  , "" , ...) || ... || any True Value.
+% it will replace any Null , Undefined , falsy values with a true value from you choice. 
+// we can use the ( Nullish (??) ) to solve the cases when we need an unNull or defined value for something.
+% e.g. Null ?? Undefined ?? ... || any True Or False Value.
+% it will replace any Null , Undefined values with the true or false values from your choice. 
+# ---------------------------------------------------------------------------------------------
+? control flows in javaScript:
+~ 1) if statement:
+// if(condition){...}
+~ 2) if else statements:
+// if(condition){...} else {...}
+~ 3) if else if ... statements:
+// if(condition){...} else {...} if(condition){...} ...
+~ 4) Ternary if else statements:
+// (condition) ? if true : if false;
+// (condition) ? if true : (condition) ? if true : (condition) ? if true : .... : if false ;
+~ 5) the switch Statement:
+// switch(expression) { case1 : ... brake; ... Default:}
+// switch(expression) { case1 case2 ...: ... brake; ... Default:} 
+% it can take multiple cases as you wish.
+# ---------------------------------------------------------------------------------------------
+? Array in javaScript:
+// Create Arrays [Two Methods] new Array() or [].
+% let arr1 = new Array("A", 1, true, 3.9, null);
+% let arr2 = ["A", 1, true, 3.9, null];
+// Access Arrays Elements is indexed starts from zero.
+// you can Check the Array using -> Array.isArray(arrName);
+// you can get the length of array using (ArrayName.length) it starts counting from one.
 */

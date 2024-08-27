@@ -81,21 +81,147 @@
 // // Use Variables b + d To Get This Values
 // console.log((parseInt(b) / Math.ceil(d)).toFixed(2)); // 66.67 => String
 // console.log(Math.ceil((parseInt(b) / Math.ceil(d)))); // 67 => Number
+// let a = "Elzero Web School";
+// // Include This Method In Your Solution [slice, charAt]
+// console.log(a.charAt(2).toUpperCase()+a.slice(3 , 7)); // Zero
+// // 8 H
+// console.log(a.charAt(13).repeat(8).toUpperCase()); // HHHHHHHH
+// // Return Array
+// console.log(a.split(" " , 1)); // ["Elzero"]
+// // Use Only "substr" Method + Template Literals In Your Solution
+// console.log(`${a.substr(0 , 7)}${a.substr(-6 , 6)}`); // Elzero School
+// let b = "ahmad";
+// // Solution Must Be Dynamic Because String May Changes
+// console.log(b.charAt(0).toLowerCase() + b.substring(1 , b.length-1).toUpperCase() + b.charAt(length+1).toLowerCase());
+// // eLZERO WEB SCHOOl
+// let value1 = 100;
+// let value2 = null;
+// let value3 = undefined;
+// console.log(value3 || value2 || value1);
 
-let a = "Elzero Web School";
+// let a = 10;
 
-// Include This Method In Your Solution [slice, charAt]
-console.log(a.charAt(2).toUpperCase()+a.slice(3 , 7)); // Zero
+// if (a < 10) {
+//   console.log(10);
+// } else if (a >= 10 && a <= 40) {
+//   console.log("10 To 40");
+// } else if (a > 40) {
+//   console.log("> 40");
+// } else {
+//   console.log("Unknown");
+// }
+// a < 10
+//   ? console.log(10)
+//   : a >= 10 && a <= 40
+//   ? console.log("10 To 40")
+//   : a > 40
+//   ? console.log("> 40")
+//   : console.log("Unknown");
+// // Write Previous Condition With Ternary If Syntax
+// let st = "Elzero Web School";
 
-// 8 H
-console.log(a.charAt(13).repeat(8).toUpperCase()); // HHHHHHHH
+// if (String(st.length*2) === "34") {
+//   console.log("Good");
+// }
+// // W Position May Change
+// if (st.charAt(st.indexOf('w')) || st.charAt(st.indexOf('W')).toLowerCase() === "w") {
+//   console.log("Good");
+// }
 
-// Return Array
-console.log(a.split(" " , 1)); // ["Elzero"]
+// if (st !== "string") {
+//   console.log("Good");
+// }
 
-// Use Only "substr" Method + Template Literals In Your Solution
-console.log(`${a.substr(0 , 7)}${a.substr(-6 , 6)}`); // Elzero School
-let b = "ahmad";
-// Solution Must Be Dynamic Because String May Changes
-console.log(b.charAt(0).toLowerCase() + b.substring(1 , b.length-1).toUpperCase() + b.charAt(length+1).toLowerCase()); 
-// eLZERO WEB SCHOOl
+// if (typeof Number(st) === "number") {
+//   console.log("Good");
+// }
+
+// if (st.substring(0 , 6).repeat(2) === "ElzeroElzero") {
+//   console.log("Good");
+// }
+/*
+  Switch Challenge
+*/
+
+// let job = "Manager";
+// let salary = 0;
+
+// if (job === "Manager") {
+//   salary = 8000;
+// } else if (job === "IT" || job === "Support") {
+//   salary = 6000;
+// } else if (job === "Developer" || job === "Designer") {
+//   salary = 7000;
+// } else {
+//   salary = 4000;
+// }
+// console.log(salary);
+// switch (job) {
+//   case "Manager":
+//     salary = 8000;
+//     break;
+//   case "IT" || "Support":
+//     salary = 6000;
+//     break;
+//   case "Developer" || "Designer":
+//     salary = 7000;
+//     break;
+//   default:
+//     salary = 4000;
+// }
+// console.log(salary);
+// /*
+//   If Challenge
+// */
+
+// let holidays = 0;
+// let money = 0;
+
+// switch (holidays) {
+//   case 0:
+//     money = 5000;
+//     console.log(`My Money is ${money}`);
+//     break;
+//   case 1:
+//   case 2:
+//     money = 3000;
+//     console.log(`My Money is ${money}`);
+//     break;
+//   case 3:
+//     money = 2000;
+//     console.log(`My Money is ${money}`);
+//     break;
+//   case 4:
+//     money = 1000;
+//     console.log(`My Money is ${money}`);
+//     break;
+//   case 5:
+//     money = 0;
+//     console.log(`My Money is ${money}`);
+//     break;
+//   default:
+//     money = 0;
+//     console.log(`My Money is ${money}`);
+// }
+// if (holidays === 0) {
+//   money = 5000;
+//   console.log(`My Money is ${money}`);
+// } else if (holidays === 1 || holidays === 2) {
+//   money = 3000;
+//   console.log(`My Money is ${money}`);
+// } else if (holidays === 3) {
+//   money = 2000;
+//   console.log(`My Money is ${money}`);
+// } else if (holidays === 4) {
+//   money = 1000;
+//   console.log(`My Money is ${money}`);
+// } else {
+//   money = 0;
+//   console.log(`My Money is ${money}`);
+// }
+let arr1 = new Array("ahmad", "mohamd");
+let arr2 = ["A", 1, true, 3.9, null];
+console.log(arr1[0]);
+console.log(arr2[3]);
+console.log(arr1.length);
+console.log(arr2.length);
