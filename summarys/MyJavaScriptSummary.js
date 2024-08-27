@@ -28,52 +28,52 @@
 ! let name = "Ahmad";
 // 1) Access With Index 
 % name[0 , ...] , name[5] returns undefined.
-// 2) Access With charAt() 
+// 2) Access With charAt(): String(char) 
 % name.charAt(0 , ...) name.charAt(5) returns nothing.
-// 3) length 
+// 3) length : number
 % name.length() starts from one.
-// 4) trim() 
+// 4) trim() : String
 % name.trim() it removes the before and after spaces .
-// 5) toUpperCase() 
+// 5) toUpperCase() : String
 % name.toUpperCase()
-// 6) toLowerCase() 
+// 6) toLowerCase() : String
 % name.toLowerCase()
-// 7) indexOf(Value [Mandatory], Start [Optional] indexNumber)
-// 8) lastIndexOf(Value [Mandatory], Start [Optional] Length)
+// 7) indexOf(Value [Mandatory], Start [Optional] indexNumber) : number
+// 8) lastIndexOf(Value [Mandatory], Start [Optional] Length) : number
 % these two method returns a number and if the char is not exist they return -1.
-// 9) slice(Start [Mandatory], End [Optional] Not Include End)
+// 9) slice(Start [Mandatory], End [Optional] Not Include End) : String
 % this function dose not include the last index if you entered it.
 % it takes a negative values to start from the end and it starts from zero.
-// 10) repeat(Times) [ES6]
-// 11) split(Separator [Optional], Limit [Optional])
+// 10) repeat(Times) [ES6] : String
+// 11) split(Separator [Optional], Limit [Optional]) : Object of Array
 % it takes the string and return it as an array of strings.
-// 12) substring(Start [Mandatory], End [Optional] Not Including End)
+// 12) substring(Start [Mandatory], End [Optional] Not Including End) : String
 % if the Start > End it will Swap
 % if the Start < 0 It Starts From 0
 % we can Use Length To Get Last Character since it doesn't take negative numbers
-// 13) substr(Start [Mandatory], Characters To Extract)
+// 13) substr(Start [Mandatory], Characters To Extract) : String
 % if the Start >= Length it will return "" 
 % Negative Start From End like the slice.
-// 14) includes(Value [Mandatory], Start [Optional] Default 0) [ES6]
+// 14) includes(Value [Mandatory], Start [Optional] Default 0) [ES6] : Boolean
 % it returns true or false.
-// 15) startsWith(Value [Mandatory], Start [Optional] Default 0) [ES6]
+// 15) startsWith(Value [Mandatory], Start [Optional] Default 0) [ES6] : Boolean
 % it returns true or false.
-// 16) endsWith(Value [Mandatory], Length [Optional] Default Full Length) [ES6]
+// 16) endsWith(Value [Mandatory], Length [Optional] Default Full Length) [ES6] : Boolean
 % it returns true or false.
 ~ 2) Number 
 ! let x = 2000 or 2000.998;
 // (Syntactic Sugar "_") (e)
-// 1) toString() 
+// 1) toString() : String
 % (x.toString()); or (x..toString());
-// 2) toFixed(num) 
+// 2) toFixed(num) : String
 % (x.toFixed(num)); 
-// 3) parseInt() 
+// 3) parseInt() : Number
 % (parseInt("String"));
-// 4) parseFloat() 
+// 4) parseFloat() : Number
 % (parseFloat("String"));
-// 5) isInteger() [ES6] 
+// 5) isInteger() [ES6] : Boolean
 % (Number.isInteger(IntegerNumber)); true
-// 6) isNaN() [ES6] 
+// 6) isNaN() [ES6]  : Boolean
 % (Number.isNaN(anyNaN)); -> true
 ~ 3) boolean 
 % true or false
@@ -89,21 +89,21 @@
 % function FunName(){}.
 # ---------------------------------------------------------------------------------------------
 ? Math Object in javaScript:
-// 1) Math.round(); 
+// 1) Math.round(); : Number
 % Math.Round(99.2); -> 99 , math.Round(99.5); -> 100
-// 2) Math.ceil(); 
+// 2) Math.ceil(); : Number
 % Math.ceil(99.1); -> 100
-// 3) Math.floor(); 
+// 3) Math.floor(); : Number
 % Math.floor(99.9) -> 99
-// 4) Math.min(); 
+// 4) Math.min(); : Number
 % Math.min(1 , 2 , 3 , 4 , 5); -> 1
-// 5) Math.max(); 
+// 5) Math.max(); : Number
 % Math.max(1 , 2 , 3 , 4 , 5); -> 5
-// 6) Math.pow(); 
+// 6) Math.pow(); : Number
 % Math.pow(2 , 4); -> 16
-// 7) Math.random(); 
+// 7) Math.random(); : Number
 % Math.random(); -> any random number
-// 8) Math.trunc(); [Es6] 
+// 8) Math.trunc(); [Es6] : Number
 % Math.trunc(99.199);-> 99 , Math.trunc(10.8989); > 10
 # ---------------------------------------------------------------------------------------------
 ? Variables in javaScript:
@@ -206,4 +206,14 @@
 // Access Arrays Elements is indexed starts from zero.
 // you can Check the Array using -> Array.isArray(arrName);
 // you can get the length of array using (ArrayName.length) it starts counting from one.
+// the indexOutOfBounderException here will print just undefined. 
+! we have several functions to use in on the array:
+~ 1) ArrayName.unshift("", "", ...); : Length Of the array after adding elements
+% To Add Elements To The Start of the array
+~ 2) ArrayName.push("", "", ...); : Length Of the array after adding elements
+% To Add Elements To The End of the array
+~ 3) ArrayName.shift(); : Array Element
+% to get the First Element in the array.
+~ 4) ArrayName.pop(); : Array Element
+% to get the last Element in the array.
 */

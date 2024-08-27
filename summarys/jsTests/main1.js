@@ -219,9 +219,21 @@
 //   money = 0;
 //   console.log(`My Money is ${money}`);
 // }
-let arr1 = new Array("ahmad", "mohamd");
+let arr1 = new Array("ahmad", "i");
 let arr2 = ["A", 1, true, 3.9, null];
-console.log(arr1[0]);
-console.log(arr2[3]);
-console.log(arr1.length);
-console.log(arr2.length);
+// console.log(arr1[0]);
+// console.log(arr2[3]);
+// console.log(arr1.length);
+// console.log(arr2.length);
+// console.log(arr1[10]);
+let x1 = arr1.unshift(1 , 2 , 3);
+let x2 = arr1.push(arr1.length , arr1.length+1 , arr1.length+2);
+let x3 = arr1.push(arr1.length);
+console.log(`${x1} ${x2} ${x3}`)
+let x4 = arr1.shift();
+console.log(x4);
+console.log(arr1);
+let x5 = arr1.pop();
+console.log(arr1);
+// let x3 = arr1.unshift(1 , 2 , 3);
+// let x4 = arr1.unshift(1 , 2 , 3);
