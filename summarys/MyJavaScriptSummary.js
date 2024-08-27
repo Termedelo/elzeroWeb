@@ -216,4 +216,30 @@
 % to get the First Element in the array.
 ~ 4) ArrayName.pop(); : Array Element
 % to get the last Element in the array.
+// to search within the array we can use :
+~ 5) ArrayName.indexOf(Search Element, start Index [Optional]) : Number
+% here, we are searching for the index of an element [start , end].
+% it includes the start index in the searching and it takes negative values. 
+~ 6) ArrayName.lastIndexOf(Search Element, From Index [Optional]) : Number
+% here, we are searching for the index of an element [end , start].
+% it includes the start index in the searching and it takes negative values.
+~ 7) ArrayName.includes(valueToFind, fromIndex [Optional]) [ES7] : Boolean
+% were we are searching wither the element exists in the array or not.
+// to sort a array we can use:
+~ 8) ArrayName.Sort();
+~ 8.1) ArrayName.Sort(You Can Build a function to sort (optional));
+% here js will convert every element to String and sort it according to UTF-16.
+% it sorts element in the array in an ascending order by default.
+~ 8) ArrayName.reverse();
+% here js will convert every element to String and sort it according to UTF-16.
+% it sorts element in the array in an descending order by default.
+// to slice an Array we can use:
+~ 10) ArrayName.slice(Start Index [optional], End Index [optional] Not Including End)
+% ArrayName.slice() will return all the elements of the Array
+% If Start Is Undefined => 0
+% Negative Count From End
+% If End Is Undefined || > Indexes => Slice To The End Array.length
+% Return New Array
+~ 11) ArrayName.splice(Start [Mand], DeleteCount [Opt] [0 No Remove], The Items To Add [optional])
+  --- If Negative => Start From The End
 */
