@@ -202,6 +202,20 @@
 ! looping control flow:
 ~ 1) for loop:
 // for (initialize , condition , increment){...}
+~ 2) while loop:
+// while (condition){...}
+~ 2) do while loop:
+// do{...}while (condition);
+
+! to control loops we can use :
+~ 1) break
+~ 2) continue
+~ 3) label : we use it to label any loop when we have nested loops using break an continue.
+* MainLabel1:for(...){ 
+*   SecondaryLabel:for(...){
+*      if(...){ break MainLabel; or continue SecondaryLabel; ...}
+*   } 
+* }
 # ---------------------------------------------------------------------------------------------
 ? Array in javaScript:
 // Create Arrays [Two Methods] new Array() or [].
