@@ -185,6 +185,7 @@
 % it will replace any Null , Undefined values with the true or false values from your choice. 
 # ---------------------------------------------------------------------------------------------
 ? control flows in javaScript:
+! conditional control flow:
 ~ 1) if statement:
 // if(condition){...}
 ~ 2) if else statements:
@@ -198,6 +199,9 @@
 // switch(expression) { case1 : ... brake; ... Default:}
 // switch(expression) { case1 case2 ...: ... brake; ... Default:} 
 % it can take multiple cases as you wish.
+! looping control flow:
+~ 1) for loop:
+// for (initialize , condition , increment){...}
 # ---------------------------------------------------------------------------------------------
 ? Array in javaScript:
 // Create Arrays [Two Methods] new Array() or [].
@@ -236,10 +240,20 @@
 // to slice an Array we can use:
 ~ 10) ArrayName.slice(Start Index [optional], End Index [optional] Not Including End)
 % ArrayName.slice() will return all the elements of the Array
-% If Start Is Undefined => 0
-% Negative Count From End
-% If End Is Undefined || > Indexes => Slice To The End Array.length
-% Return New Array
-~ 11) ArrayName.splice(Start [Mand], DeleteCount [Opt] [0 No Remove], The Items To Add [optional])
-  --- If Negative => Start From The End
+% if the Start index is not entered it will start from zero.
+% if the End index is not entered or if its grater then the indexes it will go to the end of the array. 
+% it takes negative values to start from the end
+% it dose not effect the original array but it Returns a New Array.
+~ 11) ArrayName.splice(Start [Mandatory], DeleteCount [optional] , The Items To Add [optional])
+% it takes negative values to start from the end
+% it returns an array containing the deleted items.
+% it does effect the original array. 
+% it simply will add and delete items from your array from a starting index from you choice. \
+// to join arrays together we can use:
+~ 12) ArrayName.concat(array, array, [...], anyItem, ...);
+% it will make all the arrays as a one array together.
+% it dose not effect the original arrays but it Returns a New Array.
+~ 13) ArrayName.join(Separator);
+% this function will return a String that contains all items of the array.
+% the items can be separated by any thing from your choice (by default a comma (,)). 
 */

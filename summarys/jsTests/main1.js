@@ -219,21 +219,46 @@
 //   money = 0;
 //   console.log(`My Money is ${money}`);
 // }
-let arr1 = new Array("ahmad", "i");
-let arr2 = ["A", 1, true, 3.9, null];
+// let arr1 = new Array("ahmad", "i");
+// let arr2 = ["A", 1, true, 3.9, null];
 // console.log(arr1[0]);
 // console.log(arr2[3]);
 // console.log(arr1.length);
 // console.log(arr2.length);
 // console.log(arr1[10]);
-let x1 = arr1.unshift(1 , 2 , 3);
-let x2 = arr1.push(arr1.length , arr1.length+1 , arr1.length+2);
-let x3 = arr1.push(arr1.length);
-console.log(`${x1} ${x2} ${x3}`)
-let x4 = arr1.shift();
-console.log(x4);
-console.log(arr1);
-let x5 = arr1.pop();
-console.log(arr1);
+// let x1 = arr1.unshift(1 , 2 , 3);
+// let x2 = arr1.push(arr1.length , arr1.length+1 , arr1.length+2);
+// let x3 = arr1.push(arr1.length);
+// console.log(`${x1} ${x2} ${x3}`)
+// let x4 = arr1.shift();
+// console.log(x4);
+// console.log(arr1);
+// let x5 = arr1.pop();
+// console.log(arr1);
 // let x3 = arr1.unshift(1 , 2 , 3);
 // let x4 = arr1.unshift(1 , 2 , 3);
+// document.write(arr1.slice(undefined)+"<br>");
+// document.write(arr1+"<br>");
+// document.write(arr1.splice(0 , 0 , "ahmad" , "ismail")+"<br>");
+// document.write(arr1+"<br>");
+// document.write(arr1.concat(arr2));
+/*
+  Array Challenge
+*/
+
+let zero = 0;
+
+let counter = 3;
+
+let my = ["Ahmed", "Mazero", "Elham", "Osama", "Gamal", "Ameer"];
+// Write Code Here
+
+document.write(my.slice(zero, counter + my.indexOf("Mazero")).reverse()+"<br>"); 
+//! ["Osama", "Elham", "Mazero", "Ahmed"];
+
+document.write(my.slice(my.indexOf("Mazero") , counter).reverse()+"<br>"); 
+//! ["Elham", "Mazero"]
+
+document.write(my[counter-my.indexOf("Mazero")].substring(zero , counter-my.indexOf("Mazero")) + my[counter/counter].substring(counter-my.indexOf("Mazero"))+"<br>"); // "Elzero"
+
+document.write(my[counter/counter].charAt(counter + counter/counter) + my[counter/counter].charAt(my.length-1).toUpperCase()+"<br>"); // "rO"
