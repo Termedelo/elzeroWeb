@@ -246,19 +246,110 @@
   Array Challenge
 */
 
-let zero = 0;
+// let zero = 0;
 
-let counter = 3;
+// let counter = 3;
 
-let my = ["Ahmed", "Mazero", "Elham", "Osama", "Gamal", "Ameer"];
-// Write Code Here
+// let my = ["Ahmed", "Mazero", "Elham", "Osama", "Gamal", "Ameer"];
+// // Write Code Here
 
-document.write(my.slice(zero, counter + my.indexOf("Mazero")).reverse()+"<br>"); 
-//! ["Osama", "Elham", "Mazero", "Ahmed"];
+// document.write(
+//   my.slice(zero, counter + my.indexOf("Mazero")).reverse() + "<br>"
+// );
+// //! ["Osama", "Elham", "Mazero", "Ahmed"];
 
-document.write(my.slice(my.indexOf("Mazero") , counter).reverse()+"<br>"); 
-//! ["Elham", "Mazero"]
+// document.write(my.slice(my.indexOf("Mazero"), counter).reverse() + "<br>");
+// //! ["Elham", "Mazero"]
 
-document.write(my[counter-my.indexOf("Mazero")].substring(zero , counter-my.indexOf("Mazero")) + my[counter/counter].substring(counter-my.indexOf("Mazero"))+"<br>"); // "Elzero"
+// document.write(
+//   my[counter - my.indexOf("Mazero")].substring(
+//     zero,
+//     counter - my.indexOf("Mazero")
+//   ) +
+//     my[counter / counter].substring(counter - my.indexOf("Mazero")) +
+//     "<br>"
+// ); // "Elzero"
 
-document.write(my[counter/counter].charAt(counter + counter/counter) + my[counter/counter].charAt(my.length-1).toUpperCase()+"<br>"); // "rO"
+// document.write(
+//   my[counter / counter].charAt(counter + counter / counter) +
+//     my[counter / counter].charAt(my.length - 1).toUpperCase() +
+//     "<br>"
+// ); // "rO"
+
+// let myAdmins = ["Ahmed", "Osama", "Sayed", "Stop", "Samera"];
+// let myEmployees = [
+//   "Amgad",
+//   "Samah",
+//   "Ameer",
+//   "Omar",
+//   "Othman",
+//   "Amany",
+//   "Samia",
+//   "Anwar",
+// ];
+// let newArray = new Array();
+// for (let i = 0; myAdmins[i] !== "Stop"; i++) {
+//   newArray.push(myAdmins[i]);
+// }
+// document.write(`<h3>we have ${newArray.length} Admins</h3>`);
+// for (let i = 0; i < newArray.length; i++) {
+//   document.write(`<h3>the Admin for Team ${i + 1} is ${newArray[i]} </h3>`);
+//   document.write(`<h2>Team members Are : </h2>`);
+//   let con = 1;
+//   for (let j = 0; j < myEmployees.length; j++) {
+//     if (myEmployees[j].startsWith(newArray[i].charAt(0))) {
+//       document.write(`<p>-${con++} ${myEmployees[j]}</p>`);
+//     }
+//   }
+//   document.write(`<hr>`);
+// }
+// let Name = "";
+// let age = 0;
+// let Status = true;
+// function showDetails(...random) {
+//   for (let i = 0; i < random.length; i++) {
+//     if (typeof random[i] === typeof "string") {
+//       Name = random[i];
+//     } else if (typeof random[i] === "number") {
+//       age = random[i];
+//     } else if (typeof random[i] === "boolean") {
+//       Status = random[i];
+//     }
+//   }
+//   if(Status){
+//     document.write(`Hello ${Name}, Your Age Is ${age}, You Are Available For Hire <br>`);
+//   } else {
+//     document.write(`Hello ${Name}, Your Age Is ${age}, You Are not Available For Hire <br>`);
+//   }
+// }
+// showDetails("Osama", 38, true); // "Hello Osama, Your Age Is 38, You Are Available For Hire"
+// showDetails(38, "Osama", true); // "Hello Osama, Your Age Is 38, You Are Available For Hire"
+// showDetails(true, 38, "Osama"); // "Hello Osama, Your Age Is 38, You Are Available For Hire"
+// showDetails(false, "Osama", 38); // "Hello Osama, Your Age Is 38, You Are Not Available For Hire"
+/*
+  Function Arrow Challenges
+*/
+
+// [1] One Statement In Function
+// [2] Convert To Arrow Function
+// [3] Print The Output [Arguments May Change]
+
+// let names = function (...names) {
+//   let massage = `String [${names.join("],[")}] => Done !`;
+//   return massage;
+// };
+let names = (...names) => `String [${names.join("],[")}] => Done !`;
+console.log(names("Osama", "Mohamed", "Ali", "Ibrahim"));
+// String [Osama], [Mohamed], [Ali], [Ibrahim] => Done !
+
+/* ================================= */
+
+// [1] Replace ??? In Return Statement To Get The Output
+// [2] Create The Same Function With Regular Syntax
+// [3] Use Array Inside The Arguments To Get The Output
+
+let myNumbers = [20, 50, 10, 60];
+
+let calc = (one, two, ...numbers) => one + two + numbers[0];
+
+console.log(calc(10,myNumbers[2] , myNumbers[3])); // 80

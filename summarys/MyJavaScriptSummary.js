@@ -126,6 +126,7 @@
   * when you try to Access Before Declare it will output -> error.
   * it doesn't cause a (Variable Scope Drama)
   * Block Scope and function Block Scope
+! don't forget about the lexical scope (parents and children).
 # ---------------------------------------------------------------------------------------------
 ? the Escape character an the concatenation in javaScript:
 // you can use: 
@@ -270,4 +271,30 @@
 ~ 13) ArrayName.join(Separator);
 % this function will return a String that contains all items of the array.
 % the items can be separated by any thing from your choice (by default a comma (,)). 
+# ---------------------------------------------------------------------------------------------
+? functions on javaScript:
+~ 1) basic function:
+// function funName(parameter , ...){ .... }
+~ 2) function with a return:
+// function funName(parameter , ...){ .... return anything;}
+! to avoid undefined parameters you can use if statement or you can use the (or) operator.
+! you can use the same ways in the above line to give your parameters a default value.
+! in the ES6 you can just do the following to give your parameters a default values:
+// function funName(param1 , param2 = "0" , ...){... return param1 , param2;}
+~ 3) function with an unknown number of arguments:
+// here we can use one parameter parameter with triple dots before it to make it an Array of arguments.
+% note that you cant use the three dots parameter more then once.
+% note that you can use any parameters before it but you cant use after it.
+// function funName(...ParamsArray){... return anyThing;} 
+~ 4) Anonymous function:
+// let AnyVariable = function (parameter , ...){ .... };
+% its a function without a name that we use for a single use task.
+% we can call it by the variable name like so : AnyVariable(parameter , ...);
+~ 5) Nested functions: this is the stupidest thing to do in my opinion.
+// he said that if you want to decompose a big function into smaller functions you can use this way.
+~ 6) the Arrow Function:
+// let AnyVariable = (parameter , ...) => {...}; 
+% if we have a one line bode in the function we can remove {} and return.
+% if we don't have parameters we can remove () and instead write _ .
+% if we have single parameter we can remove () and write it directly if not we cant.
 */
