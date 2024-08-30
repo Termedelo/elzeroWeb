@@ -146,7 +146,7 @@
 ~ console.log(+100); -> 100
 ~ console.log(+"100"); -> 100
 ~ console.log(+"-100"); -> -100
-~ console.log(+"Osama"); -> NaN
+~ console.log(+"OOOO"); -> NaN
 ~ console.log(+"15.5"); -> 15.5
 ~ console.log(+0xff); -> 255
 ~ console.log(+null); -> 0
@@ -156,7 +156,7 @@
 ~ console.log(-100); -> -100
 ~ console.log(-"100"); -> -100
 ~ console.log(-"-100"); -> 100
-~ console.log(-"Osama"); -> NaN
+~ console.log(-"OOOO"); -> NaN
 ~ console.log(-"15.5"); -> -15.5
 ~ console.log(-0xff); -> -255
 ~ console.log(-null); -> -0
@@ -273,28 +273,72 @@
 % the items can be separated by any thing from your choice (by default a comma (,)). 
 # ---------------------------------------------------------------------------------------------
 ? functions on javaScript:
-~ 1) basic function:
+~ 1) basic Function:
 // function funName(parameter , ...){ .... }
-~ 2) function with a return:
+~ 2) Function with a return:
 // function funName(parameter , ...){ .... return anything;}
 ! to avoid undefined parameters you can use if statement or you can use the (or) operator.
 ! you can use the same ways in the above line to give your parameters a default value.
 ! in the ES6 you can just do the following to give your parameters a default values:
 // function funName(param1 , param2 = "0" , ...){... return param1 , param2;}
-~ 3) function with an unknown number of arguments:
+~ 3) Function with an unknown number of arguments:
 // here we can use one parameter parameter with triple dots before it to make it an Array of arguments.
 % note that you cant use the three dots parameter more then once.
 % note that you can use any parameters before it but you cant use after it.
 // function funName(...ParamsArray){... return anyThing;} 
-~ 4) Anonymous function:
+~ 4) Anonymous Function:
 // let AnyVariable = function (parameter , ...){ .... };
 % its a function without a name that we use for a single use task.
 % we can call it by the variable name like so : AnyVariable(parameter , ...);
-~ 5) Nested functions: this is the stupidest thing to do in my opinion.
+~ 5) Nested Functions: this is the stupidest thing to do in my opinion.
 // he said that if you want to decompose a big function into smaller functions you can use this way.
 ~ 6) the Arrow Function:
 // let AnyVariable = (parameter , ...) => {...}; 
 % if we have a one line bode in the function we can remove {} and return.
 % if we don't have parameters we can remove () and instead write _ .
 % if we have single parameter we can remove () and write it directly if not we cant.
+~ 7) Higher Order Functions: is a function that accepts functions as parameters and/or returns a function.
+// A) map function is an iterative array function that takes:
+! let newArray = originalArray.map(callback(currentValue, index, array) {...}, thisArg);
+% 1) callback: A function that will be executed on each element of the array.   
+% 2) currentValue: The current element being processed in the array.
+% 3) index (optional): The index of the current element being processed.
+% 4) array (optional): The array that map was called upon.
+% 5) thisArg (optional): An optional object to which (this) can refer in the callback function.
+* it returns a new array that means it dose not effect the original array.
+* note that it will be called by an array.
+// B) filter function is an iterative array function that takes:
+! let newArray = originalArray.filter(callback(currentValue, index, array) {...}, thisArg);
+% 1) callback: A function that will be executed on each element of the array.
+* note that here the function will return only the elements that passes the condition.
+* inside the function you need to write a condition that returns true or false:
+* if the condition returned true this means that the element is included in the newArray.   
+* if the condition returned false this means that the element is excluded from the newArray.   
+% 2) currentValue: The current element being processed in the array.
+% 3) index (optional): The index of the current element being processed.
+% 4) array (optional): The array that map was called upon.
+% 5) thisArg (optional): An optional object to which (this) can refer in the callback function.
+* it returns a new array that means it dose not effect the original array.
+* note that it will be called by an array.
+// C) reduce function is an iterative array function that takes:
+! let newArray = reduce(callback(accumulator, currentValue, index, array) {...}, initialValue);
+% 1) callback: A function that will be executed on each element of the array.
+* method executes a reducer function on each element of the array resulting in a single output value. 
+% 2) accumulator : the variable that the result will be stored in.
+* it Starts with the value of index 0 if an initialValue is provided. 
+* Otherwise it starts from the value of index 1.
+% 3) currentValue: The current element being processed in the array.
+% 4) index (optional): The index of the current element being processed.
+* Starts from index 0 if an initialValue is provided, Otherwise it starts from index 1.
+% 5) array (optional): The array that map was called upon.
+% 6) initialValue (optional): this the initial value of the accumulator.
+// D) forEach function is an iterative array function that takes:
+! let newArray = forEach(callback(currentValue, index, array) {...}, thisArg);
+% 1) callback: A function that will be executed on each element of the array.   
+% 2) currentValue: The current element being processed in the array.
+% 3) index (optional): The index of the current element being processed.
+% 4) array (optional): The array that map was called upon.
+% 5) thisArg (optional): An optional object to which (this) can refer in the callback function.
+* it dose effect the original array and returns nothing.
+* note that it will be called by an array.
 */

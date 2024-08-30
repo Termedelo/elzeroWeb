@@ -338,18 +338,87 @@
 //   let massage = `String [${names.join("],[")}] => Done !`;
 //   return massage;
 // };
-let names = (...names) => `String [${names.join("],[")}] => Done !`;
-console.log(names("Osama", "Mohamed", "Ali", "Ibrahim"));
-// String [Osama], [Mohamed], [Ali], [Ibrahim] => Done !
+// let names = (...names) => `String [${names.join("],[")}] => Done !`;
+// console.log(names("Osama", "Mohamed", "Ali", "Ibrahim"));
+// // String [Osama], [Mohamed], [Ali], [Ibrahim] => Done !
 
-/* ================================= */
+// /* ================================= */
 
-// [1] Replace ??? In Return Statement To Get The Output
-// [2] Create The Same Function With Regular Syntax
-// [3] Use Array Inside The Arguments To Get The Output
+// // [1] Replace ??? In Return Statement To Get The Output
+// // [2] Create The Same Function With Regular Syntax
+// // [3] Use Array Inside The Arguments To Get The Output
 
-let myNumbers = [20, 50, 10, 60];
+// let myNumbers = [20, 50, 10, 60];
 
-let calc = (one, two, ...numbers) => one + two + numbers[0];
+// let calc = (one, two, ...numbers) => one + two + numbers[0];
 
-console.log(calc(10,myNumbers[2] , myNumbers[3])); // 80
+// console.log(calc(10,myNumbers[2] , myNumbers[3])); // 80
+
+// let arr = [1 , 2 , 3 , 4 , 5 , 6];
+// let newArr1 = arr.map(function(element , i , arr){
+//   return element*element;
+// } , 0);
+// let newArr2 = arr.map(element => element*element);
+// console.log(newArr1);
+// console.log(newArr2);
+// let invertedNumbers = [1, -10, -20, 15, 100, -30];
+// let newArray = invertedNumbers.map(element => element < 0 ? -element : element);
+// console.log(newArray);
+// let ignoreNumbers = "Elz123er4o";
+// let newArray1 = ignoreNumbers.split("").map(function (element){
+//   return isNaN(parseInt(element)) ? element : "";
+// });
+// let newArray2 = ignoreNumbers.split("").map(element =>  isNaN(parseInt(element)) ? element : "");
+// console.log(newArray1.join(""));
+// console.log(newArray2.join(""));
+// let sentence = "I Love Foodies Code Too Playing Much";
+// let newFilteredArray = sentence.split(" ").filter(function (element){
+//   return element.length <= 4;
+// });
+// console.log(newFilteredArray.join(" "));
+// let ignoreNumbers = "Elz123er4o";
+
+// let newArray1 = ignoreNumbers.split("").map(function (element){
+//   return isNaN(element) ? element : "";
+// });
+
+// let newArray = ignoreNumbers.split("").filter(function (element){
+//   return isNaN(element);
+// });
+// console.log(newArray.join(""));
+// console.log(newArray1.join(""));
+// let mix = "A13BS2ZX";
+// let newArray = mix
+//   .split("")
+//   .filter(function (element) {
+//     return !isNaN(element);
+//   })
+//   .map(function (element) {
+//     return element * element;
+//   });
+// console.log(newArray.join());
+// let removeChars = ["E", "@", "@", "L", "Z", "@", "@", "E", "R", "@", "O"];
+// let newArray = removeChars.filter(function(element){
+//   return element !== "@";
+// }).reduce(function(acc , element){
+// return acc + element;
+// });
+
+// console.log(newArray);
+let myString = "1,2,3,EE,l,z,e,r,o,_,W,e,b,_,S,c,h,o,o,l,2,0,Z";
+let theDamnE = "";
+let solution = myString
+  .split(",")
+  .filter(function (element) {
+    return isNaN(element) && element !== "Z";
+  })
+  .map(function (element) {
+    return element === "_" ? " " : element;
+  })
+  .reduce(function (acc = "", element = "") {
+    if (acc.length > element.length) {
+      acc = acc.substring(true);
+    }
+  });
+
+console.log(solution); // Elzero Web School
