@@ -341,4 +341,115 @@
 % 5) thisArg (optional): An optional object to which (this) can refer in the callback function.
 * it dose effect the original array and returns nothing.
 * note that it will be called by an array.
+# ---------------------------------------------------------------------------------------------
+? Object oriented javaScript:
+// how to create an object in javaScript:
+!let objName = { 
+* properties:
+!property1:Value1 -> anyThing,
+!property2:Value2 -> anyThing,
+!............................,
+* Methods:
+!Method1:Method(...){
+!},
+!Method2:Method(...){
+!},
+!.......................,
+!};
+// we can access the object properties using two ways and the Methods in one way:
+~ 1) the Dot Notation:
+% objName.propName;
+% objName.MethodName(...);
+* we are using this way when we have valid names for the properties or the Methods.
+~ 2) the Bracket Notation: 
+% objName["propName"];
+* here we are considering the obj as a hash map with keys and values.
+* when you need to use the dynamic property name it must be used by the Bracket Notation.
+% e.g. let name = "ahmad";
+% let user = {
+%   "ahmad":"ali";
+% }
+% consol.log(user[name]);
+! accessing nested objects with the two ways:
+% obj1.obj2.obj3.(...);
+% obj1["obj2"]["obj3"]["..."];
+// we can add new properties or Methods using the object name:
+% e.g. let user = {};
+% user.newProp1 = anyValue1.
+% user["newProp2"] = anyValue2.
+% user.newMethod = Method() {...}.
+% and so on....
+// this keyword : we have a number of cases to use (this) keyword
+~ 1) within a method thats in an object:
+% it will refer to the object itself.
+~ 2) within a regular function:
+% it will refer to the global object (window).
+~ 3) Alone within the global scope:
+% it will refer to the global object (window).
+~ 4) In a function, in strict mode.
+% it will refer to undefined.
+// to create a clone obj from a prototype obj we can use :
+! let newObj = Object.create(protoTypeObj);
+* this function will create a new object from protoTypeObj.
+* the newObj will have all properties and methods of the protoTypeObj.
+* the newObj will be linked with the protoTypeObj:
+* what if we needed to update something in the newObj ?
+* we can simply use (this keyword) on the protoTypeObj.
+* we can create an empty obj by this method.
+// to create a newObject by merging more then oneObj together:
+! let newObj = Object.assign(TargetObj , SourceObj1 , SourceObj2 , ...);
+* this method will take all the properties of the source Objects and merge it into the target obj.
+* note that this method will not effect the targetObj it will create a new one.
+* what if we had a duplicated property of method ?
+* simply it will take the first one of them all.
+# ---------------------------------------------------------------------------------------------
+? Document object module (DOM) in javaScript:
+* What Is Document object module (DOM) ?
+* its an object named document that refers to the Html page.
+! Document object module (DOM) Selectors:
+~ 1) Find Element By ID : 
+% let var1 = document.getElementById("id"); : Object
+~ 2) Find Element By Tag Name
+% let var2 = document.getElementsByTagName("tagName"); : Array of Objects
+~ 3) Find Element By Class Name
+% let var3 = document.getElementsByClassName("class"); : Array of Objects
+~ 4) Find Element By CSS Selectors
+% let var4 = document.querySelector("#id, .class, tagName , ..."); : Objects
+* this one will get just the first one as an Object.
+% let var5 = document.querySelectorAll("#id, .class, tagName , ..."); : Array of Objects
+* this one will get all items as an Array Of Objects.
+~ 5) Find Element By Collection
+% let var6 = document.title.(...).anyAttribute;
+% let var7 = document.body.(...).anyAttribute;
+% let var8 = document.images.(...).anyAttribute;
+% let var9 = document.forms.(...).anyAttribute;
+% let var10 = document.links.(...).anyAttribute;
+% you can get any Html tag by this way...
+// how to get and set html tags content and attributes using DOM:
+~ innerHTML
+% let var1 = document.querySelector("...").innerHTML;
+* it will give you the html content that is inside your tag as tags.
+~ textContent
+% let var2 = document.querySelector("...").textContent;
+* it will give you the html content that is inside your tag as text.
+~ Change Attributes Directly
+% let var3 = document.images[index].src;
+% document.images[index].src = "anyPath";
+~ Change Attributes With Methods
+% let var4 = document.querySelector("...").getAttribute("attributeName");
+% document.querySelector("...").setAttribute("attributeName" , "AttributeValue");
+! note that the attributes is the html tags attributes not the css.
+! note this functions will override an already existing attribute.
+! note this functions will create the attributes that dose'nt exists.
+// we have several methods to check on attributes and to delete attributes:
+~ 1) YourElement.attributes;
+% it returns a NamedNodeMap (indexed) like an array with all element attributes.
+~ 2) YourElement.hasAttribute("AttributeName");
+% it returns true if the attribute exists within the Element.
+% it returns false if the attribute is not exist within the Element.
+~ 3) YourElement.hasAttributes();
+% it returns true if the Element has any attributes.
+% it returns false if the Element has no attributes.
+~ 4) YourElement.removeAttribute("AttributeName");
+% this function will remove the attribute completely from the element.
 */

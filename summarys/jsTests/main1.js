@@ -405,20 +405,29 @@
 // });
 
 // console.log(newArray);
-let myString = "1,2,3,EE,l,z,e,r,o,_,W,e,b,_,S,c,h,o,o,l,2,0,Z";
-let theDamnE = "";
-let solution = myString
-  .split(",")
-  .filter(function (element) {
-    return isNaN(element) && element !== "Z";
-  })
-  .map(function (element) {
-    return element === "_" ? " " : element;
-  })
-  .reduce(function (acc = "", element = "") {
-    if (acc.length > element.length) {
-      acc = acc.substring(true);
-    }
-  });
+// let myString = "1,2,3,EE,l,z,e,r,o,_,W,e,b,_,S,c,h,o,o,l,2,0,Z";
+// let theDamnE = "";
+// let solution = myString
+//   .split(",")
+//   .filter(function (element) {
+//     return isNaN(element) && element !== "Z";
+//   })
+//   .map(function (element) {
+//     return element === "_" ? " " : element;
+//   })
+//   .reduce(function (acc = "", element = "") {
+//     if (acc.length > element.length) {
+//       acc = acc.substring(true);
+//     }
+//   });
 
-console.log(solution); // Elzero Web School
+// console.log(solution); // Elzero Web School
+
+// const person = {
+//   firstName  : "John",
+//   lastName   : "Doe",
+//   id         : 5566,
+//   myFunction : function() {
+//     return this;
+//   }
+// };
