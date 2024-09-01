@@ -452,4 +452,209 @@
 % it returns false if the Element has no attributes.
 ~ 4) YourElement.removeAttribute("AttributeName");
 % this function will remove the attribute completely from the element.
+// to create Html elements and Attributes using javaScript:
+~ 1) createElement
+% let var1 = document.createElement("ElementTagName");
+* we use this to create Html Elements
+~ 2) createComment
+% let var2 = document.createComment("Comment");
+~ 3) createTextNode
+% let var3 = document.createTextNode("..Text..");
+* we use this function to create a text to place it were we need.
+~ 4) createAttribute
+% let var4 = document.createAttribute("AttributeName");
+* we use this one to create an Empty Attribute to use it in the future.
+% ElementObj.setAttributeNode("AttributeName or Variable");
+*we use this one to set the empty Attribute in the element.
+! note that we use this way to create new Attribute on the element. 
+! or we can just use the setAttribute() to create it, its you choice.
+~ 5) appendChild
+% ElementObj.appendChild(var3);
+* we use this to add the text to the end of the element.
+% document.appendChild(Element)
+* we also use this one to add the whole element on the body.
+% document.appendChild(var2);
+* we can also use it to add a comment to the body.
+// when we need to deal with children inside an element we use:
+~ 1) to get all the children of an element we can use:
+% element.children; -> returns an array
+~ 2) to get all children on an element including everyThing even spaces and comments:
+% element.childNodes; -> returns an array
+~ 3) to get the first child of an element including everyThing even spaces and comments:
+% element.firstChild; 
+~ 4) to get the last child of an element including everyThing even spaces and comments:
+% element.lastChild; 
+~ 5) to get the first child of a specific type excluding spaces and comments:
+% element.firstElementChild; 
+~ 6) to get the last child of a specific type excluding spaces and comments:
+% element.lastElementChild; 
+// java Script events are a lot so i will cope a number of them:
+% element.onEvent = function(){...}
+~ 1) Mouse Events
+* onclick: Triggered when the user clicks an HTML element.
+* ondblclick: Triggered when the user double-clicks an HTML element.
+* onmouseover: Triggered when the mouse pointer moves over an HTML element.
+* onmouseout: Triggered when the mouse pointer moves out of an HTML element.
+* onmousedown: Triggered when a mouse button is pressed down over an element.
+* onmouseup: Triggered when a mouse button is released over an element.
+* onmousemove: Triggered when the mouse pointer moves over an element.
+~ 2) Keyboard Events
+* onkeydown: Triggered when a key is pressed down.
+* onkeypress: Triggered when a key is pressed (deprecated in favor of onkeydown and onkeyup).
+* onkeyup: Triggered when a key is released.
+~ 3) Form Events
+* onchange: Triggered when the value of an input element has changed.
+* onfocus: Triggered when an input element gains focus.
+* onblur: Triggered when an input element loses focus.
+* onsubmit: Triggered when a form is submitted.
+* onreset: Triggered when a form is reset.
+* oninput: Triggered when the value of an input element is changed.
+~ 4) Window Events
+* onload: Triggered when the browser has finished loading the page.
+* onunload: Triggered when the user leaves the page.
+* onresize: Triggered when the browser window is resized.
+* onscroll: Triggered when the document is scrolled.
+~ 5) Drag and Drop Events
+* ondrag: Triggered when an element is being dragged.
+* ondragend: Triggered when a drag operation is complete.
+* ondragenter: Triggered when a dragged element enters a valid drop target.
+* ondragleave: Triggered when a dragged element leaves a valid drop target.
+* ondrop: Triggered when an element is dropped on a valid drop target.
+~ 6) Touch Events (for mobile devices)
+* ontouchstart: Triggered when a touch point is placed on the touch surface.
+* ontouchmove: Triggered when a touch point is moved along the touch surface.
+* ontouchend: Triggered when a touch point is removed from the touch surface.
+~ 7) Other Events
+* onerror: Triggered when an error occurs while loading an external resource.
+* oncontextmenu: Triggered when the user right-clicks on an element to open the context menu.
+* onselect: Triggered when some text is selected.
+// to validate and check forms and anything what we can do:
+! note that the anonymous function of an event can take a parameter that refers to the event it self.
+% element.event = function (event) {event.anyThing;}
+~ Step1) we need to create a false boolean with any name.
+~ Step2) we need to check any condition we need if its valid we turn the boolean into true.
+~ Step3) we need one last condition that checks the boolean.
+* if the boolean was true the condition wont use the event.preventDefault() method.
+* if the boolean still false the condition will use the event.preventDefault() method.
+! what dose preventDefault() method do ?
+! it prevents the default behaver of an event.
+// the simulated events in javaScript : 
+! its an events that occurs without the need to the user involvement. 
+% element.simulatedEvent().
+~ 1) Mouse Events
+* click: Simulates a mouse click.
+* dblclick: Simulates a double-click.
+* mousedown: Simulates pressing down a mouse button.
+* mouseup: Simulates releasing a mouse button.
+* mouseover: Simulates the mouse pointer moving over an element.
+* mouseout: Simulates the mouse pointer moving out of an element.
+* mousemove: Simulates moving the mouse over an element.
+~ 2) Keyboard Events
+* keydown: Simulates pressing down a key.
+* keyup: Simulates releasing a key.
+* keypress: Simulates pressing a key (deprecated in favor of keydown and keyup).
+~ 3) Form Events
+* change: Simulates changing the value of an input element.
+* focus: Simulates an element gaining focus.
+* blur: Simulates an element losing focus.
+* submit: Simulates submitting a form.
+~ 4) Touch Events (for mobile devices)
+* touchstart: Simulates the start of a touch interaction.
+* touchmove: Simulates moving a touch point.
+* touchend: Simulates the end of a touch interaction.
+~ 5) Custom Events
+* CustomEvent: Allows the creation of custom events with additional data.
+// to work with DOM [Class List]  we have several methods:
+~ 1) classList:
+% let list = element.classlist;
+* it returns an array contains all the classes of your element.
+~ 2) length:
+% element.classlist.length;
+* it returns the length of the list (number of classes).
+~ 3) contains:
+% element.classlist.contains("class");
+* it returns true if the class is founded in the list.
+* it returns false if the class is not founded in the list.
+~ 4) item(index):
+% element.classlist.item(index);
+* it returns the class with the needed index.
+~ 5) add:
+% element.classlist.add("class", "class", ...);
+* it adds the classes to your element.
+~ 6) remove:
+% element.classlist.remove("class", "class", ...);
+* it adds the classes to your element.
+~ 7) toggle:
+% element.classlist.toggle("class", "class", ...);
+! it works like the add and remove method at the same time:
+* if the class is exists in the element it will remove it.
+* if the class is not exists in the element it will add it.
+// when it comes to styling DOM [CSS] your elements in javaScript we can use:
+~ 1) using the style way:
+% element.style.anyProperty = "value";
+! the properties here written in the camelCase way. 
+~ 2) using the cssText way:
+% element.style.cssText = "Regular Css lines";
+# these two methods can edit Inline or External Style Sheet:
+# inline:
+~ 3) removeProperty(propertyName)
+% element.removeProperty("propertyName");
+~ 4) setProperty(propertyName, value, priority)
+% element.setProperty("propertyName", "propertyValue", "priority (Opt)");
+# External Style Sheet:
+~ 3) removeProperty(propertyName)
+% document.styleSheets[index].rules[index].style.removeProperty("propertyName");
+~ 4) setProperty(propertyName, value, priority)
+% document.styleSheets[index].rules[index].style.setProperty("propertyName", "propertyValue", "priority");
+! the styleSheets is an array that contains all css files.
+! the rules is an array that contains all css rules e.g. (div{} , p{} ,...).
+// when we need to deal with the DOM Elements:
+~ 1) before it takes Element or String:
+% element.before(Element or "String");
+* it adds the (Element or "String") outside and before your element.
+~ 2) after it takes Element or String:
+% element.after(Element or "String");
+* it adds the (Element or "String") outside and after your element.
+~ 3) append it takes Element or String:
+% element.append(Element or "String");
+* it adds the (Element or "String") inside and at the end of your element.
+~ 4) prepend it takes Element or String:
+% element.prepend(Element or "String");
+* it adds the (Element or "String") inside and at the start of your element.
+~ 5) remove
+% element.remove();
+* it removes the Element from the whole document.
+// when you need to Traves among your DOM elements:
+~ 1) nextSibling
+% element.nextSibling;
+* it gets you the next sibling in the same parent including everyThing even spaces and comments.
+~ 2) previousSibling
+% element.previousSibling;
+* it gets you the previous sibling in the same parent including everyThing even spaces and comments.
+~ 3) nextElementSibling
+% element.nextElementSibling;
+* it gets you the next sibling in the same parent excluding spaces and comments.
+~ 4) previousElementSibling
+% element.previousElementSibling;
+* it gets you the previous sibling in the same parent excluding spaces and comments.
+~ 5) parentElement
+% element.parentElement;
+* it gets you the parent of your element.
+// to make a clone out of a specific element we can use:
+% element.cloneNode(DeepVar : True or false);
+* this function clones the element with its attributes.
+* it clones the element with its tag content if the deep was true.
+* it clones the element without its tag content if the deep was false.
+! the default for the deepVar is false so what dose it means.
+// we have a new way to add an event to our elements its DOM Add Event Listener:
+! why do we need this we already have one ?
+! simply when you need to add more then one event to the same element it wont work.
+% element.addEventListener("simulatedEvents" , function() {...});  
+* the best way to use this thing is to have an event on an element that doesn't exist yet in the document.
+document.addEventListener("click", function (e) {
+  if (e.target.className === "clone") {
+    console.log("Iam Cloned");
+  }
+}); 
+! target is used to have the element that you clicked whatever it was.
 */
