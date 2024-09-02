@@ -471,9 +471,9 @@
 ~ 5) appendChild
 % ElementObj.appendChild(var3);
 * we use this to add the text to the end of the element.
-% document.appendChild(Element)
+% document.body.appendChild(Element)
 * we also use this one to add the whole element on the body.
-% document.appendChild(var2);
+% document.body.appendChild(var2);
 * we can also use it to add a comment to the body.
 // when we need to deal with children inside an element we use:
 ~ 1) to get all the children of an element we can use:
