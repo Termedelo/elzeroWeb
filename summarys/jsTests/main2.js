@@ -112,3 +112,89 @@
 // let {name , age , hello} = obj;
 // console.log(typeof hello);
 // console.log(hello("ahmad"));
+
+// let chosen = 2;
+// let myFriends = [
+//   { title: "Osama", age: 39, available: true, skills: ["HTML", "CSS"] },
+//   { title: "Ahmed", age: 25, available: false, skills: ["Python", "Django"] },
+//   { title: "Sayed", age: 33, available: true, skills: ["PHP", "Laravel"] },
+// ];
+// if (chosen === 1) {
+//   let [{ title, age, available, skills: [ , skill2] } = obj1, ,] =
+//     myFriends;
+//     console.log(title);
+//     console.log(age);
+//     if (available === true) {
+//         console.log("Available");
+//     } else {
+//         console.log("Not Available");
+//     }
+//     console.log(skill2);
+// } else if (chosen === 2) {
+//   let [ , { title, age, available, skills: [ , skill2] } = obj2 ,] =
+//     myFriends;
+//     console.log(title);
+//     console.log(age);
+//     if (available === true) {
+//         console.log("Available");
+//     } else {
+//         console.log("Not Available");
+//     }
+//     console.log(skill2);
+// } else if (chosen === 3) {
+//   let [, ,{ title, age, available, skills: [ , skill2] } = obj3] =
+//     myFriends;
+//     console.log(title);
+//     console.log(age);
+//     if (available === true) {
+//         console.log("Available");
+//     } else {
+//         console.log("Not Available");
+//     }
+//     console.log(skill2);
+// }
+// let obj1 = { A: 1 };
+// let obj2 = { B: 2 };
+// let obj3 = { C: 3 };
+// let newWs = new WeakSet();
+// newWs.add(obj1);
+// newWs.add(obj2);
+// newWs.add(obj3);
+// console.log(newWs.has(obj1));
+// console.log(newWs.has(obj2));
+// console.log(newWs.has(obj3));
+// let map = new WeakMap();
+// console.log(map);
+// let arr = [1, 2, 3, 4, 5, "A", "B", "C", "D", "E"];
+// console.log(arr.copyWithin(0 , 5 , 8));
+// // ["A", "B", "C", 4, 5, "A", "B", "C", "D", "E"];
+// let arr = [1, 2, 3, 4, 5, "F", "A", "C", "D", "E"];
+// let i = 0;
+// let result = arr.some(function (e) {
+//   console.log(i++);
+//   return e === "A";
+// });
+// console.log(result);
+// console.log(..."String");
+// console.log([..."String"]);
+
+
+/*
+  Map And Set + What You Learn => Challenge
+  Requirements
+  - You Cant Use Numbers Or True Or False
+  - Don't Use Array Indexes
+  - You Cant Use Loop
+  - You Cant Use Any Higher Order Function
+  - Only One Line Solution Inside Console
+  - If You Use Length => Then Only Time Only
+  Hints
+  - You Can Use * Operator Only In Calculation
+  - Set
+  - Spread Operator
+  - Math Object Methods
+*/
+
+let n1 = [10, 30, 10, 20];
+let n2 = [30, 20, 10];
+console.log(Math.max(...n2)*[...n1 , ...n2].length); // 210

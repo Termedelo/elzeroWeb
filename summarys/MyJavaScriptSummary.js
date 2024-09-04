@@ -402,6 +402,8 @@
 * note that this method will not effect the targetObj it will create a new one.
 * what if we had a duplicated property of method ?
 * simply it will take the first one of them all.
+// to get the keys of an object we can use:
+% Object.keys(Obj);
 # ---------------------------------------------------------------------------------------------
 ? Document object module (DOM) in javaScript:
 * What Is Document object module (DOM) ?
@@ -893,4 +895,223 @@ document.addEventListener("click", function (e) {
 // when we need to Destructure a nested object:
 % let obj1 = {prop1:val1, prop2:val2, obj2:{prop3:val3, prop4:val4}};
 % let {prop1, prop2, obj2:{prop3, prop4}} = obj1;
+# ---------------------------------------------------------------------------------------------
+? Set Data Type :
+% let newVar =  new Set([...] , arrayName);
+* its an Object that Stores only Unique Values.
+* the Elements Cannot be Accessed By there Indexes.
+// Set Data methods and properties:
+~ 1) size:
+% newVar.size; 
+* it gets the number of Unique items in the set.
+~ 2) add:
+% newVar.add(anyItem);
+* this function adds elements to the end of the Set.
+! it returns the new Set with the added element.	
+~ 3) delete:
+% newVar.delete(itemValue);
+* this function deletes the specific valued element from the Set.	
+! it returns true if the element is found and deleted.
+! it returns false if the element is not found and not deleted.
+~ 4) clear:
+% newVar.clear();
+* this function deletes all elements from the set.	
+~ 5) has:
+% newVar.has(itemValue);
+* this function searches for the specific valued element from the Set:	
+! it returns true if the element is found.
+! it returns false if the element is not found.
+~ 6) values or keys:
+% newVar.keys(); or newVar.values();
+* this functions is the same it returns an iterator on your set.
+  ~ 6.1) next: 
+  % newVar.keys().next(); or newVar.Values().next();
+  * here we are moving forward in the set to get the next item.
+  ~ 6.2) value: 
+  % newVar.keys().next().value; or newVar.Values().next().value;
+  * here we are getting the value of the elements in the set.
+~ 7) forEach : it can be used on the set you know how to do it.
+# ...............................................................................................
+? WeakSet Data Type :
+% let newVar =  new WeakSet(obj1 , obj2 , ... or ArrayOfObjs);
+* its an Object that Stores only Unique Values.
+* the Elements Cannot be Accessed By there Indexes.
+* The WeakSet is weak, meaning references to objects in a WeakSet are held weakly.
+* if we have an object with no references stored in the WeakSet it will be collected by the garbage collector.
+* Usage of WeakSets: it Stores objects and removes them once they become inaccessible.
+// WeakSet methods:
+~ 1) add:
+% newVar.add(value);
+~ 2) delete:
+% newVar.delete(value);
+~ 3) has:
+% newVar.has(value);
+# ...............................................................................................
+! Set vs WeakSet : 
+~ Set     => Can Store Any Data Values.
+~ WeakSet => Collection Of Objects Only.
+---------------------------------------
+~ Set     => Have Size Property.
+~ WeakSet => Does Not Have Size Property.
+---------------------------------------
+~ Set     => Have Keys, Values, Entries.
+~ WeakSet => Does Not Have clear, Keys, Values And Entries.
+---------------------------------------
+~ Set     => Can Use forEach
+~ WeakSet => Cannot Use forEach
+# ...............................................................................................
+? Map Data Type
+% let map = new Map(Iterable With Key/Value);
+// map Data methods and properties:
+~ 1) size:
+% map.size; 
+* it gets the number of items in the map.
+~ 2) set:
+% map.set(key , value);
+* this function sets elements to the end of the map.
+! there is another way to set elements into the map:
+! let m = new Map([ [key , value], [key , value], [key , value], ... ]);
+~ 3) get:
+% map.get(key);
+* this function get elements with the specified key from the map.
+~ 3) delete:
+% map.delete(key);
+* this function deletes elements with the specified key from the map.	
+! it returns true if the element is found and deleted.
+! it returns false if the element is not found and not deleted.
+~ 4) clear:
+% map.clear();
+* this function deletes all elements from the map.
+~ 5) has:
+% map.has(key);
+* this function searches for the elements with the specified key in the map.	
+! it returns true if the element is found.
+! it returns false if the element is not found.	
+# ...............................................................................................
+! Map vs Object
+~ Map => Does Not Contain Key By Default.
+~ Object => Has Default Keys because it have a prototype.
+-----------------------------------------------------------------------
+~ Map => the Keys Can Be Anything (Function, Object, Any Primitive Data Types).
+~ Object => the Keys are either String Or Symbol.
+-----------------------------------------------------------------------
+~ Map => Ordered By Insertion
+~ Object => Not 100% Till Now
+-----------------------------------------------------------------------
+~ Map => Get Items By Size
+~ Object => Need To Do Manually
+* using the length of the array returned by (Object.keys();)
+-----------------------------------------------------------------------
+~ Map => Can Be Directly Iterated
+~ Object => Not Directly And Need To Use Object.keys() And So On
+-----------------------------------------------------------------------
+~ Map => Better Performance When Add Or Remove Data
+~ Object => Low Performance When Comparing To Map
+# ...............................................................................................
+? WeakMap Data Type:
+% let weakMap = new WeakMap(Iterable With Key/Value);
+* note that the key here must be object.
+// map Data methods:
+~ 2) set:
+% weakMap.set(key , value);
+* this function sets elements to the end of the WeakMap.
+! there is another way to set elements into the WeakMap:
+! let m = new WeakMap([ [key , value], [key , value], [key , value], ... ]);
+~ 3) get:
+% weakMap.get(key);
+* this function get elements with the specified key from the WeakMap.
+~ 3) delete:
+% weakMap.delete(key);
+* this function deletes elements with the specified key from the WeakMap.	
+! it returns true if the element is found and deleted.
+! it returns false if the element is not found and not deleted.
+~ 5) has:
+% weakMap.has(key);
+* this function searches for the elements with the specified key in the WeakMap.	
+! it returns true if the element is found.
+! it returns false if the element is not found.	
+! Map vs WeakMap
+* WeakMap Allows Garbage Collector To Do Its Task unlike Map.
+~ Map     => Keys Can Be Anything
+~ WeakMap => Keys Can Be Object Only
+# ---------------------------------------------------------------------------------------------
+? Advanced Array method:
+% 1) Array.from(Iterable, MapFunc, This);
+* this function takes an Iterable and execute the mapFunction on it then returns it as an array.
+! common build-in iterables include: 
+! Arrays: You can iterate through each element loops.
+! Strings: Each character can be accessed similarly.
+! Maps and Sets: Both data structures are also iterable.
+# ...............................................................................................
+% 2) ArrayName.copyWithin(Target, Start (Optional), End (Optional))
+* "Copy Part Of An Array To Another Location in The Same Array"
+* note that Any Negative Value Will start Counting From The End
+~ Target:
+* its the index to start Copying in.
+* If it was Greater Than or equal to the Array Length then Nothing Will Be Copied.
+~ Start:
+* its the Index To Start Copying From.
+* If you didn't entered it , it will Start From Index zero.
+~ End:
+* its the Index To End Copying From.
+* it will note be Included as its the End.
+* If you didn't entered it , it will Reach The End of the array. 
+# ...............................................................................................
+% 3) Array.some(CallbackFunc(Element, Index (Opt), Array (Opt)), ThisArgument (Opt));
+* it tests whether at least one element in the array passes the test implemented by the provided function.
+~ Call back Function => Function To Run On Every Element On The Given Array:
+* Element => The Current Element being processed.
+* Index => Index Of Current Element being processed.
+* Array => The Current Array being processed.
+~ This Argument => Value To Use As This When Executing Call back Function.
+! It returns true if it finds an element for which the provided function returns true. 
+! It returns false if it can not find an element for which the provided function returns true.
+# ...............................................................................................
+% 3) Array.every(CallbackFunc(Element, Index (Opt), Array (Opt)), ThisArgument (Opt));
+* it tests all elements in the array passes the test implemented by the provided function.
+~ Call back Function => Function To Run On Every Element On The Given Array:
+* Element => The Current Element being processed.
+* Index => Index Of Current Element being processed.
+* Array => The Current Array being processed.
+~ This Argument => Value To Use As This When Executing Call back Function.
+! It returns true if it finds that all elements for which the provided function returns true. 
+! It returns false if it can not find that all elements for which the provided function returns true.
+# ...............................................................................................
+? Spread Syntax :
+% ...Iterable;
+* we use it to Allow ab Iterable To Expand In Place.
+// we have a large number of use cases here is some of them:
+~ Spread With String => Expand String
+% console.log(..."String");
+* Output: "S" "t" "r" "i" "n" "g".
+% console.log([..."String"]);
+* Output: ["S", "t", "r", "i", "n", "g"].
+~ Concatenate Arrays
+% let arr1 = [val1, val2, val3];
+% let arr2 = [val4, val5, val6];
+% let allArrays = [...arr1, ...arr2];
+% console.log(allArrays);
+* Output: [val1, val2, val3, val4, val5, val6].
+~ Copy Array
+% let copiedArray = [...myArray1];
+% console.log(copiedArray);
+~ Push Inside Array
+% let arr1 = [val1, val2, val3];
+% let arr2 = [val4, val5];
+% allFriends.push(...thisYearFriends);
+% console.log(allFriends);
+* Output: [val1, val2, val3, val4, val5].
+~ Use With Math Object
+% let arr1 = [val1, val2, val3, val4, val5];
+% console.log(Math.max(...arr1));
+* Output: the largest one between (val1 ... val5).
+~ Spread With Objects => Merge Objects
+% let objOne = { prop1 : val1, prop2 : val2, };
+% let objTwp = { prop3 : val3, prop4 : val4, };
+% console.log({ ...objOne, ...objTwo, prop5: val4, });
+* Output: an obj with all these properties.
+! common build-in iterables include: 
+! Arrays: You can iterate through each element loops.
+! Strings: Each character can be accessed similarly.
+! Maps and Sets: Both data structures are also iterable.
 */
