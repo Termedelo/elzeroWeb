@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 111px;
+      }
+      .container .form {
+        width: 466px;
+        height: 84px;
+        border-radius: 10px;
+        position: relative;
+        background-color: #bbb;
+      }
+      .container .form .name {
+        width: 300px;
+        height: 30px;
+        position: absolute;
+        top: 50%;
+        left: calc(50% - 50px);
+        transform: translate(-50%, -50%);
+        font-size: 20px;
+        outline: none;
+        border-radius: 12px;
+        border-color: white;
+        border-style: solid;
+      }
+      .container .form .add {
+        height: 36px;
+        width: 99px;
+        position: absolute;
+        top: 50%;
+        left: calc(50% + 160px);
+        transform: translate(-50%, -50%);
+        color: white;
+        font-size: 17px;
+        outline: none;
+        border-radius: 12px;
+        border: solid 1px transparent;
+        background-color: #f8482e;
+        cursor: pointer;
+      }
+      .container .TasksCont {
+        width: 466px;
+        min-height: 90px;
+        height: fit-content;
+        margin-top: 30px;
+        background-color: #BBB;
+        border-radius: 10px;
+        position: relative;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="form">
+        <input type="text" class="name"/>
+        <input type="submit" class="add" value="Add task" />
+      </div>
+      <div class="TasksCont"></div>
+    </div>
+    <script src="../jsTests/bomChal.js"></script>
+  </body>
+</html>

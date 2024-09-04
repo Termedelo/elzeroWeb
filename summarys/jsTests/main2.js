@@ -47,3 +47,68 @@
 //         divInputs[i+1].focus();
 //     }
 // }
+// let time = setTimeout(function(){
+//     console.log("hi");
+//   } , 5000);
+// let btn = document.querySelector("button");
+// btn.onclick = function(){
+//     clearTimeout(time);
+// }
+// let i = 1;
+// let intervalTime = setInterval(function () {
+//   console.log(i);
+//   i++;
+// }, 100);
+// let timeout = setTimeout(function () {
+//   console.log("im stooped the interval");
+//   clearInterval(intervalTime);
+// }, 10000);
+//#...........................................................................
+// let btn1 = document.querySelector("#btn1");
+// let div = document.querySelector("div");
+// let btn2 = document.querySelector("#btn2");
+// div.style.fontSize = "100px";
+// let int = setInterval(() => {
+//   div.innerHTML -= 1;
+// }, 100);
+// btn1.onclick = () => {
+//   clearInterval(int);
+// };
+// btn2.onclick = () => {
+//   int = setInterval(() => {
+//     div.innerHTML -= 1;
+//   }, 100);
+// };
+//#...........................................................................
+// window.setTimeout(function () {
+//   window.open(
+//     "https://google.com",
+//     "_blank",
+//     "width = 1000 , height = 1000 left = 500 , top = 500",
+//     true
+//   );
+// }, 3000);
+
+// let colors1 = document.querySelector(".color1");
+// let colors2 = document.querySelector(".color2");
+// let colors3 = document.querySelector(".color3");
+// let colors4 = document.querySelector(".color4");
+// let mainDiv = document.querySelector(".theColorViewer");
+// colors1.onclick = function(){
+//     console.log(colors1.style.BackgroundColor);
+// }
+// colors2.onclick = function(){
+//     console.log(colors2.style.BackgroundColor);
+// }
+// colors3.onclick = function(){
+//     console.log(colors3.style.BackgroundColor);
+// }
+// colors4.onclick = function(){
+//     console.log(colors4.style.BackgroundColor);
+// }
+// let obj = {name:"ahmad" , age:21 , hello(n){
+// return n;
+// }};
+// let {name , age , hello} = obj;
+// console.log(typeof hello);
+// console.log(hello("ahmad"));

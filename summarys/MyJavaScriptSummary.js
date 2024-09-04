@@ -657,4 +657,240 @@ document.addEventListener("click", function (e) {
   }
 }); 
 ! target is used to have the element that you clicked whatever it was.
+* The event object is automatically passed as an argument to the callback function when an event occurs. 
+* It contains information about the specific event that triggered the function.
+* Some common properties and methods of the event object include:
+~ 1) e.type: The type of the event (e.g., "click", "submit", "keydown").
+~ 2) e.target: The specific element that triggered the event.
+~ 3) e.currentTarget: The element that the event listener is attached to.
+~ 4) e.preventDefault(): A method to prevent the default behavior of the event. 
+~ 5) e.stopPropagation(): A method to stop the event from bubbling up the DOM tree.
+~ 6) e.clientX and e.clientY: The coordinates of the mouse pointer relative to the viewport.
+~ 7) e.key and e.keyCode: The key or key code for keyboard events.
+# ---------------------------------------------------------------------------------------------
+? Browser Object model:
+// Window Object Is The Browser Window:
+* All Global Variables And Objects And Functions Are Members Of Window Object
+* What Can We Do With Window Object ?
+~ Open Window
+~ Close Window
+~ Move Window
+~ Resize Window
+~ Print Document
+~ Run Code After Period Of Time Once Or More
+~ Fully Control The URL
+~ Save Data Inside Browser To Use Later
+# ...............................................................................................
+// we have a number of methods on the BOM (window object):
+~ 1) alert:
+% alert(Message); 
+* this is a message that needs No Response it needs only you to press (ok).
+~ 2) confirm:
+% confirm(Message); 
+* it needs to Response with yes or no And it Returns A Boolean value.
+~ 3) prompt:
+% prompt(Message, Default Message);
+* it need you to input Data to Collect it and returns the inputted data.
+! note that in the global scope you can use (window.(...) , this.(...) , directly (...)).
+~ 4) setTimeout:
+% let Time = setTimeout(Function(){...}, Timeout, Additional Params)
+* the function will be executed after the Timeout.
+* Timeout its the time that the function will be executed after it in milliseconds.
+* the Additional parameters is used in the case we had a function with a name and parameters.
+~ 5) clearTimeout:
+% clearTimeout(Identifier);
+% clearTimeout(Time); up there.
+* this function wil stop the timeout if it is called before the timeout time.
+~ 6) setInterval(Function, IntervalTime, Additional Params)
+% let interTime = setInterval(Function(){...}, IntervalTime, Additional Params)
+* the function will be executed iteratively every IntervalTime.
+* IntervalTime its the time that the function will be executed iteratively in milliseconds.
+* the Additional parameters is used in the case we had a function with a name and parameters.
+~ 7) clearInterval(Identifier) 
+% clearTimeout(Identifier);
+% clearTimeout(interTime); up there.
+* this function wil stop the interTime if it is called.
+# ...............................................................................................
+// dealing with the location object using BOM [Browser Object Model]:
+~ 1) href: Getting and Setting
+# get
+% location.href; -> (https://...)
+# set
+% location.href = "URL or Hash or file of mail"; 
+* this way will not remove the previous page from the history.
+~ 2) host
+# get
+% location.host; -> (Ip:Port)
+% location.hostname; -> (Ip)
+# set
+% location.host = (Ip:Port);
+% location.hostname; -> (Ip)
+~ 3) hash
+# get
+% location.hash; -> (#...)
+# set
+% location.hash = "#....";
+~ 4) protocol
+# get
+% location.protocol; -> (http or https)
+# set
+% location.protocol = (http or https);
+~ 5) reload()
+% location.reload();
+~ 6) replace()
+% location.replace("url");
+* this way will remove the previous page from the history.
+~ 7) assign()
+% location.assign("url");
+* this way will work as the href way.
+# ...............................................................................................
+// open and close you window using BOM [Browser Object Model]:
+~ 1) close()
+% window.close();
+* this function will not close any window except the window opened by the script.
+~ 2) open(URL [Opt], Window Name Or Target Attr [Opt], Win Features [Opt], History Replace [Opt])
+% window.open("url" , "_blank" , "width = .. , height = ... , ..." , Boolean);
+* you don't need to use px or any unit.
+* Window Features
+* left [Num]
+* top [Num]
+* width [Num]
+* height [Num]
+* menubar [yes || no]
+* ...
+# ...............................................................................................
+// dealing with History API using BOM [Browser Object Model]
+~ 1) length:
+% history.length;
+* it will return the number of pages that stored on the history for you current pages moves.
+~ 2) back():
+% history.back();
+* it will get you on the previous page on the history list.
+~ 3) forward()
+* it will get you on the next page on the history list.
+~ 4) go(number)
+% history.go(+1);
+* this will get you to the next page if possible on the history list.
+% history.go(-1);
+* this will get you to the previous page on the history list.
+# ...............................................................................................
+// some BOM method and scrolling methods using BOM:
+~ 1) stop()
+% window.stop(); 
+* this function Cancels the document load.
+~ 2) print()
+% window.print(); 
+* this function opens the print page options.
+~ 3) focus()
+% window.focus(); 
+* this function Moves the focus to the window's browsing context, if any.
+~ 4) scrollTo(x, y or Options)
+% window.scrollTo(x , y);
+% window.scrollTo({top: number, left: number, behavior: "smooth",});
+* scrolls to a particular set of coordinates in the document.
+~ 5) scrollBy(x, y or Options)
+% window.scrollBy(x , y);
+% window.scrollBy({top: number, left: number, behavior: "smooth",});
+* method scrolls the document in the window by the given amount.
+~ 6) scrollX()
+% window.scrollX();
+* this function will return the scroll X value it can't be changed.
+~ 7) scrollY()
+% window.scrollY();
+* this function will return the scroll Y value it can't be changed.
+# ...............................................................................................
+// dealing with Local Storage using BOM [Browser Object Model]
+! what is the local Storage and what is its properties ?
+! The localStorage object allows you to save key/value pairs in the browser.
+! The localStorage object stores data with no expiration date.
+! The data is not deleted when the browser is closed, and are available for future sessions.
+~ 1) setItem:
+% window.localStorage.setItem("Key", "Value");
+% window.localStorage.Key = "Value";
+% window.localStorage["Key"] = "Value";
+* this is a three ways to set an item with a key and a value.
+~ 2) getItem:
+% window.localStorage.getItem("Key");
+% window.localStorage.Key;
+% window.localStorage["Key"];
+* this is a three ways to get an item value with a key.
+~ 3) removeItem:
+% window.localStorage.removeItem("Key");
+* this is the way to delete one item from the local Storage.
+~ 4) clear:
+% window.localStorage.clear();
+* this is the way to remove all items from the local Storage.
+~ 5) length:
+% window.localStorage.length;
+* this is used to get the number of items added to the local storage.
+~ 6) key: 
+% window.localStorage.key(index);
+* this is used to get the key of items with an index in the local storage.
+# ...............................................................................................
+// dealing with Session Storage using BOM [Browser Object Model]
+! what is the Session Storage and what is its properties ?
+! The SessionStorage object allows you to save key/value pairs in the browser.
+! The SessionStorage object stores data with expiration date.
+! The data is deleted when the browser is closed, and are available for future sessions.
+! you need to duplicate the page to have the same sessionStorage data.
+~ 1) setItem:
+% window.sessionStorage.setItem("Key", "Value");
+% window.sessionStorage.Key = "Value";
+% window.sessionStorage["Key"] = "Value";
+* this is a three ways to set an item with a key and a value.
+~ 2) getItem:
+% window.sessionStorage.getItem("Key");
+% window.sessionStorage.Key;
+% window.sessionStorage["Key"];
+* this is a three ways to get an item value with a key.
+~ 3) removeItem:
+% window.sessionStorage.removeItem("Key");
+* this is the way to delete one item from the local Storage.
+~ 4) clear:
+% window.sessionStorage.clear();
+* this is the way to remove all items from the local Storage.
+~ 5) length:
+% window.sessionStorage.length;
+* this is used to get the number of items added to the local storage.
+~ 6) key: 
+% window.sessionStorage.key(index);
+* this is used to get the key of items with an index in the local storage.
+# ---------------------------------------------------------------------------------------------
+? Destructuring Arrays : 
+// its the process that allows for the unpacking of values from data-Chunks into distinct variables.
+// data-Chunks : arrays, objects, and maps.
+% let arr = [item1, item2, item3, ...];
+% let [var1, var2, var3, ...] = arr; -> (item1, item2, item3, ...)
+% let [, var2,, ...] = arr; -> (, item2,, ...)
+* this way we get every array item into an independent variable.
+! you know how to Destructure a nested array.
+# ...............................................................................................
+// Swapping variables using Destructuring Arrays :
+* in the past we needed to declare a new variable to do it but with the Destructuring:
+% let var1 = val2;
+% let var2 = val1;
+% [var1 , var2] = [var2 , var1]; -> just like this
+! e.g.
+~ let var1 = "val2";
+~ let var2 = "val1";
+~ console.log(`${var1} ${var2} -> before swapping`);
+~ [var1 , var2] = [var2 , var1];
+~ console.log(`${var1} ${var2} -> after swapping`);
+# ...............................................................................................
+// when it comes to object Destructuring: 
+% let obj = {prop1:value1, prop2:value2, prop3:value3, ...}
+* if the variables was not declared before:
+% let {prop1, prop2, prop3, ...} = obj;
+* if the variables was declared before:
+% ({prop1, prop2, prop3, ...} = obj;)
+! note that you don't need to leave an empty places in you destructed object instead:
+! you can just write the names of your properties or methods and ignore the unwanted once.
+* if you needed to change the object properties or methods names when Destructuring:
+% let {prop1:newName, prop2:newName, prop3:newName, ...} = obj;
+* if you needed to give the object properties or methods a default values when Destructuring:
+% let {prop1 = defaultValue, prop2 = defaultValue, prop3 = defaultValue, ...} = obj;
+# ...............................................................................................
+// when we need to Destructure a nested object:
+% let obj1 = {prop1:val1, prop2:val2, obj2:{prop3:val3, prop4:val4}};
+% let {prop1, prop2, obj2:{prop3, prop4}} = obj1;
 */
