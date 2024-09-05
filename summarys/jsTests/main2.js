@@ -178,7 +178,6 @@
 // console.log(..."String");
 // console.log([..."String"]);
 
-
 /*
   Map And Set + What You Learn => Challenge
   Requirements
@@ -195,6 +194,37 @@
   - Math Object Methods
 */
 
-let n1 = [10, 30, 10, 20];
-let n2 = [30, 20, 10];
-console.log(Math.max(...n2)*[...n1 , ...n2].length); // 210
+// let n1 = [10, 30, 10, 20];
+// let n2 = [30, 20, 10];
+// console.log(Math.max(...n2)*[...n1 , ...n2].length); // 210
+// let s = "AaBbcdefG123!234%^&*";
+// let regex = /./g;
+// let result = s.match(regex);
+// console.log(result);
+// document.getElementById("register").onsubmit = function () {
+//   let phone = document.getElementById("phone").value;
+//   let regex = /962-7\d{8}/;
+//   let result = regex.test(phone);
+//   if (result === false) {
+//     return false;
+//   }
+//   return true;
+// };
+
+// let url1 = 'elzero.org';
+// let url2 = 'http://elzero.org';
+// let url3 = 'https://elzero.org';
+// let url4 = 'https://www.elzero.org';
+// let url5 = 'https://www.elzero.org:8080/articles.php?id=100&cat=topics';
+
+// let re = /(https?)?:?(\/\/)?(www.)?elzero.org:?(\d*)?(\/)?(\w*)?(.)?(\w*)?(\?)?(\w*)?/;
+
+// console.log(url1.match(re));
+
+// console.log(url2.match(re));
+
+// console.log(url3.match(re));
+
+// console.log(url4.match(re));
+
+// console.log(url5.match(re));

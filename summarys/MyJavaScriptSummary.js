@@ -1114,4 +1114,132 @@ document.addEventListener("click", function (e) {
 ! Arrays: You can iterate through each element loops.
 ! Strings: Each character can be accessed similarly.
 ! Maps and Sets: Both data structures are also iterable.
+# -----------------------------------------------------------------------------------------
+? Regular Expression:
+* Regular expressions are patterns used to match character combinations in strings.
+* we can use it to check if your String valid or not (string ,  email , url , ip , ...).
+% let regex =  /pattern/modifier(s);
+% let regex = new RegExp("pattern", "modifier(s)");
+* Modifiers => Flags
+~ i => not case-sensitive
+* With this flag the search is case-insensitive (no difference between A and a).
+~ g => global
+* With this flag the search looks for all matches, without it only the first match is returned.
+~ m => MultiLines
+* means that the pattern we are matching can exists at multiple line in the String.
+# ...............................................................................................
+// method to check the pattern
+% let result =  StringName.match(Pattern);
+* it Matches A String Against a Regular Expression Pattern.
+! it Returns An Array With The Matches founded in the string.
+! Returns null If No Match Is found in the string.
+# ...............................................................................................
+// regular expression patterns of ranges:
+~ (...|X|Y|...):
+% let regex = /name1|name2|name3|.../;
+* this is a range that searches for (...) or (x) or (y) or (...) irrespectively to order.
+~ [0-9]:
+% let regex = /[num1 - num2]/;
+* this is a range that searches for the numbers between (num1) and (num2) irrespectively to order.
+! it includes (num1) and (num2).
+~ [^0-9]:
+% let regex = /[^num1 - num2]/;
+* this is a range that searches for the numbers not between (num1) and (num2) irrespectively to order.
+! it includes (num1) and (num2).
+~ [a-z]:
+% let regex = /[smallLetter1 - smallLetter2]/;
+* this is a range that searches for the Letters between (SLetter1) and (SLetter2) irrespectively to order.
+! it includes (smallLetter1) and (smallLetter2).
+~ [^a-z]:
+% let regex = /[^smallLetter1 - smallLetter2]/;
+* this is a range that searches for the Letters not between (SLetter1) and (SLetter2) irrespectively to order.
+! it includes (smallLetter1) and (smallLetter2).
+~ [A-Z]:
+% let regex = /[capitalLetter1 - capitalLetter2]/;
+* this is a range that searches for the Letters between (CLetter1) and (CLetter2) irrespectively to order.
+! it includes (capitalLetter1) and (capitalLetter2).
+~ [^A-Z]:
+% let regex = /[^capitalLetter1 - capitalLetter2]/;
+* this is a range that searches for the Letters not between (SLetter1) and (SLetter2) irrespectively to order.
+! it includes (capitalLetter1) and (capitalLetter2).
+~ [abc]:
+% let regex = /[Letter1Letter2Letter3 ...]/;
+* Matches anything that is enclosed in the square brackets irrespectively to order.
+! if you entered spaces they will be included
+~ [^abc]:
+% let regex = /[Letter1Letter2Letter3 ...]/;
+* Matches anything that is not enclosed in the square brackets irrespectively to order.
+! if you entered spaces they will be included
+# note that you can combine ranges in one square brackets => [a-zA-z9-0].
+# ...............................................................................................
+// Character Classes
+~ . 
+% let regex = /./;
+* matches any character, except newline or other line terminators.
+~ \w 
+% let regex = /\w/;
+* matches word characters. [a-z, A-Z, 0-9 And Underscore]
+~ \W 
+% let regex = /\W/;
+* matches Non word characters
+~ \d 
+% let regex = /\d/;
+* matches digits from 0 to 9.
+~ \D 
+% let regex = /\D/;
+* matches non-digit characters.
+~ \s 
+% let regex = /\s/;
+* matches whitespace character.
+~ \S 
+% let regex = /\S/;
+* matches non whitespace character.
+~ \b 
+* matches at the beginning or end of a word.
+~ \B 
+* matches NOT at the beginning/end of a word.
+# ...............................................................................................
+// methods to test the pattern on some String:
+% let result =  pattern.test("input");
+* it Matches A Regular Expression Pattern Against String.
+! it returns true if the string dose satisfies the pattern.
+! it returns false if the string doesn't satisfies the pattern.
+# ...............................................................................................
+? regular expression Quantifiers:
+* we use Quantifiers to indicate numbers of characters or expressions to match.
+~ n+    
+* One Or More 
+% e.g.(/\w+/) => one Number or Char or more
+~ n*    
+* zero or more 
+% e.g.(/ \d* /) => zero Number more
+~ n?    
+* zero or one
+% e.g.(/ letter? /) => the (r) here maybe exist one time or not.
+~ n{x}   
+* Number of
+% e.g.(/\d{k}/) => we have digits number (k) of times.
+~ n{x,y} 
+* Range
+% e.g.(/\d{k , l}/) => we have digits between (k) and (l) of times.
+! it includes (k) and (l).
+~ n{x,}  
+* At Least x
+% e.g.(/\d{k , }/) => we have digits at least (k) times.
+~ $  
+* End With Something
+% e.g.(/word$/) => if your String ends with (word) .
+~ ^  
+* Start With Something
+% e.g.(/^word/) => if your String starts with (word) .
+~ ?= 
+* Followed By Something
+% e.g.(/\w+?=Z/) => if your String is followed by (Z).
+~ ?! 
+* Not Followed By Something
+% e.g.(/\w+?!Z/) => if your String is not followed by (Z).
+# ...............................................................................................
+// we can use the regular expression patterns in the methods :
+% replace(pattern , "new thing");
+% replaceAll(pattern , "new thing");
 */
