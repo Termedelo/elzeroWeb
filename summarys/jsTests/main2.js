@@ -228,3 +228,37 @@
 // console.log(url4.match(re));
 
 // console.log(url5.match(re));
+// let strOne = "NNN";
+// let strTwo = new String("NNN");
+// console.log(typeof strOne);
+// console.log(typeof strTwo);
+// console.log(strOne instanceof String);
+// console.log(strTwo instanceof String);
+// console.log(strOne.constructor === String);
+// console.log(strTwo.constructor === String);
+
+class user {
+  #password;
+  constructor(id, userName) {
+    this.id = id;
+    this.userName = userName;
+  }
+  getPassword() {
+    return this.#password;
+  }
+  setPassword(pass) {
+    this.#password = pass;
+  }
+}
+class aa extends user {
+  constructor(id, userName, permission) {
+    super(id, userName);
+    this.permission = permission;
+  }
+}
+let obj = new aa(10, "ahmad", 1);
+obj.setPassword(189898);
+console.log(obj.id);
+console.log(obj.userName);
+console.log(obj.permission);
+console.log(obj.getPassword());

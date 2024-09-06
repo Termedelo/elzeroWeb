@@ -404,6 +404,71 @@
 * simply it will take the first one of them all.
 // to get the keys of an object we can use:
 % Object.keys(Obj);
+# ...............................................................................................
+// the constructor function:
+* its a regular function with the use of the (new) keyword and the (this) keyword.
+% function constructorName(objProp1, objProp2, objProp3, ...){
+% this.objProp1 = objProp1;
+% this.objProp2 = objProp2;
+% this.objProp3 = objProp3;
+% }
+! the (this) keyword here refers to the object being created.
+% let obj = new constructorName(objProp1, objProp2, objProp3);
+// creating a constructor using (ES6) way:
+* here we create a class and we use the (constructor) keyword:
+% class className{ constructor(objProp1, objProp2, objProp3....){...} }
+% let obj = new className(objProp1, objProp2, objProp3);
+! note that the constructor contains properties only even if they was functions.
+! the class can have methods called by its objects.   
+! you know how to update the object properties.
+! when dealing with built in constructors like (String or Number) it will give objects :
+% e.g.:
+% let strOne = "NNN";
+% let strTwo = new String("NNN");
+% typeof strOne; => String.
+% typeof strTwo; => Object.
+% strOne instanceof String; => false.
+% strTwo instanceof String; => true.
+% strOne.constructor === String; => true.
+% strTwo.constructor === String; => true.
+# ...............................................................................................
+// inheritance:
+* here we are using the keyword (extends) to inherit from the super classes.
+* we use the method super(inheritedProperties, ...) to control the inheritedProperties from the super.
+% parentClass{
+%   constructor(prop1 , prop2 , ...){
+%    this.prop1 = prop1;
+%    this.prop2 = prop2;
+%   }
+% } 
+% childClass extends parentClass{
+%   constructor(prop1 , prop2 , prop3, ...){
+%    super(prop1 , prop2);
+%    this.prop3 = prop3;
+%   }
+% } 
+# ...............................................................................................
+// Encapsulation
+! what you need here is to declare a privet variable in javaScript you need to use (#).
+% parentClass{
+%   #privetVariable;
+%   constructor(prop1, prop2, ...){
+%    this.prop1 = prop1;
+%    this.prop2 = prop2;
+%   }
+%   SetterFunction(privetVar){
+%     this.#privetVariable = privetVar;
+%   }
+%   getterFunction(){
+%     return this.#privetVariable;
+%   }
+% } 
+! note that the child classes wont be able to access the privet variable. 
+! it could be accessed only through the getter and setter functions.
+# ...............................................................................................
+// prototype in a class:
+* Prototypes are the mechanism by which JavaScript objects inherit features from one another.
+* its fundamental concept that enables inheritance and the sharing of properties and methods among objects. 
 # ---------------------------------------------------------------------------------------------
 ? Document object module (DOM) in javaScript:
 * What Is Document object module (DOM) ?
