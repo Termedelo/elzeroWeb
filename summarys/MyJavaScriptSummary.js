@@ -468,7 +468,37 @@
 # ...............................................................................................
 // prototype in a class:
 * Prototypes are the mechanism by which JavaScript objects inherit features from one another.
-* its fundamental concept that enables inheritance and the sharing of properties and methods among objects. 
+* its fundamental concept that enables inheritance and the sharing of properties and methods among objects.
+% className.prototype;  
+! each class have a prototype and it will be shared among all objects created from this class.
+* to add a method or a property to your class you can do the following:
+%  className.prototype.propertyName = PropValue;
+%  className.prototype.FunctionName = function(){...};
+* or you can add your method or property to the Object class and it will be inherited:
+%  Object.prototype.propertyName = PropValue;
+%  Object.prototype.FunctionName = function(){...}; 
+# ...............................................................................................
+// Object Meta Data And Descriptor:
+// to add a new property to your Object:
+% Object.defineProperty(ObjectName , propKey , {descriptor}); 
+* the Descriptor are :
+~ value:anyValue; => default is (undefined)
+~ writable:false => default value
+* if it was true you can write on the property later.
+* if it was false you can not write on the property later.
+~ enumerable:false => default value
+* if it was true the property will be included in any loop.
+* if it was false the property will be excluded from any loop but still exists in the object.
+! to delete a property we can use:
+% delete objectName.PropertyName; it returns a boolean.
+~ configurable:false => default value 
+* if it was true you can Delete or redefine the property later.
+* if it was false you can not Delete or redefine the property later.
+// to add a more then one new property to your Object:
+% Object.defineProperties(ObjectName, { propKey1: {descriptors,value}, propKey2: {descriptors,value}, ...});
+// to check any property descriptor or descriptors:
+% Object.getOwnPropertyDescriptor(ObjectName, "propKey");
+% Object.getOwnPropertyDescriptors(myObject);
 # ---------------------------------------------------------------------------------------------
 ? Document object module (DOM) in javaScript:
 * What Is Document object module (DOM) ?
