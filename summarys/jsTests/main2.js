@@ -237,28 +237,62 @@
 // console.log(strOne.constructor === String);
 // console.log(strTwo.constructor === String);
 
-class user {
-  #password;
-  constructor(id, userName) {
-    this.id = id;
-    this.userName = userName;
+// class user {
+//   #password;
+//   constructor(id, userName) {
+//     this.id = id;
+//     this.userName = userName;
+//   }
+//   getPassword() {
+//     return this.#password;
+//   }
+//   setPassword(pass) {
+//     this.#password = pass;
+//   }
+// }
+// class aa extends user {
+//   constructor(id, userName, permission) {
+//     super(id, userName);
+//     this.permission = permission;
+//   }
+// }
+// let obj = new aa(10, "ahmad", 1);
+// obj.setPassword(189898);
+// console.log(obj.id);
+// console.log(obj.userName);
+// console.log(obj.permission);
+// console.log(obj.getPassword());
+
+// let dateNow = new Date();
+// let BD = new Date("2003/5/31");
+// console.log((dateNow - BD) / 1000 / 60 / 60 / 24 / 365);
+
+// function* gen() {
+//   yield "hello";
+//   yield 1000;
+//   yield true;
+//   yield new Object();
+// }
+// let generator = gen();
+// console.log(typeof generator);
+// console.log(generator.next());
+// console.log(generator.next());
+// console.log(generator.next());
+// console.log(generator.next());
+// console.log(generator.next());
+let req = new XMLHttpRequest();
+req.open("GET", "https://api.github.com/users/termedelo/repos");
+req.send();
+console.log(req);
+req.onreadystatechange = function () {
+  if (this.readyState === 4 && this.status === 200) {
+    let jsonRes = this.responseText;
+    let jsonObjArr = JSON.parse(jsonRes);
+    for (let i = 0; i < jsonObjArr.length; i++) {
+      let div = document.createElement("div");
+      let text = document.createTextNode(jsonObjArr[i].full_name);
+      div.appendChild(text);
+      document.body.appendChild(div);
+    }
   }
-  getPassword() {
-    return this.#password;
-  }
-  setPassword(pass) {
-    this.#password = pass;
-  }
-}
-class aa extends user {
-  constructor(id, userName, permission) {
-    super(id, userName);
-    this.permission = permission;
-  }
-}
-let obj = new aa(10, "ahmad", 1);
-obj.setPassword(189898);
-console.log(obj.id);
-console.log(obj.userName);
-console.log(obj.permission);
-console.log(obj.getPassword());
+};

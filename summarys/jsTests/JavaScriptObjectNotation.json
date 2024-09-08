@@ -1,0 +1,8 @@
+{
+  "string": "hi",
+  "boolean": true,
+  "number": 1000,
+  "object": { "a": 10, "b": 20 },
+  "arr": [1, 2, 3, 4, 5],
+  "null": null
+}

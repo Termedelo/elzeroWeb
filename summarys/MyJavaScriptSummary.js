@@ -1337,4 +1337,305 @@ document.addEventListener("click", function (e) {
 // we can use the regular expression patterns in the methods :
 % replace(pattern , "new thing");
 % replaceAll(pattern , "new thing");
+# -----------------------------------------------------------------------------------------
+? Date And Time in javaScript:
+* To Track Time You Need Starting Point
+* Epoch Time Or Unix Time In Computer Science Is The Number of Seconds Since January 1, 1970.
+// the constructor of the Date takes:
+~ 1. No parameters
+% let dateNow = new Date();
+~ 2. Time value or timestamp number
+% let dateNow = new Date(milliseconds);
+~ 3. Date string
+% let dateNow = new Date(year-month-day); -> Iso Standard format.
+* look for the formats if they affects your work.
+~ 4. Date object
+% let dateNow = new Date(DateObj);
+~ 5. Individual date and time component values
+% let dateNow = new Date(year , month , day , hour , minutes , seconds , milliseconds);
+! the parse function takes the Date as a String and returns the number of milliseconds from the Date:
+% Date.parse("e.g. month day year");
+# ...............................................................................................
+% console.log(dateNow);
+* output : the date and time with all details. 
+% console.log(Date.now()); // 1000 Mill = 1 Second
+* output : the number of milliseconds from 00:00:00 January 1, 1970.
+% let seconds = Date.now() / 1000; // Number Of Seconds
+% console.log(`Seconds ${seconds}`);
+* output : the number of seconds from 00:00:00 January 1, 1970.
+% let minutes = seconds / 60; // Number Of Minutes
+% console.log(`Minutes ${minutes}`);
+* output : the number of minutes from 00:00:00 January 1, 1970.
+% let hours = minutes / 60; // Number Of Hours
+% console.log(`Hours ${hours}`);
+* output : the number of hours from 00:00:00 January 1, 1970.
+% let days = hours / 24; // Number Of Days
+% console.log(`Days ${days}`);
+* output : the number of days from 00:00:00 January 1, 1970.
+% let years = days / 365; // Number Of Years
+% console.log(`Years ${years}`);
+* output : the number of years from 00:00:00 January 1, 1970.
+# ...............................................................................................
+// To Get Date And Time:
+% let date = new Date();
+~ 1) getTime:
+% date.getTime();
+* it returns the number of milliseconds from 00:00:00 January 1, 1970.
+~ 2) getDate:
+% date.getDate();
+* it returns the number of the day in the month.
+~ 3) getFullYear:
+% date.getFullYear();
+* it returns the year.
+~ 4) getMonth:
+% date.getMonth();
+* it returns the number of the month in the year (Zero Based).
+! the first month of the year (january) is zero.
+~ 5) getDay:
+% date.getDay();
+* it returns the number of the day in the week (Zero Based).
+! the first day of the week (sunday) is zero.
+~ 6) getHours:
+% date.getHours();
+* it returns the number hours of the day.
+~ 7) getMinutes:
+% date.getMinutes();
+* it returns the number Minutes of the day.
+~ 8) getSeconds:
+% date.getSeconds();
+* it returns the number Seconds of the day.
+# ...............................................................................................
+// To set Date And Time:
+% let setDates = new Date();
+~ 1) setTime(Milliseconds)
+% setDates.setTime(Milliseconds);
+* it takes the number of milliseconds and it add it to 00:00:00 January 1, 1970.
+~ 2) setDate() 
+% setDates.setDate(days);
+* if you typed a positive value it will go forward in time.
+* if you typed a negative value it will go backward in time.
+~ 3) setFullYear(year, month (Opt), day (Opt))
+% setDates.setFullYear(year, month, day);
+* this will give you the ability to set the year, month and day.
+* the months starts from 0 and ends in 11.
+* the days starts from 1 and ends in 31.
+* if you typed a positive value it will go forward in time.
+* if you typed a negative value it will go backward in time.
+~ 4) setMonth(Month, Day (Opt))
+% setDates.setMonth(month, day);
+* this will give you the ability to set the month and day.
+* the months starts from 0 and ends in 11.
+* the days starts from 1 and ends in 31.
+* if you typed a positive value it will go forward in time.
+* if you typed a negative value it will go backward in time.
+~ 5) setHours(Hours, Minutes (Opt), Seconds (Opt), MS (Opt))
+% setDates.setHours(Hours, Minutes, Seconds, MS);
+* this will give you the ability to set the hours , minutes , seconds and Ms.
+* the Hours starts from 0 and ends in 23.
+* the Minutes starts from 0 and ends in 59.
+* the Seconds starts from 0 and ends in 59.
+* the MS starts from 0 and ends in 999.
+* if you typed a positive value it will go forward in time.
+* if you typed a negative value it will go backward in time.
+~ 6) setMinutes(Minutes, Seconds (Opt), MS (Opt))
+% setDates.setMinutes(Minutes, Seconds, MS);
+* this will give you the ability to set the minutes, seconds and Ms.
+* the Minutes starts from 0 and ends in 59.
+* the Seconds starts from 0 and ends in 59.
+* the MS starts from 0 and ends in 999.
+* if you typed a positive value it will go forward in time.
+* if you typed a negative value it will go backward in time.
+~ 7) setSeconds(Seconds, MS (Opt))
+% setDates.setSeconds(Minutes, Seconds, MS);
+* this will give you the ability to set the seconds and Ms.
+* the Seconds starts from 0 and ends in 59.
+* the MS starts from 0 and ends in 999.
+* if you typed a positive value it will go forward in time.
+* if you typed a negative value it will go backward in time.
+# ...............................................................................................
+// to track an Operation time in milliseconds:
+~ 1) create a Date object called start:
+% let start = new Date();
+~ 2) create your operation:
+% .......................
+~ 3) create a Date object called end:
+% let end = new Date();
+~ 4) subtract the start date from the end date and well done.
+! we have an API for this job that called performance (.now , .mark) search about it.
+# -----------------------------------------------------------------------------------------
+? Generators in javaScript:
+* Generator Function Run Its Code When its Required by the user.
+* Generator Function Return Special Object [Generator Object].
+* Generators Are Iterable.
+% function* generateFunctionName(){
+% yield anyValue; 
+% yield anyValue;
+% ....
+% }
+% let generator = generateFunctionName();
+// to generate the yields:
+% generator.next();
+// to get the values of the yields:
+% generator.next().value;
+# ...............................................................................................
+// how to make one Generator that Delegates any number of Generators:
+% function* DelegationFunctionName(){
+% yield* generator1(); 
+% yield* generator2();
+% yield* Array;
+% ....
+% }
+% let generator = generateFunctionName();
+* DelegationFunctionName will be the main generator of all.
+! DelegationFunctionName.return()
+! this function will return yield from the generator and will stop the generator.
+# ...............................................................................................
+// how to make the Generator to generate an infinite number of yields:
+% function* DelegationFunctionName(){
+% while(true){
+% anything....;
+% }
+% }
+% let generator = generateFunctionName()
+# -----------------------------------------------------------------------------------------
+? Modules in javaScript:
+* the module is a javaScript file that have things that could be shared among other js files.
+~ 1) you need to create a number of javaScript files.
+~ 2) when linking these files in the html page type in (type = "module") attribute.
+~ 3) create your things at module1:
+% export let num = ...;
+% export let obj = ...;
+% export let arr = ...;
+% export{num, obj, arr , ...};
+* you can give the exported data an alias but you need to export it with the alias name.
+~ 3.1) you need to export your thing to be available to other modules:
+* you can export each one using (export) keyWord.
+* you can use export { ... }; thing.
+# we have two types of export:
+# 1) named export its the regular one.
+# 2) default export:
+     # each module can have single default export and when importing it:
+     # import defaultEx , {num, obj, arr , ...} from "module1Path";
+# the name of the default export thing dose not matter you can import it with any name.
+~ 4) you now can import your services or thing to other js files:
+% import {num, obj, arr , ...} from "module1Path";
+* your imported things can have aliases:
+% import {num as alias1, obj as alias2, arr as alias3, ...} from "module1Path";
+! to import all things in your module:
+% import * as Name from "module1Path";
+* Name here is an object of module that contains all everything in module1.
+* to get any thing just use (Name.).
+# -----------------------------------------------------------------------------------------
+? json (JavaScript Object Notation) 
+* Format For Sharing Data Between Server And Client.
+* JSON Derived From JavaScript.
+* its an Alternative To XML.
+* the File Extension for json files Is (.json).
+* You Can Convert JSON Object To JS Object And Vice Versa.
+! JSON vs XML:
+! ===================================================
+! = Text Based Format------= Markup Language--------=
+! = Lightweight------------= Heavier----------------=
+! = Does Not Use Tags------= Using Tags-------------=
+! = Shorter----------------= Not Short--------------=
+! = Can Use Arrays---------= Cannot Use Arrays------=
+! = Not Support Comments---= Support Comments-------=
+! ===================================================
+# ...............................................................................................
+// JSON Syntax
+~ Data Added Inside Curly Braces {...}
+~ Data Added With Key : Value
+~ Key Should Be String Wrapped In Double Quotes.
+~ Data Separated By Comma.
+~ Square Brackets [] For Arrays.
+~ Curly Braces {} For Objects.
+* Available Data Types
+~ 1) String
+~ 2) Number
+~ 3) Object
+~ 4) Array
+~ 5) Boolean Values
+~ 6) null
+# ...............................................................................................
+// API (Application programming interface) in javaScript:
+* Public API is a json file that a specific application provides.
+* it contains all sharable data to something that could be reused.
+* the API json files is updating constantly we can take and leave any thing. 
+# ...............................................................................................
+// to convert json to object and Vice Versa:
+~ JSON.parse 
+% JSON.parse("Json file or text");
+* the json file is a String or a text.
+* this function will Convert the json Text Data To JavaScript Object.
+* it returns an object or an array of objects.
+~ JSON.stringify => Convert JS Object To JSON
+% JSON.stringify(jsObject);
+* this function will Convert JavaScript Object To json Text Data.
+# ...............................................................................................
+// Asynchronous vs Synchronous Programming
+* Synchronous
+~ Operations Runs in Sequence.
+~ Each Operation Must Wait For The Previous One To Complete.
+* Asynchronous
+~ Operations Runs In Parallel.
+~ This Means That An Operation Can Occur while Another One Is Still Being Processed.
+# ...............................................................................................
+// Call Stack || Stack Trace
+* JavaScript Engine Uses A Call Stack To Manage Execution Contexts
+* Mechanism To Make The Interpreter Track Your Calls
+* When Function Called It Added To The Stack
+* When Function Executed It Removed From The Stack
+* After Function Is Finished Executing The Interpreter Continue From The Last Point
+* Work Using LIFO "Last In First Out" Principle 
+* Code Execution Is Synchronous.
+* Call Stack Detect Web API Methods And Leave It To The Browser To Handle It at the end.
+! Web API
+* Methods Available From The Environment Browser
+# ...............................................................................................
+// Event Loop + Callback Queue (Story)
+* JavaScript Is A Single Threaded Language "All Operations Executed in Single Thread"
+* Call Stack Track All Calls
+* when a Function Is Done It will be Popped Out from the call stack.
+* When You Call Asynchronous Function It Sent To Browser API
+* Asynchronous Function Like Settimeout Start Its Own Thread
+* Browser API Act As A Second Thread
+* API Finish Waiting And Send Back The Function For Processing
+* Browser API Add The Callback To Callback Queue
+* Event Loop Wait For Call Stack To Be Empty
+* Event Loop Get Callback From Callback Queue And Add It To Call Stack
+* Callback Queue Follow FIFO "First In First Out" Rule
+// AJAX (Asynchronous JavaScript And XML)
+* Approach To Use Many Technologies Together [HTML, CSS, Js, DOM]
+* It Use "XMLHttpRequest" Object To Interact With The Server
+* You Can Fetch Data Or Send Data Without Page Refresh
+// how to request a real API using the XMLHttpRequest object:
+~ 1) create an object of XMLHttpRequest:
+% let req = new XMLHttpRequest();
+~ 2) we start requiting the api by the open method:
+% req.open("method" , "URL" , async , "UserName" , "password");
+* the method value is "GET" or "POST" you know the difference well.
+* the URL is the address of the needed API or a path for a json file.
+* async its a boolean (the default value is true).
+* userName and password are needed if they exists.
+~ 3) we use the send method to send our request:
+% req.send();
+~ 4) you need to check two things:
+* the Ready State "Status Of The Request" has five values:
+~ 4.1) "0" => it means that the Request is Not Initialized.
+~ 4.2) "1" => it means that the Server Connection Established.
+~ 4.3) "2" => it means that the Request has been Received.
+~ 4.4) "3" => it means that the Request is being Processed. 
+~ 4.5) "4" => it means that the Request Is Finished And Response Is Ready.
+! here we are checking that the response is done regardless to its correctness.
+# to get it we use : req.readyState; => 4
+* the Status has many values but we will consider two of them:
+~ 4.1) "200" => it means that the Response is "done Successfully".
+~ 4.2) "404" => it means that the Response is "Not Found"
+! here we are checking that the correctness of the response.
+# to get it we use : req.states; => 200 
+% myRequest.onreadystatechange = function () {
+%  if (this.readyState === 4 && this.status === 200) {
+%    console.log(this.responseText);
+%  }
+%};   
 */
