@@ -1638,4 +1638,180 @@ document.addEventListener("click", function (e) {
 %    console.log(this.responseText);
 %  }
 %};   
+# ...............................................................................................
+// Pyramid Of Doom or Callback Hell
+! What Is Callback?
+* A Function That Is Passed Into Another One As An Argument To Be Executed Later.
+! the Callback Hell or the Pyramid Of Doom:
+* its a situation in javaScript where callbacks are nested within other callback that causes:
+* the code will be hard to read and manage.
+* it will shape a pyramidical code. 
+# ...............................................................................................
+// Promises in javaScript:
+* Promise Is The Object That Represent The Status Of An Asynchronous Operation And Its Resulting Value
+* Promise Status
+~ 1) pending: initial state, neither fulfilled nor rejected.
+~ 2) fulfilled: meaning that the operation was completed successfully.
+~ 3) rejected: meaning that the operation failed.
+* how dose Promises in javaScript works:
+~ 1) Once A Promise Has Been Called, It Will Start In A Pending State.
+~ 2) The Created Promise Will Eventually End In A Resolved State (fulfilled) Or In A Rejected State.
+~ 3) Calling The Callback Functions (Passed To Then And Catch) Upon Finishing.
+
+% let prom = new Promise((ResolvedFunc, RejectedFunc) => {
+%   let connection = true;
+%     if (connection) {
+%       ResolvedFunc("connection Established");
+%     } else {
+%       RejectedFunc("connection Failed");
+%     }
+% }).then(
+%   (Resolver) => {console.log(`fulfilled , ${Resolver}`);},
+%   (Rejecter) => {console.log(`rejected , ${Rejecter}`);}
+% );
+* ResolvedFunc its the default function that will be called if the thing went good.
+* RejectedFunc its the default function that will be called if the thing went bad.
+* the (then function) will be called and it takes two functions:
+~ 1) the fulfilled function that will be executed if every thing went good.
+* this function contains one parameter that you send on the ResolvedFunc.
+~ 2) the rejected function that will be executed if every thing went bad.
+* this function contains one parameter that you send on the RejectedFunc.
+! you can name every thing here whatever you want.
+* we have three kinds of handlers to the promise:
+~ 1) Then : if the Promise Is done Successfully Use The Resolved Data in it.
+~ 2) Catch : if the Promise Is Failed, Catch The Error.
+~ 3) Finally : if the Promise Successfully done Or Failed Finally it will be executed regardless.
+# note that (then) can access ResolvedFunc and RejectedFunc.
+# another note that the (then) returns to the next (then) if exists.
+# ...............................................................................................
+// working with Fetch API:
+* its a mix between promise and XMLHttpRequest classes since it do the all of the job.
+* The fetch() method returns a Promise that resolves to the Response to a request.
+% fetch("API URL")
+% .then((result1) => {
+%   let result2 = result1.json();
+%   return result2;
+% }).then((result3) => {
+%    console.log(result3[0].name);
+%    console.log(result3[1].name);
+%    console.log(result3[2].name);
+%    console.log(result3[3].name);
+% });
+* result1 : it is the response to your request.
+~ after using the method (.json) on result1:
+* result2 : its the promise of the request.
+~ after passing result2 to the (then):
+* result3 : its an array of objects converted from a json data text.\
+# ...............................................................................................
+// promise methods:
+% let myFirstPromise = new Promise((res, rej) => {
+%   setTimeout(() => {
+%     res("Iam The First Promise");
+%   }, 5000);
+% });
+% 
+% let mySecondPromise = new Promise((res, rej) => {
+%   setTimeout(() => {
+%     rej("Iam The Second Promise");
+%   }, 1000);
+% });
+% 
+% let myThirdPromise = new Promise((res, rej) => {
+%   setTimeout(() => {
+%     res("Iam The Third Promise");
+%   }, 2000);
+% });
+~ 1) All:
+% let all = Promise.all([myFirstPromise , mySecondPromise , myThirdPromise , ...]);
+% all.then((resolvedValues) => console.log(resolvedValues));
+* it takes an array of Promises and returns the resolved values as a new Promise resolved array.
+* if all of the promises have been resolved it returns the array of resolved values.
+* if at least one of the promises got rejected it returns the rejected value of that promise.
+* if all of the promises got rejected it returns the first one of them.
+~ 2) All Settled:
+% let allSettled = Promise.allSettled([myFirstPromise , mySecondPromise , myThirdPromise , ...]);
+% allSettled.then((Values) => console.log(Values));
+* it returns values as a new Promise resolved array regardless the promises got resolved or rejected.
+~ 3) Race:
+% let race = Promise.race([myFirstPromise , mySecondPromise , myThirdPromise , ...]);
+% race.then((Values) => console.log(Values));
+* it returns the value of the first settled promise regardless the promise got resolved or rejected.
+# ...............................................................................................
+// async functions
+* Async Before Function Mean This Function Return A Promise and it can be used like one.
+% async function getData() {
+%   let num = 1;
+%   if (num > 0) {
+%     return "resolved";
+%   } else {
+%     throw new Error("rejected");
+%   }
+% }
+* An async function declaration creates an AsyncFunction object.
+* Each time when an async function is called: 
+* it returns a new Promise which will be resolved with the value returned by the async function. 
+* or rejected with an exception uncaught within the async function.
+! Async And Await Help In Creating Asynchronous Promise Behavior With Cleaner Style
+# ...............................................................................................
+// Await in async functions
+* await Works Only Inside the Async Functions.
+* await Make JavaScript Wait For The Promise Result regardless its resolved or rejected.
+% const myPromise = new Promise((resolve, reject) => {
+%   setTimeout(() => {
+%     let num = 0;
+%     if (num === 1) {
+%       resolve("Iam The Good Promise");
+%     } else {
+%       reject(Error("Iam The Bad Promise"));
+%     }
+%   }, 3000);
+% });
+% async function readData() {
+%   console.log("Before Promise");
+//  console.log(await myPromise.then(resolved => resolved));
+!   console.log(await myPromise.catch(rejected => rejected));
+# here we need to write one of them not the two of them.
+%   console.log("After Promise");
+% }
+% readData();
+# ...............................................................................................
+// try catch and finally
+% const myPromise = new Promise((resolve, reject) => {
+%   setTimeout(() => {
+%     let num = 1;
+%     if (num === 1) {
+%       resolve("Iam The Good Promise");
+%     } else {
+%       reject(Error("Iam The Bad Promise"));
+%     }
+%   }, 3000);
+% });
+% async function readData() {
+%   console.log("Before Promise");
+%   try {
+//     console.log(await myPromise.then(resolved => resolved));
+%   } catch (reason) {
+!     console.log(await myPromise.catch(rejected => rejected));
+%   } finally {
+%     console.log("After Promise");
+%   }
+% }
+% readData();
+# ...............................................................................................
+// some work with fetch and await that i cant understand:
+% async function fetchData() {
+%   console.log("before fetching data");
+%   try {
+%     let myData = await fetch("https://api.github.com/users/termedelo/repos");
+%     console.log(myData);
+%     let jsonData = await myData.json();
+%     console.log(jsonData);
+%   } catch (error) {
+%     console.log(`the error is ${error}`);
+%   } finally{
+%     console.log("after fetching data");
+%   }
+% }
+% fetchData();
+! the last thing that is when using async function and await you don't need to use (then) with promises.
 */

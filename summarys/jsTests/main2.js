@@ -280,19 +280,139 @@
 // console.log(generator.next());
 // console.log(generator.next());
 // console.log(generator.next());
-let req = new XMLHttpRequest();
-req.open("GET", "https://api.github.com/users/termedelo/repos");
-req.send();
-console.log(req);
-req.onreadystatechange = function () {
-  if (this.readyState === 4 && this.status === 200) {
-    let jsonRes = this.responseText;
-    let jsonObjArr = JSON.parse(jsonRes);
-    for (let i = 0; i < jsonObjArr.length; i++) {
-      let div = document.createElement("div");
-      let text = document.createTextNode(jsonObjArr[i].full_name);
-      div.appendChild(text);
-      document.body.appendChild(div);
-    }
-  }
-};
+// let req = new XMLHttpRequest();
+// req.open("GET", "https://api.github.com/users/termedelo/repos");
+// req.send();
+// console.log(req);
+// req.onreadystatechange = function () {
+//   if (this.readyState === 4 && this.status === 200) {
+//     let jsonRes = this.responseText;
+//     let jsonObjArr = JSON.parse(jsonRes);
+//     for (let i = 0; i < jsonObjArr.length; i++) {
+//       let div = document.createElement("div");
+//       let text = document.createTextNode(jsonObjArr[i].full_name);
+//       div.appendChild(text);
+//       document.body.appendChild(div);
+//     }
+//   }
+// };
+
+// let prom = new Promise((ResolvedFunc, RejectedFunc) => {
+//   let connection = true;
+//   if (connection) {
+//     ResolvedFunc("connection Established");
+//   } else {
+//     RejectedFunc("connection Failed");
+//   }
+// });
+
+// fetch("https://api.github.com/users/termedelo/repos")
+// .then((result) => {
+//   console.log(result);
+//   let myData = result.json();
+//   console.log(myData);
+//   return myData;
+// }).then((result) => {
+// console.log(result[0].name);
+// console.log(result[1].name);
+// console.log(result[2].name);
+// console.log(result[3].name);
+// });
+// fetch("https://api.github.com/users/elzerowebschool/repos")
+//   .then((result) => {
+//     console.log(result);
+//     let myData = result.json();
+//     console.log(myData);
+//     return myData;
+//   })
+//   .then((full) => {
+//     full.length = 10;
+//     return full;
+//   })
+//   .then((ten) => {
+//     console.log(ten[0].name);
+//   });
+// let myFirstPromise = new Promise((res, rej) => {
+//   setTimeout(() => {
+//     res("Iam The First Promise");
+//   }, 5000);
+// });
+
+// let mySecondPromise = new Promise((res, rej) => {
+//   setTimeout(() => {
+//     res("Iam The Second Promise");
+//   }, 1000);
+// });
+
+// let myThirdPromise = new Promise((res, rej) => {
+//   setTimeout(() => {
+//     res("Iam The Third Promise");
+//   }, 2000);
+// });
+// let all = Promise.allSettled([myFirstPromise, mySecondPromise, myThirdPromise]);
+// all.then((resolvedValues) => console.log(resolvedValues));
+// const myPromise = new Promise((resolve, reject) => {
+//   setTimeout(() => {
+//     reject(Error("Iam The Bad Promise"));
+//   }, 3000);
+// });
+// async function readData() {
+//   console.log("Before Promise");
+//   console.log(await myPromise.catch(rejected => rejected));
+//   console.log("After Promise");
+// }
+// readData();
+// const myPromise = new Promise((resolve, reject) => {
+//   setTimeout(() => {
+//     let num = 0;
+//     if (num === 1) {
+//       resolve("Iam The Good Promise");
+//     } else {
+//       reject(Error("Iam The Bad Promise"));
+//     }
+//   }, 3000);
+// });
+// async function readData() {
+//   console.log("Before Promise");
+//   console.log(await myPromise.then(resolved => resolved));
+//   console.log(await myPromise.catch(rejected => rejected));
+//   console.log("After Promise");
+// }
+// readData();
+
+// const myPromise = new Promise((resolve, reject) => {
+//   setTimeout(() => {
+//     let num = 1;
+//     if (num === 1) {
+//       resolve("Iam The Good Promise");
+//     } else {
+//       reject(Error("Iam The Bad Promise"));
+//     }
+//   }, 3000);
+// });
+// async function readData() {
+//   console.log("Before Promise");
+//   try {
+//     console.log(await myPromise.then((resolved) => resolved));
+//   } catch (reason) {
+//     console.log(await myPromise.catch((rejected) => rejected));
+//   } finally {
+//     console.log("After Promise");
+//   }
+// }
+// readData();
+
+// async function fetchData() {
+//   console.log("before fetching data");
+//   try {
+//     let myData = await fetch("https://api.github.com/users/termedelo/repos");
+//     console.log(myData);
+//     let jsonData = await myData.json();
+//     console.log(jsonData);
+//   } catch (error) {
+//     console.log(`the error is ${error}`);
+//   } finally{
+//     console.log("after fetching data");
+//   }
+// }
+// fetchData();
