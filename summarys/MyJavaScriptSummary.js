@@ -1701,7 +1701,7 @@ document.addEventListener("click", function (e) {
 ~ after using the method (.json) on result1:
 * result2 : its the promise of the request.
 ~ after passing result2 to the (then):
-* result3 : its an array of objects converted from a json data text.\
+* result3 : its an array of objects converted from a json data text.
 # ...............................................................................................
 // promise methods:
 % let myFirstPromise = new Promise((res, rej) => {
