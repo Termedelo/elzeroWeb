@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!--Font Awesome-->
-    <link rel="stylesheet" href="/TemplateThree/css/all.min.css" />
     <!--Normalize Css Components-->
-    <link rel="stylesheet" href="/TemplateThree/css/normalize.css" />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="css/all.min.css" />
     <!--Google Fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -15,7 +15,7 @@
       rel="stylesheet"
     />
     <!--The Main Css style Sheet-->
-    <link rel="stylesheet" href="/TemplateThree/css/Style.css" />
+    <link rel="stylesheet" href="css/Style.css" />
     <title>TemplateThree</title>
   </head>
   <body>
@@ -24,44 +24,59 @@
       <div class="container">
         <h1>Wiki</h1>
         <ul class="nav">
-          <li><a href="#">Articles</a></li>
-          <li><a href="#">Gallery</a></li>
-          <li><a href="#">Features</a></li>
+          <li><a href="#" class="MainLinks">Articles</a></li>
+          <li><a href="#" class="MainLinks">Gallery</a></li>
+          <li><a href="#" class="MainLinks">Features</a></li>
           <li id="list">
-            <a href="#">Other Links</a>
+            <a href="#" class="MainLinks">Other Links</a>
             <div class="menu">
               <div class="image">
                 <img src="/TemplateThree/images/megamenu.png" alt="" />
               </div>
-              <div class="men1">
-                <ul>
-                  <li>
-                    <a href="#testimonials"> Testimonials </a>
-                  </li>
-                  <li>
-                    <a href="#team"> Team Members </a>
-                  </li>
-                  <li>
-                    <a href="#services"> Services</a>
-                  </li>
-                  <li>
-                    <a href="#our-skills"> Our Skills</a>
-                  </li>
-                  <li>
-                    <a href="#work-steps"> How It Works</a>
-                  </li>
-                </ul>
-              </div>
-              <div class="men2">
-                <ul>
-                <li>1</li>
-                <li>2</li>
-                <li>3</li>
-                <li>4</li>
-                <li>5</li>
+              <ul>
+                <li>
+                  <i class="far fa-comments fa-fw"></i>
+                  <a href="#">Testimonials</a>
+                </li>
+                <li>
+                  <i class="far fa-user fa-fw"></i>
+                  <a href="#">Team Members</a>
+                </li>
+                <li>
+                  <i class="far fa-building fa-fw"></i>
+                  <a href="#">Services</a>
+                </li>
+                <li>
+                  <i class="far fa-check-circle fa-fw"></i>
+                  <a href="#">Our Skills</a>
+                </li>
+                <li>
+                  <i class="far fa-clipboard fa-fw"></i>
+                  <a href="#">How It Works</a>
+                </li>
               </ul>
-              </div>
-              
+              <ul>
+                <li>
+                  <i class="far fa-calendar-alt fa-fw"></i>
+                  <a href="#">Events</a>
+                </li>
+                <li>
+                  <i class="fas fa-server fa-fw"></i>
+                  <a href="#">Pricing Plans</a>
+                </li>
+                <li>
+                  <i class="far fa-play-circle fa-fw"></i>
+                  <a href="#">Top Videos</a>
+                </li>
+                <li>
+                  <i class="far fa-chart-bar fa-fw"></i>
+                  <a href="#">Stats</a>
+                </li>
+                <li>
+                  <i class="fas fa-percent fa-fw"></i>
+                  <a href="#">Request A Discount</a>
+                </li>
+              </ul>
             </div>
           </li>
         </ul>
@@ -80,9 +95,22 @@
           </h3>
         </div>
         <img src="/TemplateThree/images/landing-image.png" alt="" />
+        <span></span>
       </div>
-      <span></span>
     </div>
     <!-- End of landing Section -->
+
+    <!-- Start of Article Section -->
+    <div class="Article">
+      <div class="HeadingContainer">
+        <div class="Heading">Article</div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col"></div>
+        </div>
+      </div>
+    </div>
+    <!-- End of Article Section -->
   </body>
 </html>
