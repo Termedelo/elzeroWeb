@@ -72,7 +72,28 @@ header .container .nav {
   font-size: 20px;
   width: 35%;
 }
-
+header .container .nav #list .menu {
+  width: calc(100% - 150px);
+  height: 275px;
+  position: absolute;
+  left: calc(50% + 27px);
+  top: calc(50% - 10px);
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  background-color: white;
+  border-bottom: solid 5px var(--main-color);
+  transition: 0.5s;
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 20px;
+}
+header .container .nav #list:hover .menu{
+  top: calc(50% - 84px);
+  z-index: 1;
+}
+header .container .nav #list .menu .image img{
+   height: 250px;
+}
 header .container .nav li a {
   text-decoration: none;
   position: relative;
