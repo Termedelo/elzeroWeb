@@ -31,6 +31,7 @@ body {
   border-top-left-radius: 8px;
   border-bottom-left-radius: 8px;
   font-size: 20px;
+  padding-left: 20px;
   color: white;
 }
 .todoContainer .addTask button {
@@ -67,7 +68,7 @@ body {
   border-radius: 10px;
   font-size: 17px;
 }
-.todoContainer .tasks div:not(:last-child) {
+.todoContainer .tasks .NewTask:not(:last-child) {
   margin-bottom: 10px;
 }
 .todoContainer .tasks .NewTask {
@@ -80,8 +81,9 @@ body {
   padding-left: 20px;
   border-radius: 10px;
   font-size: 17px;
+  cursor: pointer;
 }
-.todoContainer .tasks div .Delete {
+.todoContainer .tasks .NewTask .Delete {
   position: absolute;
   width: 80px;
   height: 30px;
@@ -96,6 +98,7 @@ body {
   transform: translateY(-50%);
   margin-right: 17px;
   cursor: pointer;
+  z-index: 10000;
 }
 .todoContainer .tasks .finished {
   text-decoration: line-through;
