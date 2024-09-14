@@ -309,7 +309,63 @@ span::after {
 /* End of landing Section */
 
 /* Start of Article Section */
-.Article{
+.Article {
   margin-top: 230px;
+}
+.Article .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(238px, 1fr));
+  margin-top: 100px;
+  row-gap: 50px;
+}
+.Article .container .card {
+  width: 238px;
+  height: 350px;
+  border-radius: 12px;
+  background-color: white;
+  box-shadow: 0 2px 15px rgb(0 0 0 / 10%);
+  transition: 0.2s;
+}
+.Article .container .card img {
+  width: 100%;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+.Article .container .card h2 {
+  padding: 10px 10px 0;
+}
+.Article .container .card p {
+  padding: 10px 10px 0;
+  line-height: 1.8;
+  color: #ababab;
+}
+.Article .container .card h4 {
+  padding: 10px 10px 20px;
+  margin-top: 15px;
+  color: var(--main-color);
+  border-top: solid 1px #e4e4e4;
+  position: relative;
+}
+.Article .container .card h4 i {
+  font-size: 15px;
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.Article .container .card:hover h4 i {
+  animation-name: gogo;
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+.Article .container .card:hover {
+  margin-top: -10px;
+  box-shadow: 0 2px 15px rgb(0 0 0 / 30%);
+}
+@keyframes gogo {
+  to {
+    right: 4px;
+  }
 }
 /* End of Article Section */
