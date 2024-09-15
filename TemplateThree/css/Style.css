@@ -9,6 +9,7 @@
   display: flex;
   justify-content: center;
   margin-top: 100px;
+  padding-top: 50px;
   margin-left: 20px;
 }
 .HeadingContainer .Heading::before {
@@ -370,3 +371,64 @@ span::after {
   }
 }
 /* End of Article Section */
+
+/* Start of Gallery Section */
+.Gallery {
+  margin-top: 100px;
+  height: 100vh;
+}
+.Gallery .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  margin-top: 40px;
+}
+.Gallery .container .Images {
+  width: 350px;
+  height: 350px;
+  padding: 20px 20px;
+  background-color: white;
+  margin-top: 50px;
+  box-shadow: 0 2px 15px rgb(0 0 0 / 30%);
+}
+.Gallery .container .Images .box {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.Gallery .container .Images .box::before {
+  content: "";
+  width: 0;
+  height: 0;
+  position: absolute;
+  background-color: red;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(255 255 255 / 20%);
+  opacity: 0;
+  z-index: 2;
+}
+.Gallery .container .Images .box:hover::before {
+  animation: flashing 0.7s;
+}
+@keyframes flashing {
+  0%,
+  40% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    width: 200%;
+    height: 200%;
+  }
+}
+.Gallery .container .Images .box img {
+  height: 100%;
+  width: 100%;
+  transition: 0.7s;
+}
+.Gallery .container .Images .box:hover img {
+  transform: scale(1.1) rotate(5deg);
+}
+/* End of Gallery Section */
