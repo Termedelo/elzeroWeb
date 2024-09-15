@@ -8,7 +8,7 @@
 .HeadingContainer {
   display: flex;
   justify-content: center;
-  margin-top: 190px;
+  margin-top: 100px;
   margin-left: 20px;
 }
 .HeadingContainer .Heading::before {
@@ -317,10 +317,11 @@ span::after {
   grid-template-columns: repeat(auto-fill, minmax(238px, 1fr));
   margin-top: 100px;
   row-gap: 50px;
+  column-gap: 40px;
 }
 .Article .container .card {
-  width: 238px;
-  height: 350px;
+  width: 275px;
+  height: 376px;
   border-radius: 12px;
   background-color: white;
   box-shadow: 0 2px 15px rgb(0 0 0 / 10%);
