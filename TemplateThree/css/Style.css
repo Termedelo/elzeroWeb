@@ -12,25 +12,6 @@
   padding-top: 50px;
   margin-left: 20px;
 }
-.HeadingContainer .Heading::before {
-  content: "";
-  width: 12px;
-  height: 12px;
-  position: absolute;
-  left: calc(50% - 100px);
-  top: 50%;
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #2196f3;
-  transition: 1s;
-}
-.HeadingContainer .Heading:hover::before {
-  width: 85px;
-  height: 50px;
-  left: calc(50% - 35px);
-  border-radius: 0;
-  z-index: -1;
-}
 .HeadingContainer .Heading {
   position: relative;
   width: 160px;
@@ -51,6 +32,18 @@
   border-color: transparent;
   transition-delay: 0.4s;
 }
+.HeadingContainer .Heading::before {
+  content: "";
+  width: 12px;
+  height: 12px;
+  position: absolute;
+  left: calc(50% - 100px);
+  top: 50%;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #2196f3;
+  transition: 1s;
+}
 .HeadingContainer .Heading::after {
   content: "";
   width: 12px;
@@ -63,12 +56,18 @@
   background-color: #2196f3;
   transition: 1s;
 }
+.HeadingContainer .Heading:hover::before,
 .HeadingContainer .Heading:hover::after {
   width: 85px;
   height: 50px;
-  left: calc(50% + 35px);
   border-radius: 0;
   z-index: -1;
+}
+.HeadingContainer .Heading:hover::before {
+  left: calc(50% - 38px);
+}
+.HeadingContainer .Heading:hover::after {
+  left: calc(50% + 38px);
 }
 /*End of reusable components*/
 
@@ -479,10 +478,10 @@ span::after {
   background-color: rgba(244, 64, 54, 40%);
 }
 .Features .container .card2 .FeatureImage::before {
-  background-color: rgba(0, 150, 136 , 40%);
+  background-color: rgba(0, 150, 136, 40%);
 }
 .Features .container .card3 .FeatureImage::before {
-  background-color: rgba(3, 169, 244 , 40%);
+  background-color: rgba(3, 169, 244, 40%);
 }
 .Features .container .tallCard .FeatureImage::after {
   content: "";
@@ -537,15 +536,15 @@ span::after {
   position: relative;
   transition: 0.7s;
 }
-.Features .container .card1 a{
+.Features .container .card1 a {
   border: solid 5px rgb(244, 64, 54);
   color: rgb(244, 64, 54);
 }
-.Features .container .card2 a{
+.Features .container .card2 a {
   border: solid 5px rgb(0, 150, 136);
   color: rgb(0, 150, 136);
 }
-.Features .container .card3 a{
+.Features .container .card3 a {
   border: solid 5px rgb(3, 169, 244);
   color: rgb(3, 169, 244);
 }
@@ -560,13 +559,13 @@ span::after {
   z-index: -1;
   transition: 0.7s;
 }
-.Features .container .card1 a::after{
+.Features .container .card1 a::after {
   background-color: rgb(244, 64, 54);
 }
-.Features .container .card2 a::after{
+.Features .container .card2 a::after {
   background-color: rgb(0, 150, 136);
 }
-.Features .container .card3 a::after{
+.Features .container .card3 a::after {
   background-color: rgb(3, 169, 244);
 }
 .Features .container .tallCard:hover a,
@@ -575,3 +574,88 @@ span::after {
   color: white;
 }
 /* End of Features Section */
+
+/* Start of Testimonials Section */
+.Testimonials {
+  background-color: #eee;
+}
+.Testimonials .HeadingContainer .Heading {
+  width: 244px;
+}
+.Testimonials .HeadingContainer .Heading::before {
+  left: calc(50% - 140px);
+}
+.Testimonials .HeadingContainer .Heading::after {
+  left: calc(50% + 140px);
+}
+.Testimonials .HeadingContainer .Heading:hover::before,
+.Testimonials .HeadingContainer .Heading:hover::after {
+  width: 127px;
+  height: 50px;
+  border-radius: 0;
+  z-index: -1;
+}
+.Testimonials .HeadingContainer .Heading:hover::before {
+  left: calc(50% - 58px);
+}
+.Testimonials .HeadingContainer .Heading:hover::after {
+  left: calc(50% + 58px);
+}
+.Testimonials .container {
+  margin-top: 100px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  row-gap: 40px;
+}
+.Testimonials .container .cards {
+  width: 350px;
+  height: 210px;
+  padding: 20px 0 0 20px;
+  border-radius: 10px;
+  background-color: white;
+  position: relative;
+}
+.Testimonials .container .cards .image {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  background-color: #eee;
+  left: calc(100% - 93px);
+  top: -50px;
+  border-radius: 50%;
+}
+.Testimonials .container .cards img {
+  width: 80px;
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  border-radius: 50%;
+}
+.Testimonials .container .cards:hover img {
+  animation-name: FlipPictures;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-direction: alternate;
+}
+@keyframes FlipPictures {
+  to {
+    transform: rotateY(1turn);
+  }
+}
+.Testimonials .container .cards p {
+  margin: 10px 0;
+  line-height: 1.4;
+  padding: 0 5px 0 0;
+  color: #bbb;
+}
+.Testimonials .container .cards .stars {
+  margin: 10px 0;
+  
+}
+.Testimonials .container .cards .stars i{
+  transition: 0.5s;
+}
+.Testimonials .container .cards:hover .stars .fa-solid{
+  color: gold;
+}
+/* End of Testimonials Section */

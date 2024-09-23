@@ -416,3 +416,11 @@
 //   }
 // }
 // fetchData();
+// let regex = /^(a|u|i|o|e)[a-z]{1,}\1$/;
+// console.log(regex.test("abcda"));
+// try {
+//   console.log(s.split("").reverse().join(""));
+// } catch (e) {
+//   console.log(e.message);
+//   console.log(s);
+// }
