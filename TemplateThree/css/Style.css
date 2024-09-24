@@ -606,6 +606,7 @@ span::after {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
   row-gap: 40px;
+  padding-bottom: 25px;
 }
 .Testimonials .container .cards {
   width: 350px;
@@ -650,12 +651,116 @@ span::after {
 }
 .Testimonials .container .cards .stars {
   margin: 10px 0;
-  
 }
-.Testimonials .container .cards .stars i{
+.Testimonials .container .cards .stars i {
   transition: 0.5s;
 }
-.Testimonials .container .cards:hover .stars .fa-solid{
+.Testimonials .container .cards:hover .stars .fa-solid {
   color: gold;
 }
 /* End of Testimonials Section */
+
+/* Start of Team Members Section */
+.TeamMembers {
+
+}
+.TeamMembers .HeadingContainer .Heading {
+  width: 260px;
+}
+.TeamMembers .HeadingContainer .Heading::before {
+  left: calc(50% - 145px);
+}
+.TeamMembers .HeadingContainer .Heading::after {
+  left: calc(50% + 145px);
+}
+.TeamMembers .HeadingContainer .Heading:hover::before,
+.TeamMembers .HeadingContainer .Heading:hover::after {
+  width: 145px;
+  height: 50px;
+  border-radius: 0;
+  z-index: -1;
+}
+.TeamMembers .HeadingContainer .Heading:hover::before {
+  left: calc(50% - 58px);
+}
+.TeamMembers .HeadingContainer .Heading:hover::after {
+  left: calc(50% + 58px);
+}
+.TeamMembers .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill , minmax(300px , 1fr));
+  margin: 50px 0 0 120px;
+  gap: 50px 76px;
+}
+.TeamMembers .container .longCard {
+  width: 300px;
+  height: 450px;
+  background-color: #eee;
+  border-radius: 10px;
+  position: relative;
+}
+.TeamMembers .container .longCard::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 450px;
+  background-color: rgb(128 128 128 / 50%);
+  top: 0;
+  right: 0;
+  border-radius: 10px;
+  transition: 0.5s;
+  z-index: 1;
+}
+.TeamMembers .container .longCard:hover::after {
+  width: 300px;
+}
+.TeamMembers .container .longCard img {
+  width: 300px;
+  height: 300px;
+  border-radius: 30px;
+  position: absolute;
+  top: calc(50% - 10px);
+  transform: translateY(-50%);
+  left: -70px;
+  z-index: 2;
+  transition: 0.5s;
+}
+.TeamMembers .container .longCard:hover img {
+  filter: grayscale(0.8);
+}
+.TeamMembers .container .longCard .linkIcons {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+  row-gap: 38px;
+  left: calc(100% - 43px);
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+}
+.TeamMembers .container .longCard .linkIcons a {
+  color: gray;
+}
+.TeamMembers .container .longCard .linkIcons a:hover {
+  color: blue;
+}
+.TeamMembers .container .longCard .linkIcons a:nth-child(4):hover {
+  color: red;
+}
+.TeamMembers .container .longCard h2 {
+  padding: 380px 0 0 30px;
+  color: var(--main-color);
+  position: absolute;
+  z-index: 2;
+  transition: 0.5s;
+}
+.TeamMembers .container .longCard:hover h2 {
+  color: rgb(65, 65, 65);
+}
+.TeamMembers .container .longCard p {
+  padding: 410px 0 0 30px;
+  position: absolute;
+  z-index: 2;
+}
+/* End of Team Members Section */
