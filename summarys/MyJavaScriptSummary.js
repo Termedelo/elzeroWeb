@@ -889,11 +889,11 @@ document.addEventListener("click", function (e) {
 % window.scrollBy(x , y);
 % window.scrollBy({top: number, left: number, behavior: "smooth",});
 * method scrolls the document in the window by the given amount.
-~ 6) scrollX()
-% window.scrollX();
+~ 6) scrollX
+% window.scrollX;
 * this function will return the scroll X value it can't be changed.
-~ 7) scrollY()
-% window.scrollY();
+~ 7) scrollY
+% window.scrollY;
 * this function will return the scroll Y value it can't be changed.
 # ...............................................................................................
 // dealing with Local Storage using BOM [Browser Object Model]
