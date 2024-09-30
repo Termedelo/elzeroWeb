@@ -1,0 +1,51 @@
+body {
+  background-color: #7a27a6;
+  font-family: "Bebas Neue", sans-serif;
+  text-shadow: 4px 5px 10px rgb(0 0 0 / 30%);
+}
+.slidesContainer {
+  display: flex;
+  height: 97vh;
+  column-gap: 10px;
+  transition: cubic-bezier(0.37, 0, 0.96, -0.38);
+}
+.slidesContainer .slide {
+  background-image: url(images/image.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  transition: font-size 0.7s cubic-bezier(0.61, -0.19, 0.7, -0.11),
+    flex 0.7s cubic-bezier(0.61, -0.19, 0.7, -0.11), background 0.2s;
+  overflow: hidden;
+  font-size: 40px;
+  cursor: pointer;
+}
+.slidesContainer .slide p {
+  color: white;
+  margin: 0;
+  width: 100%;
+  transition: transform 0.5s;
+  flex: 1 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.slidesContainer .slide p:first-child {
+  transform: translateY(-100%);
+}
+.slidesContainer .slide p:last-child {
+  transform: translateY(100%);
+}
+.slidesContainer .openActive p:first-child,
+.slidesContainer .openActive p:last-child {
+  transform: translateY(0);
+}
+.slidesContainer .open {
+  flex: 4;
+  font-size: 60px;
+}
