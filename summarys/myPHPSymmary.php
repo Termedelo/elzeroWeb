@@ -20,10 +20,13 @@
   % the previous note we are talking about only the PHP files.
 ! 1) how to add comment is php? :
   // you can use (//) or (#) for single line comments and for multi lines comments you can use (/"*"*"/).
+#-------------------------------------------------------------------------------------    
 ! 2) how to print any thing on the Php? : 
-  // you can use echo(anyThing) or you can use print
+  // you can use echo(anyThing) or you can use print.
   // the echo doesn't brake a new line so keep that in mind.
   // you can also use Print(anyThing) function.
+  // you can use print_r(anyThing) to print human readable codes.
+#-------------------------------------------------------------------------------------
 ! zero) all about data types:
   % you can use a function to get the type gettype().
   % keep in mind the Type Juggling And Automatic Type conversion.
@@ -32,8 +35,28 @@
   // - this function prints its output without the need to use (echo,print,...).
   // - this function mainly Dumps information about a variable dataType.
   // Boolean False,Integer Zero,Float Zero,Empty String,String "0",NULL,Empty Array.
+#-------------------------------------------------------------------------------------
 ! zero) Escaping characters: (\', \" , \\, \$, \n, \r, \t, \f, \ooo, \xhh, \u{xxxx}).
 ! zero) nl2br("Text") : it inserts html <br> tag before each new line in the string.
+! zero) the heredoc and nowdoc:
+~ Heredoc: syntax allows you to define a string that behaves like a double-quoted string. 
+// This means it supports variable interpolation and escape sequences.
+// - Variables within the heredoc are expanded.
+// - Escape sequences (like \n, \t) are interpreted.
+// - Strings can span multiple lines without needing concatenation or escaping quotes.
+  $var1 = <<<Heredoc 
+  this is the heredoc <br>
+  im not happy with my self.
+  Heredoc;
+~ Nowdoc syntax is similar to heredoc but behaves like a single-quoted string. 
+// It does not support variable interpolation or escape sequences.
+// - No variable expansion, everything is treated as plain text.
+// - Escape sequences are not interpreted.
+   $var2 = <<<'Nowdoc' 
+   this is the Nowdoc <br>
+   im not happy with my self.
+   Nowdoc;
+#-------------------------------------------------------------------------------------
 ! 3) the Php language is not case sensitive language except for the Variables names.
 ! 4) how to create a variable in php? : $x = 10;
   // fun fact : variables in php doesn't has a dataType.
@@ -41,6 +64,30 @@
   // the variable can be (String , Integer , Float (also called double) , Boolean , Array , Object , NULL).
   // when invoking the variable in any place you need to use $ and its caseSensitive.
   // $VariableName = ...
+  ! you can call your variable within a double quotes but not in a single quotes.
+  // a variable of variable : $...$VarName "this is ridiculous".
+  ~ e.g. :
+  ~ $var1 = "String1";
+  ~ $$var1 = "String2";
+  ~ $$$var1 = "String3";
+  ~ now to print it you need to use a special things:
+  ~ echo "$var1";
+  ~ echo "${$var1}"; //$$var1
+  ~ echo "${$$var1}"; //$$$var1
+  // Assign Variable By Value and Reference:
+  // By Default, Variables Are Always Assigned By Value.
+  ~ e.g. :
+  ~ $var1 = "String1"; 
+  ~ $var2 = "String2";
+  ~ $var2 = $var1;
+  % any change to var2 won't affect var1 at all. 
+  // Assigned By Reference Make Variable Alias Or Point To Another.
+  ~ e.g. :
+  ~ $var1 = "String1"; 
+  ~ $var2 = "String2";
+  ~ $var2 = &$var1;
+  % any change to var2 will affect var1 always and visa versa.
+#-------------------------------------------------------------------------------------
 ! 5) how to create a constant in php? : define("a" ,1 ,false);
   // the constant value can't be changed during the code.
   // you don't need to use ($) when invoking a constant var.
@@ -49,11 +96,29 @@
   // the last parameter stands for the caseSensitivity:
   // if it was false (the default) the name is caseSensitive.
   // if it was true the name is non-caseSensitive (they delete it).
-! 6) how to create a function in Php? : we have three ways
+  % the best practice is to name it all in upperCase.
+  // we have a large set of pre defined constants in php follow the link: --> caseSensitive
+  ~ https://www.php.net/manual/en/reserved.constants.php.
+  // we have also what is called as magic constants in php follow the link: --> not caseSensitive
+  ~ https://www.php.net/manual/en/language.constants.magic.php.
+  ## don't forget about Reserved Keywords. 
+#-------------------------------------------------------------------------------------
+! 6) the arithmetic operates in php:
+~ $a + $b => Addition
+~ $a - $b => Subtraction
+~ $a * $b => Multiplication
+~ $a / $b => Division
+~ $a % $b => Modulus
+~ $a ** $b => Exponentiation
+~ +$a => Identity : it converts the Numeric string to a positive integer.
+~ -$a => Negation : it converts the Numeric string to a negative integer.
+#-------------------------------------------------------------------------------------
+! 7) how to create a function in Php? : we have three ways
   // 6.1) function FunName1(){}
   // 6.2) FUNCTION FunName2($var1 , $var2 , ...){}
   // 6.3) FuNcTiOn FunName3($var1 , $var2 , ...){ return ...;}
-! 7) the variables Scope : its the place that you can use the variable in without any error.
+#-------------------------------------------------------------------------------------
+! 8) the variables Scope : its the place that you can use the variable in without any error.
   // there are three scopes:
   // 7.1) local scope: the variable here is initialized inside (function , if statement , for loop).
   // 7.2) Global scope: any variable outside the (function , if statement , for loop)
@@ -63,12 +128,14 @@
   // when defining variables at the first of the php body you can do the following:
   // $GLOBALS['VARNAME']
   // 7.3) static scope : its like the global variables in keeping the last value
-  // but here we use it inside any local block (function , if  , loops). 
-! 8) how to concatenate things in php?:
+  // but here we use it inside any local block (function , if  , loops).
+#------------------------------------------------------------------------------------- 
+! 9) how to concatenate things in php?:
   // we concat using the dot (.)
   // e.g. (echo 10 . "ahmad";)
   // one of the concatenation sides must be a String Value.
-! 9) how to create an array in PHP? : we have two types of arrays
+#-------------------------------------------------------------------------------------
+! 10) how to create an array in PHP? : we have two types of arrays
 ! the array in php is a dynamic generic (it accepts any dataType in the array) array.
   // 1) indexed array: its a zero based array
   // $var = array('' , '' , '' , ....);
@@ -89,6 +156,8 @@
   //    $y['name'] = "ahmad";
   //    $y[1] = 300;
   //    $y['age'] = 21; 
+  // if your one element in th associative array doesn't have a key it will follow the indexing rules.
+#-------------------------------------------------------------------------------------
 ! how to create a loop in php : its a normal looping language who we have (for , while , do while , foreach).
 ! but in our course we will focus on the forLoop and the foreachLoop:
   // for ($i = 0 , $i < arrayLength , $i++){}
@@ -99,6 +168,7 @@
 ? what if i need to print the items in the associative array and its keys?
   // simple use the foreachLoop in the following form:
   // forEach($arrayName as $KeyVar => $ValueVar){} 
+#-------------------------------------------------------------------------------------
 ! form handling : 
   // we handel using a PHP Global Variables that take the inputted values from the form to the php script.
   // we have five PHP Global Variables that is :
@@ -113,6 +183,7 @@
   // 5) $_REQUEST['formElementName'] : 
   // is used to collect data after submitting an HTML form, It contains the contents of both ($_GET, $_POST).
   // The $_REQUEST variable can be used to collect form data sent with both the GET and POST methods.
+#-------------------------------------------------------------------------------------
 ! form Validation functions: we have two functions to validate data inputted by a form in the php script
   // 1) empty($var) : this function checks if the variable is empty like so:
   // it returns TRUE if any case of the following cases occurred :
@@ -132,6 +203,7 @@
   % firstly when handling a form you must have a look on (the names of the formElement) and (the used method)
   % to compare two strings just use the (==) operator.
   % when the select tag send an array of elements that array will be an indexed.
+#-------------------------------------------------------------------------------------
 ! PHP Cookies : its a type of variables that the server creates to collect the browsing information on the webpage.
   // its created at the server side (webpage) and stored at the client browser (client side).
   // the sequence of the cookies goes like so:
@@ -154,6 +226,7 @@
   // $_COOKIE['cookieName'];
   // how to delete a cookie : you simple can by just changing the expireDate to any time in the past.
   // setCookie("age" , 21 , time() - 1);
+#-------------------------------------------------------------------------------------
 ! PHP Sessions : its a php place that stores a set of variables which can be accessed by many pages.
   // sessions are not stored on the client side unlike cookies it is stored on the server.
   // how to create a session:
@@ -178,7 +251,7 @@
   // 3) store the array in the SESSION global array.
   // 4) get the array elements like so:
   // $_SESSION['varName']['elementName' or index];
-~ --------------------------------------------------------------------------------------------------------
+#-------------------------------------------------------------------------------------
 ! to creating a dataBase and manipulate data within it we use phpMyAdmin webpage to do so with mySQL language.
 ! you know how to create a DB and how to do all the operations by the phpMyAdmin wizard GUI.
 ! now lets do a revision to some of the basic mySql Queries:
