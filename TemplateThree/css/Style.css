@@ -253,7 +253,7 @@ header .container .nav li:hover .MainLinks {
     top: -40px;
   }
 }
-span::before {
+.LandingSpan::before {
   content: "";
   border: solid 5px;
   border-radius: 5px;
@@ -266,7 +266,7 @@ span::before {
   transform: rotate(45deg);
   animation: ArrowsUpAndDown1 1.5s infinite linear alternate;
 }
-span::after {
+.LandingSpan::after {
   content: "";
   border: solid 5px;
   border-radius: 5px;
@@ -661,9 +661,6 @@ span::after {
 /* End of Testimonials Section */
 
 /* Start of Team Members Section */
-.TeamMembers {
-
-}
 .TeamMembers .HeadingContainer .Heading {
   width: 260px;
 }
@@ -688,7 +685,7 @@ span::after {
 }
 .TeamMembers .container {
   display: grid;
-  grid-template-columns: repeat(auto-fill , minmax(300px , 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   margin: 50px 0 0 120px;
   gap: 50px 76px;
 }
@@ -764,3 +761,116 @@ span::after {
   z-index: 2;
 }
 /* End of Team Members Section */
+
+/* Start of Services Section */
+.Services {
+  background-color: #eee;
+  height: 100vh;
+}
+.Services .HeadingContainer {
+}
+.Services .HeadingContainer .Heading {
+}
+.Services .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  row-gap: 30px;
+  column-gap: 30px;
+  margin-top: 50px;
+  margin-left: 105px;
+}
+.Services .container .ServiceCard {
+  width: 350px;
+  height: 230px;
+  background-color: white;
+  border-radius: 10px;
+  top: 0;
+  position: relative;
+  box-shadow: 0 12px 20px 0 rgb(0 0 0 / 20%), 0 2px 4px 0 rgb(0 0 0 / 20%);
+  transition-duration: 0.3s;
+}
+.Services .container .ServiceCard:hover {
+  top: -10px;
+}
+.Services .container .ServiceCard::before {
+  content: "";
+  width: 0;
+  height: 5px;
+  background-color: var(--main-color);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  transition-duration: 0.3s;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.Services .container .ServiceCard:hover::before {
+  width: 100%;
+}
+.Services .container .ServiceCard .icon {
+  color: #aaa;
+  position: absolute;
+  left: 50%;
+  top: 30%;
+  transform: translate(-50%, -50%) rotateY(0deg);
+  font-size: 75px;
+  transition-duration: 0.5s;
+}
+.Services .container .ServiceCard:hover .icon {
+  transform: translate(-50%, -50%) rotateY(360deg);
+}
+.Services .container .ServiceCard h1 {
+  color: var(--main-color);
+  position: absolute;
+  left: 50%;
+  top: calc(50% - 4px);
+  transform: translate(-50%, -50%);
+}
+.Services .container .ServiceCard .ServiceCardBottom {
+  background-color: var(--main-color);
+  width: 350px;
+  height: 50px;
+  display: block;
+  position: absolute;
+  top: calc(100% - 50px);
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+.Services .container .ServiceCard .ServiceCardBottom h1 {
+  z-index: 1;
+  color: white;
+  left: 38px;
+  top: -5px;
+  font-size: 45px;
+}
+.Services .container .ServiceCard .ServiceCardCenter {
+  background-color: #ccc;
+  width: 70px;
+  height: 51px;
+  display: block;
+  transform: skewX(-30deg);
+  position: absolute;
+  top: calc(100% - 50px);
+  left: 80px;
+  z-index: 1;
+}
+.Services .container .ServiceCard .ServiceCardTop {
+  background-color: #eee;
+  width: 250px;
+  height: 50px;
+  display: block;
+  position: absolute;
+  top: calc(100% - 50px);
+  left: 100px;
+  border-bottom-right-radius: 8px;
+}
+.Services .container .ServiceCard .ServiceCardTop a {
+  color: var(--main-color);
+  z-index: 1;
+  position: absolute;
+  left: calc(100% - 73px);
+  top: calc(100% - 33px);
+  text-decoration: none;
+  font-size: 20px;
+}
+/* End of Services Section */
