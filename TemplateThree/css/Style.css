@@ -767,10 +767,6 @@ header .container .nav li:hover .MainLinks {
   background-color: #eee;
   height: 100vh;
 }
-.Services .HeadingContainer {
-}
-.Services .HeadingContainer .Heading {
-}
 .Services .container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
@@ -821,9 +817,10 @@ header .container .nav li:hover .MainLinks {
 }
 .Services .container .ServiceCard h1 {
   color: var(--main-color);
+  text-align: center;
   position: absolute;
   left: 50%;
-  top: calc(50% - 4px);
+  top: calc(50% + 5px);
   transform: translate(-50%, -50%);
 }
 .Services .container .ServiceCard .ServiceCardBottom {
