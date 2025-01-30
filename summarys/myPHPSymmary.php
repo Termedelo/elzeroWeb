@@ -153,7 +153,31 @@
 ! we have the same types of conditional statements as other languages.
 ~ if(condition){BlockOfCode}
 ~ if(condition){BlockOfCode} else{BlockOfCode}
-~ if(condition){BlockOfCode} elseif(condition){BlockOfCode} ... else{BlockOfCode} 
+~ if(condition){BlockOfCode} elseif(condition){BlockOfCode} ... else{BlockOfCode}
+? alternative syntax of the conditional statements:
+~ <?php if(10 > 10): ?> ....any code..... <?php endif; ?> -> you can use elseif and else.
+? ternary syntax of conditional statements:
+~ if condition ? true : false;
+? switch statement:
+~ switch(expression){ 
+~   Case 1: BlockOfCode1; break;
+~   Case 2: BlockOfCode2; break;
+~   Case 3: BlockOfCode3; break;
+~   default:BlockOfCode;
+~  }
+#-------------------------------------------------------------------------------------
+? iterative statements in Php:
+! its a normal looping language who we have (for , while , do while , foreach).
+~ for(declarations; condition; increment/decrement){BlockOfCode;}
+~ while(condition){BlockOfCode;}
+~ do{BlockOfCode;}while(condition);
+~ forEach($arrayName as $ValueVar){} -> you know how it works. 
+* we mostly use the foreachLoop with the associative array.
+* how to get the array Length ? : simply use the count($arrayName); 
+? To print the items in the associative array and its keys:
+// simple use the foreachLoop in the following form:
+// forEach($arrayName as $KeyVar => $ValueVar){} 
+% we can use the alternative syntax also in the loops (for(...): BlockOfCode; endfor;)
 #-------------------------------------------------------------------------------------
 ? how to create a function in Php? : we have three ways
   // 6.1) function FunName1(){}
@@ -230,18 +254,6 @@
 ! Include: when including another Php script and it does'nt found
 ~ include("somePath");  
 ~ @include("somePath") or die("Massage");  
-#-------------------------------------------------------------------------------------
-? how to create a loop in php : 
-! its a normal looping language who we have (for , while , do while , foreach).
-! but in our course we will focus on the forLoop and the foreachLoop:
-  // for ($i = 0 , $i < arrayLength , $i++){}
-  // foreach($ArrayName as $var){}
-  ~ we mostly use the foreachLoop with the associative array.
-! how to get the array Length ? : simply use the count($arrayName); 
-  // the count method returns the number of items on a one based counting.
-? what if i need to print the items in the associative array and its keys?
-  // simple use the foreachLoop in the following form:
-  // forEach($arrayName as $KeyVar => $ValueVar){} 
 #-------------------------------------------------------------------------------------
 ? form handling : 
   // we handel using a PHP Global Variables that take the inputted values from the form to the php script.
