@@ -178,22 +178,64 @@
 // simple use the foreachLoop in the following form:
 // forEach($arrayName as $KeyVar => $ValueVar){} 
 % we can use the alternative syntax also in the loops (for(...): BlockOfCode; endfor;)
+* you know what is the break and continue.
 #-------------------------------------------------------------------------------------
-? how to create a function in Php? : we have three ways
-  // 6.1) function FunName1(){}
-  // 6.2) FUNCTION FunName2($var1 , $var2 , ...){}
-  // 6.3) FuNcTiOn FunName3($var1 , $var2 , ...){ return ...;}
+? the include and require:
+! mainly we use these two to have another file inside the script.
+// include("file Path") , require(file Path) are the same but there are one difference:
+~ when having some error in the include it will not stop the script. -> (just warnings).
+~ when having some error in the require it will stop the script. -> (warnings and die).
+* at the end you will notice that the include doesn't restrict like the require.
+// include_once("file Path") , require_once(file Path):
+* the main difference here is that it checks if you included or required the file before it will not work.
+#-------------------------------------------------------------------------------------
+? how to create a function in Php? : we have three ways:
+~ function FunName1(){}
+~ FUNCTION FunName2($var1 , $var2 , ...){}
+~ FuNcTiOn FunName3($var1 , $var2 , ...){ return ...;}
+! here we are working on the concept of DRY (Don't Repeat Yourself).
+% the parameter is the variables in the function header and the arguments are the values when calling it.
+% by default tha function returns NULL.
+~ FUNCTION FunName4($var1 = defaultValue, $var2 = defaultValue, ...){}
+~ FUNCTION FunName5($var1 = defaultValue, $var2 = defaultValue, ...){return ...;}
+% note that if you need to add one defaultValue keep it at the end of the Parameter List.
+? when having more then one default value and you need to change just one parameter:
+// FUNCTION FunName6($var1 = defaultValue, $var2 = defaultValue, ...){return ...;}
+// echo FunName6(var2: NewValue);
+? How to deal with functions that we don't know the number of arguments added by the user:
+~ we can use the function (func_num_args()) it returns the number of arguments.
+~ we can use the function (func_get_args(index)) it returns the an arguments with a specific index.
+~ we can use the function (func_get_args()) it returns an array of all arguments.
+% you can call these functions inside your function.
+? another way is to use the spread syntax (splat operator): 
+~ FUNCTION FunName7(...$values){return ...;}
+~ here it will get any number of arguments and form them like an array namely ($values). 
+% the splat operator needs to be at the end of the parameter list.
+% the splat operator is also used to unpack or spread and array in the argument list.
+? we can have functions as variables:
+~ FUNCTION FunName8(....){return ...;}
+~ $var = "FunName8";
+~ echo $var(); -> just like that. 
+! to check that a function has been defined use : function_exists("functionName");
+~ this function returns true if the function exists and false if its not.
+### we have a function called strlen("String") that returns the number of characters in a string.
+? passing arguments by Reference: 
+~ by default the arguments are passed by value to the function.  
+~ FUNCTION FunName9(&$var){return ...;}
+~ here any change to $var in the function body will affect it outside.
+? to specify the required return data type :
+~ FUNCTION FunName10($var1 , $var2) : dataType {return ...;}
 #-------------------------------------------------------------------------------------
 ? the variables Scope : its the place that you can use the variable in without any error.
   // there are three scopes:
-  // 7.1) local scope: the variable here is initialized inside (function , if statement , for loop).
-  // 7.2) Global scope: any variable outside the (function , if statement , for loop)
+  ~ local scope: the variable here is initialized inside (function , if statement , for loop).
+  ~ Global scope: any variable outside the (function , if statement , for loop)
   // we have two ways to call the global variables inside the local block:
-  // 7.2.1) use the key word global : Global $var1 , $var2 , ... .
-  // 7.2.2) use the GLOBALS array : 
+  ~ use the key word global : Global $var1 , $var2 , ... .
+  ~ use the GLOBALS array : 
   // when defining variables at the first of the php body you can do the following:
   // $GLOBALS['VARNAME']
-  // 7.3) static scope : its like the global variables in keeping the last value
+  ~ static scope : its like the global variables in keeping the last value
   // but here we use it inside any local block (function , if  , loops).
 #------------------------------------------------------------------------------------- 
 ? how to concatenate things in php?:
