@@ -225,6 +225,129 @@
 ~ here any change to $var in the function body will affect it outside.
 ? to specify the required return data type :
 ~ FUNCTION FunName10($var1 , $var2) : dataType {return ...;}
+? Anonymous Function: 
+// we use this type in creating a function that does a specific task.
+~ $var = function(...){...}; 
+// you can assign it to a variable or any thing.
+~ Variable Inherit From Parent Scope using the (use(varName)) keyword in Inherit by Reference.
+~ $var = function(...) use($var,...) {...}; 
+% Anonymous Function Can Be Passed To A Function
+% Anonymous Function Can Be Return From A Function
+! the main use case here is to pass a function to another function (array_map(func, $arr)).
+? Arrow or lambda Function:
+// its an alternative syntax to the Anonymous functions.
+// No Need For Curly Braces , Return Is Omitted.
+~ $var = fn(....) => "..."; 
+#-------------------------------------------------------------------------------------
+? All about Strings: 
+// you can access any letter in the string like an array using the index.
+% the indexing takes negative values that starts from the end.
+% if you updated an index its easy but if you updated a new index it will be added to the string. 
+// to get the number of letters we can use the function (strlen($StringO)).
+? Strings build in functions: 
+~ lcfirst(String (Req))
+// it will convert the first letter in the string to lower case. 
+~ ucfirst(String (Req))
+// it will convert the first letter in the string to upper case. 
+~ strtolower(String (Req))
+// it will convert the whole string in lower case. 
+~ strtoupper(String (Req))
+// it will convert the whole string in upper case. 
+~ ucwords(String (Req), Delimiters (Opt))
+// it will convert the first letter in each word in the string to upper case.
+// you can select a Delimiter that will separate the strings into words as you like:
+% e.g. echo ucwords("hi this is me | ahmad", "|"); -> Hi this is me | Ahmad 
+~ str_repeat(String (Req), Count (Req))
+// you can repeat a string for any number of times using count.
+~ implode(Separator (Opt), Array (Req)) => join() Is Alias
+// this function will concatenate all the array elements into one string.
+~ explode(Separator (Req), String (Req), Limit (Opt))
+// this function will convert you String to an array.
+// Separator (Req) -> select a separator to have elements.
+// Limit (Opt) -> you can specify the number of elements needed by you.
+% the limit takes negative values that will start to exclude elements from the end of the string.
+~ str_shuffle(String (Req))
+// this function will randomly change the positions of you string elements.
+~ strrev(String (Req))
+// this function will reverse your string.
+~ trim(String (Req), CharsList (Opt))
+// this function will trim spaces from the right and the left of the string.
+~ ltrim(String (Req), CharsList (Opt))
+// this function will trim spaces from the left of the string.
+~ rtrim(String (Req), CharsList (Opt))
+// this function will trim spaces from the right of the string.
+! you can customize trimmed characters: 
+  ! Space "" -> default
+  ! Tab \t
+  ! New Line \n
+  ! Carriage Return \r
+  ! Vertical Tab "\x0B"
+  ! NULL "\0"
+~ chunk_split(String (Req), Length (Opt), separator (Opt))
+// this function will split you string to chunks with a length and it will separate chunks by separator.
+~ strlen(String (Req))
+// this function will return the number of letters in your string.
+~ str_split(String (Req), Length (Opt))
+// this function will convert you string to an array and each element will have the specified length.
+~ strip_tags(String (Req), Allowed (Opt))
+// this function will remove any html tags in your string.
+// you can write an allowed tag to your string it will not be removed.
+~ nl2br(String (Req), XHTML (Opt))
+// it will add a <br> tag in every \n in your string.
+// XHTML is a boolean value that will add <br/> instead of <br> when its true.
+~ strpos(String (Req), Value (Req), Start Position (Opt))
+// this function will search for a substring in your string.
+// if the substring is founded it will return first letter occurrence index.
+// if the substring is not founded it will return false.
+~ strrpos(String (Req), Value (Req), Start Position (Opt))
+// this function will search for a substring in your string.
+// if the substring is founded it will return last letter occurrence index.
+// if the substring is not founded it will return false.
+! for all of these function these are a Case-Sensitive search function.
+~ stripos(String (Req), Value (Req), Start Position (Opt))
+~ strripos(String (Req), Value (Req), Start Position (Opt))
+! for all of these function these are a Incase-Sensitive search function.
+// for all of these function if you didn't insert a start position it will start from zero.
+// for all of these function it can have negative indexes you know how.
+~ substr_count(String (Req), Value (Req), Start Position (Opt), Length (Opt))
+// this function will count the number of times that the substring occurred in your string.
+// you know what "overlap string" means.
+~ parse_str(String (Req), Array (Req))
+// function in PHP is used to parse a query string into variables. 
+// This function is particularly useful for converting URL-encoded query strings into an associative array.
+% e.g. parse_str("name=ahmad&age=21&height=169");
+~ quotemeta(String (Req))
+// this function escapes any character that may need escaping.
+~ str_pad(String (Req), Length (Req), added (Opt), Pad Flag (Opt))
+// this function is used to balance your string to a givin number of characters.
+// Length : the needed string length
+// added : the string that will be added
+// Pad Flag : it can be (STR_PAD_BOTH , STR_PAD_LEFT , STR_PAD_RIGHT).
+~ strtr(String (Req), From (Req), To (Req)) 
+// we use this function to find a substring and replace it with another one.
+// it will find each substring and it will change it From -> To.
+~ strtr(String (Req), Array (Req))
+// here we can use an associative array when we need to change more than one.
+// $arr = ["From SubStr1" => "To SubStr2" , "From SubStr3" => "To SubStr4" , ...];
+~ str_replace(Find (Req), Replace With (Req), Data (Req), Replace Count (Opt))
+// this function will find a single or list of substrings and it will replace it with another.
+// the last parameter its a counter that counts the number of replacements.
+// when searching Its Case-Sensitive.
+% e.g. echo str_replace("#", "A", "A#AA@A$A", $count); -> AAAA@A$A 
+% e.g. echo str_replace(["#" , "@" , "$"], "A", "A#AA@A$A", $count); -> AAAAAAAA 
+% e.g. echo str_replace(["#" , "@" , "$"], ["A" , "B" , "C"], "A#AA@A$A", $count); -> AAAABACA 
+% e.g. echo str_replace(["#" , "@" , "$"], ["A" , "B"], "A#AA@A$A", $count); -> AAAABA A 
+~ str_ireplace(Find (Req), Replace With (Req), Data (Req), Replace Count (Opt))
+// its the same as the previous but when searching Its InCase-Sensitive.
+~ substr_replace(String (Req), Replace With (Req), Start (Req), Length (Opt))
+// these two functions will replace a substring in the string from a start point with some length.
+// if the length was a Positive Number then Length Of String To Be Replaced.
+% e.g. echo substr_replace("oneTwo", "A", 4, 2); -> "oneTA" 
+// if the length was a Negative Number then Characters Left At The End After Replacement.
+% e.g. echo substr_replace("oneTwo", "A", 2, -2); -> "onAwo" 
+// if the length was a zero (0) then Insert Instead Of Replace.
+% e.g. echo substr_replace("oneTwo", "A", 2, 0); -> "onAeTwo" 
+! note that it will work on the arrays in the same way as the string.
 #-------------------------------------------------------------------------------------
 ? the variables Scope : its the place that you can use the variable in without any error.
   // there are three scopes:
