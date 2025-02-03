@@ -239,7 +239,7 @@
 // No Need For Curly Braces , Return Is Omitted.
 ~ $var = fn(....) => "..."; 
 #-------------------------------------------------------------------------------------
-? All about Strings: 
+? All about Strings build In functions: 
 // you can access any letter in the string like an array using the index.
 % the indexing takes negative values that starts from the end.
 % if you updated an index its easy but if you updated a new index it will be added to the string. 
@@ -348,6 +348,81 @@
 // if the length was a zero (0) then Insert Instead Of Replace.
 % e.g. echo substr_replace("oneTwo", "A", 2, 0); -> "onAeTwo" 
 ! note that it will work on the arrays in the same way as the string.
+~ wordwrap(String (Req), Width = 75  (Opt), Break_Char = "\n" (Opt), Cut_Long = False (Opt))
+// this function will wrap your string in a given number of characters.
+// it has default values it will wrap words by the givin width in a new line by default.
+// if the word was equal to the width it will directly wrap it.
+// if the word was less than the width it will add more letters to match the width.
+// if the word was grater than the width it will not wrap it unless you make the cut_long = true.
+~ ord(String (Req))
+// this function takes a character and it returns the ASCII code.
+~ chr(Int (Req))
+// this function takes an ASCII code and it returns the character.
+~ similar_text(String_One (Req), String_Two (Req), Percent(Opt))
+// this function Returns The Number Of Matching Character in two strings.
+// it can return the percent of matching between these two strings.
+% e.g. echo similar_text("ahmad", "ahmad", $percent); -> 5
+% -> echo $percent; -> 100
+~ strstr(String (Req), Search (Req), Before_Search (Opt) = False)
+~ strchr(String (Req), Search (Req), Before_Search (Opt) = False)
+// this function searches in a string for a given string and returns whatever comes after it.
+// this is a Case-Sensitive search function.
+% e.g. echo strstr("hello world", "e"); -> ello world
+% e.g. echo strstr("hello world", "e", true); -> h
+~ stristr(String (Req), Search (Req), Before_Search (Opt) = False)
+// this is the same as the one above but its Case-Insensitive.
+~ number_format(Number (Req), Decimals (Opt), Decimal_String (Opt), Separator (Opt))
+// this function makes a good formatting for your number to increase readability.
+% e.g. echo number_format(10000000.19999); -> 10,000,000
+% e.g. echo number_format(10000000.19999, 3); -> 10,000,000.200 
+% e.g. echo number_format(10000000.19999, 3, "@"); -> 10,000,000@200 
+% e.g. echo number_format(10000000.19999, 3, "@","~"); -> 10~000~000@200 
+#-------------------------------------------------------------------------------------
+? All about Arrays build In functions: 
+~ array_chunk(Array (Req), Length (Req), Preserve_Key (Opt))
+// this function Splits An Array Into Chunks and Returns A Multidimensional Indexed Array.
+// if it was an associative array the boolean value Preserve_Key:
+// if the Preserve_Key was False its the Default it Reindexes The Keys.
+// if the Preserve_Key was True Preserves The Keys of the elements.
+~ array_change_key_case(Array (Req), Case (Opt))
+// this function Changes The Case Of All Keys In An Array.
+// if the case was (CASE_LOWER) its the Default it Changes The Keys To Lowercase.
+// if the case was (CASE_UPPER) its the Default it Changes The Keys To Uppercase.
+~ array_combine(Array_Of_Keys (Req), Array_Of_Values (Req))
+// this function combines two arrays to make them as one associative array.
+~ array_count_values(Array (Req))
+// this function returns an associative array that counts each element occurrences.
+~ array_reverse(Array (Req), Preserve (Opt))
+// this function Reverses Array Elements.
+// the Preserve default value is false that means that the indexes is preserved.
+// if the Preserve value was true it will reverse the elements and there indexes.
+~ array_flip(Array (Req))
+// this function Exchange Keys With Its Values in an array.
+~ count(Array (Req), Mode (Opt))
+// this function Counts the Array Elements.
+// if the mode value is 0 its the Default it Does Not Count the Elements Of Multidimensional Arrays.
+// if the mode value is 1 it will Count the Elements Of Multidimensional Arrays including the arrays.
+~ in_array(Search (Req), Array (Req), Type (Opt))
+// this function Checks If A Value Exists In An Array.
+// the type has a value of true and false.
+// if it was true it will search according to the values and the types.
+~ array_key_exists(Key (Req), Array (Req))
+// this function Checks If a Key Is Exists in the array.
+~ array_keys(Array (Req), Value (Opt), Type (Opt))
+// this function Returns an array that contains all the keys of the Array.
+// if you specified a value it returns the keys of all the occurrences of this value.
+// if the Type was False its the Default value it will not Check For Type.
+// if the Type was True it will Check For Type.
+~ array_values(Array (Req))
+// this function Returns All The Values Of An Array in an array.
+~ array_pad(Array (Req), Size (Req), Value (Req))
+// this function Pads Array To The Specified Length With A Value.
+// if the size is a Negative Value Add Elements Before Original Items.
+// If Size is less Array Length Nothing Will Be Deleted.
+~ array_product(Array (Req))
+// this function returns the Product Of Values In An Array it Returns Integer or Float.
+~ array_sum(Array (Req))
+// this function returns the summation Of Values In An Array it Returns Integer or Float.
 #-------------------------------------------------------------------------------------
 ? the variables Scope : its the place that you can use the variable in without any error.
   // there are three scopes:
