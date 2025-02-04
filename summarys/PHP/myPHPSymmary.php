@@ -423,6 +423,95 @@
 // this function returns the Product Of Values In An Array it Returns Integer or Float.
 ~ array_sum(Array (Req))
 // this function returns the summation Of Values In An Array it Returns Integer or Float.
+! Every Array Has An Internal Pointer To Its "Current" Element
+! Which Is Initialized To The First Element.
+! Functions Returns Value Of Array Element That's Currently Pointed By The Internal Pointer
+~ current(Array (Req)) 
+// this function Returns The Current Element In An Array.
+~ next(Array (Req)) 
+// this function Advances The Internal Pointer.
+~ prev(Array (Req)) 
+// this function Rewinds The Internal Pointer.
+~ reset(Array (Req)) 
+// this function Puts The Internal Pointer On First Element.
+~ end(Array (Req)) 
+// this function Puts The Internal Pointer On Last Element.
+~ array_merge(Array (Req), Other_Array/s (Opt))
+// this function Merges One Or More Arrays.
+// associative Array Key With The Same Name Override The Value Of The Previous One.
+// Numeric Key array Will Be Renumbered.
+~ array_replace(Array (Req), Replacement/s (Opt))
+// this function Replaces Elements From Passed Arrays Into The First Array.
+// if it finds a duplicated key it will Override its value in the first array.
+// if it finds a new key it will add it to the first array. 
+~ array_rand(Array (Req), Num (Opt))
+// this function picks a random index of your array.
+// it can pick more than one and it returns them as an array of indexes.
+~ shuffle(Array (Req))
+// this function renumbers the indexes of the array.
+// it changes the array by reference.
+// it shuffles the values of the array each time we call it.
+~ array_shift(Array (Req))
+// this function Shifts An Element Off The Beginning Of Array.
+// this Function Will Reset "reset()" The Input Array Pointer.
+~ array_pop(Array (Req))
+// this Function Pops The Element Off Ehe End Of Array.
+// this Function Will Reset "reset()" The Input Array Pointer.
+~ array_push(Array (Req), Values (Opt))
+// this Function Pushes One Or More Elements at The End Of the Array.
+// an alternative way to add one element is to Use ($arr[] = "element";).
+~ array_unshift(Array (Req), Values (Opt))
+// this Function Adds One or more Elements at The Beginning Of the An Array.
+// this Function Will Reset "reset()" The Input Array Pointer.
+~ array_slice(Array (Req), Start (Req), Length (Opt), Preserve_Keys (Opt))
+// this function Extracts A Slice Of The Array according to some values.
+// the start index is included in the slicing.
+// the start value can take a negative value.
+// if the Length has no value it will slice All Elements From Start Position to the end.
+// if the Length has a negative value it will Stop Slicing when it reaches this Index.
+// if the Preserve Keys value was False its the default it will Reset Keys.
+// if the Preserve Keys value was True it will Preserve Keys.
+! If Array Have String Keys, It Will Always Preserve The Keys.
+! this function doesn't change the reference array it returns a new slice.
+~ array_splice(Array (Req), Start (Req), Length (Opt), Array (Opt))
+// this function Removes A Portion Of The Array And Replace It With Something Else.
+// the start index is included in the splicing.
+// the start value can take a negative value.
+// if the Length has no value it will Remove All Elements From Start Position to the end.
+// if the Length has a negative value it will Stop Removing when it reaches this Index.
+~ sort(Array[Required], Flag[Optional])
+// this function Sorts An Indexed Array In Ascending Order.
+~ rsort(Array[Required], Flag[Optional])
+// this function Sorts An Indexing Array In Descending Order
+~ asort(Array[Required], Flag[Optional])
+// this function Sorts An Associative Array In Ascending Order According To The Values.
+~ arsort(Array[Required], Flag[Optional])
+// this function Sorts An Associative Array In Descending Order According To The Values.
+~ ksort(Array[Required], Flag[Optional])
+// this function Sorts An Associative Array In Ascending Order According To The Keys.
+~ krsort(Array[Required], Flag[Optional])
+// this function Sorts An Associative Array In Descending Order According To The Keys.
+~ natsort(Array[Required], Flag[Optional])
+// this function Sorts An Array By Using A "Natural Order" Algorithm.
+! flag parameter:
+// The $flags parameter allows developers to specify how the sorting should be performed. 
+// By default, this parameter is set to "SORT_REGULAR". 
+// the flag parameter has different values :
+% SORT_NUMERIC: 
+// Treats elements as numbers during comparison. 
+// For example, it would correctly order 30 and 3 numerically.
+% SORT_STRING: 
+// Treats elements as strings, which affects how they are compared lexicographically. 
+// For instance, it would sort '100' before '20' because it compares them as strings.
+% SORT_LOCALE_STRING: 
+// Similar to SORT_STRING, but uses the current locale settings for string comparison.
+% SORT_NATURAL: 
+// Sorts strings in a way that is more intuitive for humans (natural ordering)
+// treating numeric substrings in a way that reflects their numerical values.
+% SORT_FLAG_CASE: 
+// When combined with SORT_STRING, this flag allows for case-insensitive sorting. 
+// (e.g., treating 'a' and 'A' as equal).
+! note that flags can be combined like so sort($arr, flag1 | flag2 | ....);
 #-------------------------------------------------------------------------------------
 ? the variables Scope : its the place that you can use the variable in without any error.
   // there are three scopes:
