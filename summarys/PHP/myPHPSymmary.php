@@ -13,28 +13,28 @@
 
 /*
 ? php basics : 
-  // the skeleton of the php code is <?php "script" ?>
-  // we need to save the file in ".php" extension even if it has (html , css , js) codes.
-  // the php block can be written in the body tag or in the style tag.
-  % Note: the best practice is to not include the endTag "?>" it may cause problems later.
-  % the previous note we are talking about only the PHP files.
+// the skeleton of the php code is <?php "script" ?>
+// we need to save the file in ".php" extension even if it has (html , css , js) codes.
+// the php block can be written in the body tag or in the style tag.
+% Note: the best practice is to not include the endTag "?>" it may cause problems later.
+% the previous note we are talking about only the PHP files.
 ? how to add comment is php? :
-  // you can use (//) or (#) for single line comments and for multi lines comments you can use (/"*"*"/).
+// you can use (//) or (#) for single line comments and for multi lines comments you can use (/"*"*"/).
 #-------------------------------------------------------------------------------------    
 ? how to print any thing on the Php? : 
-  // you can use echo(anyThing) or you can use print.
-  // the echo doesn't brake a new line so keep that in mind.
-  // you can also use Print(anyThing) function.
-  // you can use print_r(anyThing) to print human readable codes.
+// you can use echo(anyThing) or you can use print.
+// the echo doesn't brake a new line so keep that in mind.
+// you can also use Print(anyThing) function.
+// you can use print_r(anyThing) to print human readable codes.
 #-------------------------------------------------------------------------------------
 ? all about data types:
-  % you can use a function to get the type gettype().
-  % keep in mind the Type Juggling And Automatic Type conversion.
-  % we also have a casting in the from any data type to any data type : (dataType) Value.
-  // to convert any data type to Boolean we use var_dump():
-  // - this function prints its output without the need to use (echo,print,...).
-  // - this function mainly Dumps information about a variable dataType.
-  // Boolean False,Integer Zero,Float Zero,Empty String,String "0",NULL,Empty Array.
+% you can use a function to get the type gettype().
+% keep in mind the Type Juggling And Automatic Type conversion.
+% we also have a casting in the from any data type to any data type : (dataType) Value.
+// to convert any data type to Boolean we use var_dump():
+// - this function prints its output without the need to use (echo,print,...).
+// - this function mainly Dumps information about a variable dataType.
+// Boolean False,Integer Zero,Float Zero,Empty String,String "0",NULL,Empty Array.
 #-------------------------------------------------------------------------------------
 ? Escaping characters: (\', \" , \\, \$, \n, \r, \t, \f, \ooo, \xhh, \u{xxxx}).
 ? nl2br("Text") : it inserts html <br> tag before each new line in the string.
@@ -59,49 +59,49 @@
 #-------------------------------------------------------------------------------------
 ? the Php language is not case sensitive language except for the Variables names.
 ? how to create a variable in php? : $x = 10;
-  // fun fact : variables in php doesn't has a dataType.
-  // the value of the variable specifics the var dataType.
-  // the variable can be (String , Integer , Float (also called double) , Boolean , Array , Object , NULL).
-  // when invoking the variable in any place you need to use $ and its caseSensitive.
-  // $VariableName = ...
-  ! you can call your variable within a double quotes but not in a single quotes.
-  // a variable of variable : $...$VarName "this is ridiculous".
-  ~ e.g. :
-  ~ $var1 = "String1";
-  ~ $$var1 = "String2";
-  ~ $$$var1 = "String3";
-  ~ now to print it you need to use a special things:
-  ~ echo "$var1";
-  ~ echo "${$var1}"; //$$var1
-  ~ echo "${$$var1}"; //$$$var1
-  // Assign Variable By Value and Reference:
-  // By Default, Variables Are Always Assigned By Value.
-  ~ e.g. :
-  ~ $var1 = "String1"; 
-  ~ $var2 = "String2";
-  ~ $var2 = $var1;
-  % any change to var2 won't affect var1 at all. 
-  // Assigned By Reference Make Variable Alias Or Point To Another.
-  ~ e.g. :
-  ~ $var1 = "String1"; 
-  ~ $var2 = "String2";
-  ~ $var2 = &$var1;
-  % any change to var2 will affect var1 always and visa versa.
+// fun fact : variables in php doesn't has a dataType.
+// the value of the variable specifics the var dataType.
+// the variable can be (String , Integer , Float (also called double) , Boolean , Array , Object , NULL).
+// when invoking the variable in any place you need to use $ and its caseSensitive.
+// $VariableName = ...
+! you can call your variable within a double quotes but not in a single quotes.
+// a variable of variable : $...$VarName "this is ridiculous".
+~ e.g. :
+~ $var1 = "String1";
+~ $$var1 = "String2";
+~ $$$var1 = "String3";
+~ now to print it you need to use a special things:
+~ echo "$var1";
+~ echo "${$var1}"; //$$var1
+~ echo "${$$var1}"; //$$$var1
+// Assign Variable By Value and Reference:
+// By Default, Variables Are Always Assigned By Value.
+~ e.g. :
+~ $var1 = "String1"; 
+~ $var2 = "String2";
+~ $var2 = $var1;
+% any change to var2 won't affect var1 at all. 
+// Assigned By Reference Make Variable Alias Or Point To Another.
+~ e.g. :
+~ $var1 = "String1"; 
+~ $var2 = "String2";
+~ $var2 = &$var1;
+% any change to var2 will affect var1 always and visa versa.
 #-------------------------------------------------------------------------------------
 ? how to create a constant in php? : define("a" ,1 ,false);
-  // the constant value can't be changed during the code.
-  // you don't need to use ($) when invoking a constant var.
-  // the constant scope is always Global.
-  // define("ConstantName" , constantValue , false/true);
-  // the last parameter stands for the caseSensitivity:
-  // if it was false (the default) the name is caseSensitive.
-  // if it was true the name is non-caseSensitive (they delete it).
-  % the best practice is to name it all in upperCase.
-  // we have a large set of pre defined constants in php follow the link: --> caseSensitive
-  ~ https://www.php.net/manual/en/reserved.constants.php.
-  // we have also what is called as magic constants in php follow the link: --> not caseSensitive
-  ~ https://www.php.net/manual/en/language.constants.magic.php.
-  ## don't forget about Reserved Keywords. 
+// the constant value can't be changed during the code.
+// you don't need to use ($) when invoking a constant var.
+// the constant scope is always Global.
+// define("ConstantName" , constantValue , false/true);
+// the last parameter stands for the caseSensitivity:
+// if it was false (the default) the name is caseSensitive.
+// if it was true the name is non-caseSensitive (they delete it).
+% the best practice is to name it all in upperCase.
+// we have a large set of pre defined constants in php follow the link: --> caseSensitive
+~ https://www.php.net/manual/en/reserved.constants.php.
+// we have also what is called as magic constants in php follow the link: --> not caseSensitive
+~ https://www.php.net/manual/en/language.constants.magic.php.
+## don't forget about Reserved Keywords. 
 #-------------------------------------------------------------------------------------
 ? the arithmetic operates in php:
 ~ $a + $b => Addition
@@ -277,12 +277,12 @@
 ~ rtrim(String (Req), CharsList (Opt))
 // this function will trim spaces from the right of the string.
 ! you can customize trimmed characters: 
-  ! Space "" -> default
-  ! Tab \t
-  ! New Line \n
-  ! Carriage Return \r
-  ! Vertical Tab "\x0B"
-  ! NULL "\0"
+! Space "" -> default
+! Tab \t
+! New Line \n
+! Carriage Return \r
+! Vertical Tab "\x0B"
+! NULL "\0"
 ~ chunk_split(String (Req), Length (Opt), separator (Opt))
 // this function will split you string to chunks with a length and it will separate chunks by separator.
 ~ strlen(String (Req))
@@ -479,19 +479,19 @@
 // the start value can take a negative value.
 // if the Length has no value it will Remove All Elements From Start Position to the end.
 // if the Length has a negative value it will Stop Removing when it reaches this Index.
-~ sort(Array[Required], Flag[Optional])
+~ sort(Array (Req), Flag (Opt))
 // this function Sorts An Indexed Array In Ascending Order.
-~ rsort(Array[Required], Flag[Optional])
+~ rsort(Array (Req), Flag (Opt))
 // this function Sorts An Indexing Array In Descending Order
-~ asort(Array[Required], Flag[Optional])
+~ asort(Array (Req), Flag (Opt))
 // this function Sorts An Associative Array In Ascending Order According To The Values.
-~ arsort(Array[Required], Flag[Optional])
+~ arsort(Array (Req), Flag (Opt))
 // this function Sorts An Associative Array In Descending Order According To The Values.
-~ ksort(Array[Required], Flag[Optional])
+~ ksort(Array (Req), Flag (Opt))
 // this function Sorts An Associative Array In Ascending Order According To The Keys.
-~ krsort(Array[Required], Flag[Optional])
+~ krsort(Array (Req), Flag (Opt))
 // this function Sorts An Associative Array In Descending Order According To The Keys.
-~ natsort(Array[Required], Flag[Optional])
+~ natsort(Array (Req), Flag (Opt))
 // this function Sorts An Array By Using A "Natural Order" Algorithm.
 ! flag parameter:
 // The $flags parameter allows developers to specify how the sorting should be performed. 
@@ -512,53 +512,222 @@
 // When combined with SORT_STRING, this flag allows for case-insensitive sorting. 
 // (e.g., treating 'a' and 'A' as equal).
 ! note that flags can be combined like so sort($arr, flag1 | flag2 | ....);
+? higher order functions : its a function that takes another function as a parameter.
+~ array_map(Callback Function (Req), Array (Req), Other Arrays (Opt))
+// this is a function that applies another function on all the elements of the array.
+% e.g. function fun1(param1){.....}
+% -> $arr = ["element1","element2","element3","element4","element5"];
+% -> array_map("fun1",$arr1);
+% e.g. function fun2(param1,param2){.....}
+% -> $arr1 = ["element1","element2","element3","element4","element5"];
+% -> $arr2 = ["element1","element2","element3","element4","element5"];
+% -> array_map("fun1",$arr1,$arr2);
+! -> e.g. lambda Function: array_map(fu(param1,param2) => {....} ,$arr1,$arr2);
+~ array_filter(Array (Req), Callback Function (Req), Flag (Opt))
+// this function filters the elements of the array according to some function.
+// the flag parameter takes three values:
+! 0 is the default value it Sends the Values of the elements As an Arguments to the function.
+! ARRAY_FILTER_USE_KEY it Sends the Keys of the elements As an Arguments to the function.
+! ARRAY_FILTER_USE_BOTH it Sends both the Keys and values of the elements As an Arguments to the function.
+~ array_reduce(Array (Req), Callback Function (Req), Initial_Value (Opt))
+// this function iterates through an array and reduces it to a single value.
+// the callback function takes two parameters: 
+// 1- the Carry value its the The return value of the previous iteration.
+// In the first iteration, the carry holds the value of Initial_Value if provided.
+// the Initial_Value default value is NULL.
+// 2- the item value its The value of the current element in the array.
+% e.g. 
+% function n($carry,$item){
+%     if ($carry > $item) {
+%         return $carry;
+%     } return $item;
+% }
+% $arr1 = [1,2,3,4,5,6,7,8,9,10,100];
+% echo array_reduce($arr1,"n");
+% iteration1: carry = NULL and item = 1 -> returns 1 
+% iteration1: carry = 1 and item = 2 -> returns 2
+% iteration1: carry = 2 and item = 3 -> returns 3
+% iteration1: carry = 3 and item = 4 -> returns 4
+% iteration1: carry = 4 and item = 5 -> returns 5
+% iteration1: carry = 5 and item = 6 -> returns 6
+% iteration1: carry = 6 and item = 7 -> returns 7
+% iteration1: carry = 7 and item = 8 -> returns 8
+% iteration1: carry = 8 and item = 9 -> returns 9
+% iteration1: carry = 9 and item = 10 -> returns 10
+% iteration1: carry = 10 and item = 100 -> returns 100
 #-------------------------------------------------------------------------------------
-? the variables Scope : its the place that you can use the variable in without any error.
-  // there are three scopes:
-  ~ local scope: the variable here is initialized inside (function , if statement , for loop).
-  ~ Global scope: any variable outside the (function , if statement , for loop)
-  // we have two ways to call the global variables inside the local block:
-  ~ use the key word global : Global $var1 , $var2 , ... .
-  ~ use the GLOBALS array : 
-  // when defining variables at the first of the php body you can do the following:
-  // $GLOBALS['VARNAME']
-  ~ static scope : its like the global variables in keeping the last value
-  // but here we use it inside any local block (function , if  , loops).
+? All about Math build In functions:
+~ abs(Number (Req))
+// this function returns the absolute value of a number.
+~ mt_rand(min (Opt), max (Opt) 
+~ rand(min (Opt), max (Opt)
+// these two functions are the same returns a random number within a specific range.
+// we use "mt_getrandmax()" function to Show Largest Possible Random Value.
+// mt_rand : Generates Random Value Via The Mersenne Twister Random Number Generator Algorithm.
+~ intdiv(dividend (Req), divisor (Req))
+// this function applies an integer division to two values.
+// its not the same as the division operator (/). 
+~ fmod(dividend (Req), divisor (Req))
+// this function applies a float modules on two values.
+// its not the same as the modules operator (%). 
+~ ceil(Number (Req))
+// Round Up To Integer
+~ floor(Number (Req))
+// Round Down To Integer
+~ round(Number (Req), Precision (Opt), Mode (Opt))
+// this function Rounds Up To Integer value according to some rules.
+// the optional Mode value takes four different values.
+// 1) PHP_ROUND_HALF_UP : the default value.
+// 2) PHP_ROUND_HALF_DOWN
+// 3) PHP_ROUND_HALF_EVEN
+// 4) PHP_ROUND_HALF_ODD
+! note: ceil, floor, round Return Double values.
+! keep the note of negative numbers in the ceil, floor, round functions.
+~ sqrt(Number (Req))
+// this function returns the Square Root of a given number.
+~ min(array (Req)) 
+~ min(Values (Req)
+// this function Finds Lowest Value in an array.
+~ max(array (Req)) 
+~ min(Values (Req))
+// this function Finds Highest Value in an array.
+! the min and max can compare two arrays as a whole.
+#-------------------------------------------------------------------------------------
+? All about filter build In functions:
+// we use filter functions to validate and sanitize external data gained from user.
+// we have a large number of filters you need to see it through documentations. 
+~ filter_list()
+// this function returns an array that contains All Supported Filters.
+~ filter_id(Filter_Name (Req))
+// this function takes a filter and it returns the ID of that filter.
+~ filter_var(Value (Req), Filter (Opt), Flags and options (Opt))
+~ filter_var(Value (Req), FilterID (Opt), Flags and options (Opt))
+// this function Filters A Variable With A Specified Filter.
+? different type of filters:
+// 1) Validate Filters : here we are just validation the given data.
+~ FILTER_VALIDATE_BOOL
+* this filter validates a boolean value according to four values [True, 1, Yes, On].
+* any thing other than these four values returns false.
+* to improve it we use a flag in the flag parameters:
+! Flag1: FILTER_NULL_ON_FAILURE it returns False For [False, 0, No, Off, ""] Only otherwise it returns NULL. 
+~ FILTER_VALIDATE_URL
+* this filter validates the URL and returns a string and the count of characters on the URL.
+* anything other than a correct URL it returns False.
+! Flag1: FILTER_NULL_ON_FAILURE
+* this flag makes it return NUll in the case if failure.
+! Flag2: FILTER_FLAG_PATH_REQUIRED
+* this flag validate that the URL contains a Path if it does not it returns false.
+! Flag3: FILTER_FLAG_QUERY_REQUIRED
+* this flag validates that the URL contains a query if it does not it returns false.
+~ FILTER_VALIDATE_IP
+* this filter validates the Ip and returns a string and the count of characters on the Ip.
+* anything other than a correct Ip it returns False.
+! Flag1: FILTER_NULL_ON_FAILURE
+* this flag makes it return NUll in the case if failure.
+! Flag2: FILTER_FLAG_IPV4
+* this flag customize the filter IPV4 only.
+! Flag3: FILTER_FLAG_IPV6
+* this flag customize the filter IPV6 only.
+~ FILTER_VALIDATE_MAC
+* this filter validates the MAC address and returns a string and the count of characters on the Mac.
+* anything other than a correct MAC address it returns False.
+! Flag1: FILTER_NULL_ON_FAILURE
+* this flag makes it return NUll in the case if failure.
+% to combine more than one flag: filter_var(var, filter, ["flags" => flag1 | flag2 | ....])
+~ FILTER_VALIDATE_EMAIL
+* this filter validates the Email and returns a string and the count of characters on the Email.
+* anything other than a correct Email it returns False.
+! Flag1: FILTER_NULL_ON_FAILURE
+* this flag makes it return NUll in the case if failure.
+~ FILTER_VALIDATE_INT
+* this filter validates the integer and returns an integer.
+* if the givin number was not an integer it convert it to integer.
+! Flag1: FILTER_NULL_ON_FAILURE
+* this flag makes it return NUll in the case if failure.
+! Options1: min_range
+! Options2: max_range
+* i will give an example to how you can use these below:
+% filter_var(var, filter, ["flags" => ..., "options" => [min_range => value, max_range => value]]);
+~ FILTER_VALIDATE_FLOAT
+* this filter validates the float and returns a float.
+* if the givin number was not a float it convert it to float.
+! Flag1: FILTER_NULL_ON_FAILURE
+* this flag makes it return NUll in the case if failure.
+! Options1: min_range
+! Options2: max_range
+* i will give an example to how you can use these below:
+% filter_var(var, filter, ["flags" => ..., "options" => [min_range => value, max_range => value]]);
+// 2) Sanitize Filters : here we validate and sanitize the data by changing the errors.
+~ FILTER_SANITIZE_EMAIL
+* this filter sanitizes the Email and returns a string and the count of characters on the Email.
+* it sanitizes by removing all characters except: 
+* Letters, Digits, and symbols (!,#, $, %, &, ', *, +, -, =, ?, ^, _, `, {, |, }, ~, @, ., [, ]).
+~ FILTER_SANITIZE_NUMBER_INT
+* this filter sanitizes the Integer and returns a string and the count of characters on the Integer.
+* it sanitizes by removing all characters except: 
+* Digits and symbols (+ , -).
+~ FILTER_SANITIZE_NUMBER_FLOAT
+* this filter sanitizes the float and returns a string and the count of characters on the float.
+And Optionally [.,eE]
+* it sanitizes by removing all characters except: 
+* Digits, symbols (+ , -) and Optionally ([, ., ,, e, E, ]).
+! Flags1: FILTER_FLAG_ALLOW_THOUSAND
+* this flag allows to keep the "," e.g. 10,000,008123091
+! Flags2: FILTER_FLAG_ALLOW_FRACTION
+* this flag allows to keep the "." e.g. 1000000.8123091
+~ FILTER_SANITIZE_URL
+* this filter sanitizes the URL and returns a string and the count of characters on the URL.
+* it sanitizes by removing all characters except: 
+* Letters, Digits, and symbols:
+* ($, -, _, ., +, !, *, ', (, ), ,, {, }, |, \, \, ^, ~, [, ], `, <, >, #, %, ", ;, /, ?, :, @, &, =, .)
+~ filter_input(Value (Req), FilterID (Opt), Flags and options (Opt))
+#-------------------------------------------------------------------------------------
+?, the variables Scope : its the place that you can use the variable in without any error.
+// there are three scopes:
+~ local scope: the variable here is initialized inside (function , if statement , for loop).
+~ Global scope: any variable outside the (function , if statement , for loop)
+// we have two ways to call the global variables inside the local block:
+~ use the key word global : Global $var1 , $var2 , ... .
+~ use the GLOBALS array : 
+// when defining variables at the first of the php body you can do the following:
+// $GLOBALS['VARNAME']
+~ static scope : its like the global variables in keeping the last value
+// but here we use it inside any local block (function , if  , loops).
 #------------------------------------------------------------------------------------- 
 ? how to concatenate things in php?:
-  // we concat using the dot (.)
-  // e.g. (echo 10 . "ahmad";)
-  // one of the concatenation sides must be a String Value.
-  // we can use an echo to just concatenate strings but some times its not possible.
-  // we can incrementally concatenate strings using (.=) e.g. : 
-  % $var1 = "String1";
-  % $var2 = "String2";
-  % $var3 = "String3";
-  % $var1 .= $var2; => $var1 = $var1 . $var2; -> "String1String2"
-  % $var1 .= $var3; => $var1 = $var1 . $var3; "String1String2String3"
+// we concat using the dot (.)
+// e.g. (echo 10 . "ahmad";)
+// one of the concatenation sides must be a String Value.
+// we can use an echo to just concatenate strings but some times its not possible.
+// we can incrementally concatenate strings using (.=) e.g. : 
+% $var1 = "String1";
+% $var2 = "String2";
+% $var3 = "String3";
+% $var1 .= $var2; => $var1 = $var1 . $var2; -> "String1String2"
+% $var1 .= $var3; => $var1 = $var1 . $var3; "String1String2String3"
 #-------------------------------------------------------------------------------------
 ? how to create an array in PHP? : we have two types of arrays
 ! the array in php is a dynamic generic (it accepts any dataType in the array) array.
-  // 1) indexed array: its a zero based array
-  // $var = array('' , '' , '' , ....);
-  // $x = array(1 , 2 , 3 , "ahmad" , true , 3.6 ,...);
-  // we have two ways to fill in the array elements:
-  // A) $x = array(... , ... , ....);
-  // B) $x;
-  //    $x[0] = 2;
-  //    $x[1] = "ahmad";
-  //    $x[2] = true;
-  //    $x[...] = ...;
-  // 2) associative array : its a key based array (like a hash map).
-  //    the key here can be a number or a string.
-  // $var = array(key => value , key => value , key => value , ...); 
-  // we have two ways to fill in the array elements:
-  // A) $y = array("name" => "ahmad" , 1 => 300 , "age" => 21);
-  // B) $y;
-  //    $y['name'] = "ahmad";
-  //    $y[1] = 300;
-  //    $y['age'] = 21; 
-  // if your one element in th associative array doesn't have a key it will follow the indexing rules.
+// 1) indexed array: its a zero based array
+// $var = array('' , '' , '' , ....);
+// $x = array(1 , 2 , 3 , "ahmad" , true , 3.6 ,...);
+// we have two ways to fill in the array elements:
+// A) $x = array(... , ... , ....);
+// B) $x;
+//    $x[0] = 2;
+//    $x[1] = "ahmad";
+//    $x[2] = true;
+//    $x[...] = ...;
+// 2) associative array : its a key based array (like a hash map).
+//    the key here can be a number or a string.
+// $var = array(key => value , key => value , key => value , ...); 
+// we have two ways to fill in the array elements:
+// A) $y = array("name" => "ahmad" , 1 => 300 , "age" => 21);
+// B) $y;
+//    $y['name'] = "ahmad";
+//    $y[1] = 300;
+//    $y['age'] = 21; 
+// if your one element in th associative array doesn't have a key it will follow the indexing rules.
 ? Array Operators:
 ~ $a +   $b => Union
 ~ $a ==  $b => Equal => Same Key And Value
@@ -585,153 +754,153 @@
 ~ @include("somePath") or die("Massage");  
 #-------------------------------------------------------------------------------------
 ? form handling : 
-  // we handel using a PHP Global Variables that take the inputted values from the form to the php script.
-  // we have five PHP Global Variables that is :
-  // 1) $_SERVER['PHP_SELF'] : it Returns the filename of the currently executing Php script.
-  // 2) $_SERVER['REQUEST_METHOD'] : Returns the request method used to access the page (POST or GET).
-  // 3) $_POST['formElementName'] : 
-  //    is widely used to collect values from a form after submitting an HTML form with method="post". 
-  //    (The names of the form fields will automatically be the keys in the $_POST array).
-  // 4) $_GET['formElementName'] :
-  //    can also be used to collect form data after submitting an HTML form with method="get".
-  //    (The names of the form fields will automatically be the keys in the $_GET array).
-  // 5) $_REQUEST['formElementName'] : 
-  // is used to collect data after submitting an HTML form, It contains the contents of both ($_GET, $_POST).
-  // The $_REQUEST variable can be used to collect form data sent with both the GET and POST methods.
+// we handel using a PHP Global Variables that take the inputted values from the form to the php script.
+// we have five PHP Global Variables that is :
+// 1) $_SERVER['PHP_SELF'] : it Returns the filename of the currently executing Php script.
+// 2) $_SERVER['REQUEST_METHOD'] : Returns the request method used to access the page (POST or GET).
+// 3) $_POST['formElementName'] : 
+//    is widely used to collect values from a form after submitting an HTML form with method="post". 
+//    (The names of the form fields will automatically be the keys in the $_POST array).
+// 4) $_GET['formElementName'] :
+//    can also be used to collect form data after submitting an HTML form with method="get".
+//    (The names of the form fields will automatically be the keys in the $_GET array).
+// 5) $_REQUEST['formElementName'] : 
+// is used to collect data after submitting an HTML form, It contains the contents of both ($_GET, $_POST).
+// The $_REQUEST variable can be used to collect form data sent with both the GET and POST methods.
 #-------------------------------------------------------------------------------------
 ? form Validation functions: 
 ! we have two functions to validate data inputted by a form in the php script
-  // 1) empty($var) : this function checks if the variable is empty like so:
-  // it returns TRUE if any case of the following cases occurred :
-  // 1.1) "" (an empty string)
-  // 1.2) 0 (integer)
-  // 1.3) 0.0 (float) 
-  // 1.4) "0" (string) 
-  // 1.5) NULL 
-  // 1.6) FALSE 
-  // 1.7) array () (an empty array)
-  // 1.8) "$var;" (a variable declared but without a value in a class). 
-  // integer (0) , String ("0" , "") , float or double (0.0) , obj (NULL , array(); , $var;) , Boolean (False)  
-  // otherwise it will return FALSE.
-  // 2) isset($var) : this function checks wether the variable have a value or not like so:
-  // it returns FALSE if the Variable has a (NULL) value or if it has no Value at all.
-  // otherwise it will return TRUE.
-  % firstly when handling a form you must have a look on (the names of the formElement) and (the used method)
-  % to compare two strings just use the (==) operator.
-  % when the select tag send an array of elements that array will be an indexed.
+// 1) empty($var) : this function checks if the variable is empty like so:
+// it returns TRUE if any case of the following cases occurred :
+// 1.1) "" (an empty string)
+// 1.2) 0 (integer)
+// 1.3) 0.0 (float) 
+// 1.4) "0" (string) 
+// 1.5) NULL 
+// 1.6) FALSE 
+// 1.7) array () (an empty array)
+// 1.8) "$var;" (a variable declared but without a value in a class). 
+// integer (0) , String ("0" , "") , float or double (0.0) , obj (NULL , array(); , $var;) , Boolean (False)  
+// otherwise it will return FALSE.
+// 2) isset($var) : this function checks wether the variable have a value or not like so:
+// it returns FALSE if the Variable has a (NULL) value or if it has no Value at all.
+// otherwise it will return TRUE.
+% firstly when handling a form you must have a look on (the names of the formElement) and (the used method)
+% to compare two strings just use the (==) operator.
+% when the select tag send an array of elements that array will be an indexed.
 #-------------------------------------------------------------------------------------
 ? PHP Cookies : 
 ! its a type of variables that the server creates to collect the browsing information on the webpage.
-  // its created at the server side (webpage) and stored at the client browser (client side).
-  // the sequence of the cookies goes like so:
-  // 1) at the first time the user requests the page the cookies will not be set yet.
-  // 2) the server will response to the request with the cookies to be set.
-  // 3) after that every time the user requests the webpage he will send the cookies with the request.
-  ~ what do we need cookies for : 
-  ~  1) It is used to recognize the user. 
-  ~  2) Tacking user activities and collect information.
-  % cookies requires the user acceptance to be saved on his side.
-  // how to create a cookie variable:
-  // setCookie("name"  , "value" , expireDate);
-  // setCookie("age" , 21 , time() + 60*60);
-  % we use the name attribute to invoke the cookie later on.
-  % the value attribute left mostly empty so that the user can fill it.
-  % after the expireDate passes the browser will forget the cookie.
-  % the expireDate is counted by seconds so you need to be aware.
-  % the time() function returns the time from the system.
-  // how to get a cookie value : by using the global COOKIE array
-  // $_COOKIE['cookieName'];
-  // how to delete a cookie : you simple can by just changing the expireDate to any time in the past.
-  // setCookie("age" , 21 , time() - 1);
+// its created at the server side (webpage) and stored at the client browser (client side).
+// the sequence of the cookies goes like so:
+// 1) at the first time the user requests the page the cookies will not be set yet.
+// 2) the server will response to the request with the cookies to be set.
+// 3) after that every time the user requests the webpage he will send the cookies with the request.
+~ what do we need cookies for : 
+~  1) It is used to recognize the user. 
+~  2) Tacking user activities and collect information.
+% cookies requires the user acceptance to be saved on his side.
+// how to create a cookie variable:
+// setCookie("name"  , "value" , expireDate);
+// setCookie("age" , 21 , time() + 60*60);
+% we use the name attribute to invoke the cookie later on.
+% the value attribute left mostly empty so that the user can fill it.
+% after the expireDate passes the browser will forget the cookie.
+% the expireDate is counted by seconds so you need to be aware.
+% the time() function returns the time from the system.
+// how to get a cookie value : by using the global COOKIE array
+// $_COOKIE['cookieName'];
+// how to delete a cookie : you simple can by just changing the expireDate to any time in the past.
+// setCookie("age" , 21 , time() - 1);
 #-------------------------------------------------------------------------------------
 ? PHP Sessions : its a php place that stores a set of variables which can be accessed by many pages.
-  // sessions are not stored on the client side unlike cookies it is stored on the server.
-  // how to create a session:
-  // we use the function session_start();
-  // this function must be used to get an access to the session variables (get , modify , delete , ...).
-  // any page that needs to access the session it must use the session_start function.
-  // how to create a session variable and give it a value:
-  // $_SESSION['VarName'] = VarValue; 
-  % the SESSION array is an associative array.
-  // how to get a Session variable:
-  // $_SESSION['VarName'];
-  // how to delete one session variable:
-  // unset($_SESSION['VarName']);
-  // how to delete all session Variables but not the session itself:
-  // session_unset();
-  // how to delete the whole session :
-  // destroy_session();
-  % By default, a session lasts until the user closes the browser (Cookies). 
-  ~ how to store an array in a session and how to get it and how to ger its elements:
-  // 1) create an array of any type (indexed or associative).
-  // 2) use the function session_start().
-  // 3) store the array in the SESSION global array.
-  // 4) get the array elements like so:
-  // $_SESSION['varName']['elementName' or index];
+// sessions are not stored on the client side unlike cookies it is stored on the server.
+// how to create a session:
+// we use the function session_start();
+// this function must be used to get an access to the session variables (get , modify , delete , ...).
+// any page that needs to access the session it must use the session_start function.
+// how to create a session variable and give it a value:
+// $_SESSION['VarName'] = VarValue; 
+% the SESSION array is an associative array.
+// how to get a Session variable:
+// $_SESSION['VarName'];
+// how to delete one session variable:
+// unset($_SESSION['VarName']);
+// how to delete all session Variables but not the session itself:
+// session_unset();
+// how to delete the whole session :
+// destroy_session();
+% By default, a session lasts until the user closes the browser (Cookies). 
+~ how to store an array in a session and how to get it and how to ger its elements:
+// 1) create an array of any type (indexed or associative).
+// 2) use the function session_start().
+// 3) store the array in the SESSION global array.
+// 4) get the array elements like so:
+// $_SESSION['varName']['elementName' or index];
 #-------------------------------------------------------------------------------------
 ? to creating a dataBase and manipulate data within it:
 ! we use phpMyAdmin webpage to do so with mySQL language.
 ! you know how to create a DB and how to do all the operations by the phpMyAdmin wizard GUI.
 ! now lets do a revision to some of the basic mySql Queries:
-  // 1) creating a dataBase : 
-  ~     create database DataBaseName;
-  // 2) creating a table into the dataBase:
-  ~     create table table name (columnName dataType constant , ....);  
-  ~     data types that we need is : VARCHAR(Length) , INT(Length) , CHAR(1).
-  ~     constants that we need is : NOT NULL , UNIQUE , PRIMARY KEY , AUTO_INCREMENT.
-  // 3) how to insert data into the table : we have two ways
-  ~     insert into TableName (column1 , column2 , ...) values (column1Value , column2Value , ....);
-  ~     insert into TableName values (column1Value , column2Value , ...);
-  % you need to be aware that the order of the columns is required in these two ways 
-  // if you need to change the columns order just do the following:
-  ~     insert into TableName (column2 , column1 , ...) values (column2Value , column1Value , ....);
-  // 4) how to update a record in the table: 
-  ~ update TableName set columnName = newValue , columnName = newValue , ... Where (.....);
-  % if there is no where clause all the records in the table will be updated.
-  // how to select a record of a set of records from a table:
-  ~ select * from TableName;
-  ~ select columnName , columnName , ... from TableName;
-  ~ select DISTINCT columnName , columnName , ... from TableName;
-  // the select statement will return exactly like the columns order that you write. 
-  // the where clause conditions is an important thing:
-  // 1) between .... and ...
-  // 2) < , > , <= , >= , <>
-  // 3) and , or
-  // 4) like "%A" , like "A%", like "%A%" , like "%A__"
-  // 5) how to delete all records or a set of records or a specific record:
-  ~ delete * from TableName; 
-  ~ delete from TableName;
-  ~ truncate table TableName;
-  // these three lines are equivalent all of them will delete all the records in the table.
-  ~ delete from TableName Where (...);
+// 1) creating a dataBase : 
+~     create database DataBaseName;
+// 2) creating a table into the dataBase:
+~     create table table name (columnName dataType constant , ....);  
+~     data types that we need is : VARCHAR(Length) , INT(Length) , CHAR(1).
+~     constants that we need is : NOT NULL , UNIQUE , PRIMARY KEY , AUTO_INCREMENT.
+// 3) how to insert data into the table : we have two ways
+~     insert into TableName (column1 , column2 , ...) values (column1Value , column2Value , ....);
+~     insert into TableName values (column1Value , column2Value , ...);
+% you need to be aware that the order of the columns is required in these two ways 
+// if you need to change the columns order just do the following:
+~     insert into TableName (column2 , column1 , ...) values (column2Value , column1Value , ....);
+// 4) how to update a record in the table: 
+~ update TableName set columnName = newValue , columnName = newValue , ... Where (.....);
+% if there is no where clause all the records in the table will be updated.
+// how to select a record of a set of records from a table:
+~ select * from TableName;
+~ select columnName , columnName , ... from TableName;
+~ select DISTINCT columnName , columnName , ... from TableName;
+// the select statement will return exactly like the columns order that you write. 
+// the where clause conditions is an important thing:
+// 1) between .... and ...
+// 2) < , > , <= , >= , <>
+// 3) and , or
+// 4) like "%A" , like "A%", like "%A%" , like "%A__"
+// 5) how to delete all records or a set of records or a specific record:
+~ delete * from TableName; 
+~ delete from TableName;
+~ truncate table TableName;
+// these three lines are equivalent all of them will delete all the records in the table.
+~ delete from TableName Where (...);
 ? Linking webPages with a DataBase : its a four steps process using PHP functions.
-  // 1) we need to connect to the dataBase by the following method:
-  ~ mysqli_connect("ServerName" , "UserName" , "password" , "DataBaseNAme");
-  ~ mysqli_connect("localhost" , "root" , "" , "DBName");
-  // the first three parameters is solid according to our course.
-  // if the dataBase is not created yet we can just settle for the first three parameters.
-  // if the connection is done with no errors it will return an SqlConnectionObj.
-  // if the connection faced any errors it will return FALSE.
-  // you need to store the result of this function in a regular variable.
-  // 2) to execute any query we will use the following method:
-  ~ mysqli_query($mysqli_connectVar , "mySqlQuery");
-  // if we execute any query with no errors like (insert,delete,update,create,...) it will return true.
-  // if an error occurred it will return false.
-  // if we execute a (select query) it will return a table.
-  // you also need to store its result in a variable.
-  // 3) to get the retrieved rows from the table we use :
-  ~ mysqli_fetch_array($mysqli_queryVar);
-  // we use this function in case we executed a select statement.
-  // each time we invoke this function it will return a row of the retrieved table in the from of an array.
-  // the array can be an indexedArray or it can be an associativeArray (the key here is the column name).
-  // in case we used the associativeArray the column names is caseSensitive.
-  // if we finished the retrieved table it will return false.
-  // 4) we need to close the connection to the dataBase at the end of the script so we use:
-  ~ mysqli_close($mysqli_connectVar);
-  ! mysqli_num_rows($mysqli_queryVar); this function returns the retrieved number of rows.
-  ! die("errorMassage"); this function will get out the whole php script.
-  % some practical notes :
-  % when you creating a dataBase make sure that its a completely new one.
-  % when you inserting,... into a table make sure to use single quotations over the values.
-  % after you are done with your code make sure to close your connection. 
+// 1) we need to connect to the dataBase by the following method:
+~ mysqli_connect("ServerName" , "UserName" , "password" , "DataBaseNAme");
+~ mysqli_connect("localhost" , "root" , "" , "DBName");
+// the first three parameters is solid according to our course.
+// if the dataBase is not created yet we can just settle for the first three parameters.
+// if the connection is done with no errors it will return an SqlConnectionObj.
+// if the connection faced any errors it will return FALSE.
+// you need to store the result of this function in a regular variable.
+// 2) to execute any query we will use the following method:
+~ mysqli_query($mysqli_connectVar , "mySqlQuery");
+// if we execute any query with no errors like (insert,delete,update,create,...) it will return true.
+// if an error occurred it will return false.
+// if we execute a (select query) it will return a table.
+// you also need to store its result in a variable.
+// 3) to get the retrieved rows from the table we use :
+~ mysqli_fetch_array($mysqli_queryVar);
+// we use this function in case we executed a select statement.
+// each time we invoke this function it will return a row of the retrieved table in the from of an array.
+// the array can be an indexedArray or it can be an associativeArray (the key here is the column name).
+// in case we used the associativeArray the column names is caseSensitive.
+// if we finished the retrieved table it will return false.
+// 4) we need to close the connection to the dataBase at the end of the script so we use:
+~ mysqli_close($mysqli_connectVar);
+! mysqli_num_rows($mysqli_queryVar); this function returns the retrieved number of rows.
+! die("errorMassage"); this function will get out the whole php script.
+% some practical notes :
+% when you creating a dataBase make sure that its a completely new one.
+% when you inserting,... into a table make sure to use single quotations over the values.
+% after you are done with your code make sure to close your connection. 
 */

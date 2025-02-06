@@ -1,9 +1,10 @@
 <?php 
-$arr1 = ["value1","value2","value3","value4","value5"];
-$arr2 = ["key1" => "value*1","key2" => "value*2","key3" => "value*3","key4" => "value*4","key5" => "value*5"];
-shuffle($arr2);
-echo "<pre><h1>";
-print_r($arr2); 
-echo "</pre></h1>";
-echo "<br>";
-?>
+// echo "<pre><h1>";
+// print_r(filter_list());
+// echo "</pre></h1>";
+// echo "<br>";
+// echo "<h1>";
+// echo filter_id("boolean");
+// echo "</h1>";
+$var = "xah ma d8 95@gma ¥ il.c om";
+var_dump(filter_var($var,FILTER_SANITIZE_NUMBER_INT));
