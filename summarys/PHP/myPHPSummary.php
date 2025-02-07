@@ -680,7 +680,73 @@ And Optionally [.,eE]
 * it sanitizes by removing all characters except: 
 * Letters, Digits, and symbols:
 * ($, -, _, ., +, !, *, ', (, ), ,, {, }, |, \, \, ^, ~, [, ], `, <, >, #, %, ", ;, /, ?, :, @, &, =, .)
-~ filter_input(Value (Req), FilterID (Opt), Flags and options (Opt))
+~ filter_input(Type (Req), Value (Req), Filter (Opt), Options (Opt))
+// this function validates forms and it returns the inputted data without warnings.
+// Type can be: (INPUT_GET, INPUT_POST, INPUT_COOKIE, INPUT_SERVER, INPUT_ENV).
+% we write the Types according to the form method.
+// Value: its the name of the input filed.
+// you can also use Filters and Options as we learned previously.
+! important note : it will not return any data in case of the failure of filters.
+#-------------------------------------------------------------------------------------
+? File System Functions:
+~ disk_total_space("diskName:");
+// Get Total Space In Bytes.
+~ disk_free_space("diskName:") 
+~ diskfreespace("diskName:")
+// Get Free Space In Bytes.
+~ file_exists(Path)
+// Checks If A File Or Directory Exists.
+~ filesize(File_Name)
+// Get Space In Bytes.
+~ is_dir(Name)
+// this function Tells If The Filename Is A Directory.
+~ mkdir(Path (Req), Mode (Opt) = 0777, Recursive (Opt), Context (Opt))
+// this function creates a directory with any given Path.
+// the Mode represents the Permissions its 4 digits Octal numbers.
+! Permissions are Ignored On Windows.
+! the application will be uploaded into a Linux server build on unix thats why we need Permissions.    
+// the Mode value Starts With 0 in the first digit. 
+// the Second digit Is for Owner Permission.
+// the Third digit Is for User Group Permission.
+// the Fourth digit Is for Others Permissions.
+// the Recursive takes a boolean value its used to create multiple directories.
+% e.g. mkdir("dir1/dir2/dir3", 0777, true); it will create (dir1, dir2, dir3).
+~ rmdir(Name (Req), Context (Opt))
+// this function deletes with a givin path iff it was an empty directory.
+~ chmod(File (Req), Mode (Req))
+// this function changes the Permissions of an already existing directory. 
+~ fileperms(Name)
+// this function returns the Permissions of a directory in decimal.
+% for a given directory it will return a decimal that when converting it gives (40777).
+% the 4 means that this is a directory and the rest is the Permissions. 
+~ clearstatcache()
+// we need this function to get the Permission of a directory correctly after changing it. 
+! You Can Change Owner Permissions using chown().
+! You Can Change Group Permissions using chgrp().
+~ basename(Path (Req), Suffix (Opt))
+// this function Returns the Trailing Name Component Of Path.
+// when using a suffix it will remove the suffix of the returned data.
+% e.g. echo basename("myPHPSummary.php"); -> "myPHPSummary.php"
+% e.g. echo basename(__FILE__,".php"); -> "myPHPSummary"
+~ dirname(Path (Req), Levels (Opt) = 1)
+// this function Returns A Parent Directory's Path.
+// Levels Number of Parent Directories To Go Up.
+% e.g. 
+% echo dirname(__FILE__,1);
+! C:\Users\2021\Desktop\FrontEnd\elzeroWeb\summarys\PHP
+% echo dirname(__FILE__,2);
+! C:\Users\2021\Desktop\FrontEnd\elzeroWeb\summarys
+% echo dirname(__FILE__,3);
+! C:\Users\2021\Desktop\FrontEnd\elzeroWeb
+~ realpath(Path (Req))
+// this function returns the absolute path of the givin file or directory.
+~ pathinfo(Path (Req), Flags (Opt))
+// this function returns an associative array that contains (DIRNAME, BASENAME, EXTENSION, FILENAME).
+// you can get any thing by the key of the associative array or you can use flags.
+! flag1 : PATHINFO_DIRNAME
+! flag2 : PATHINFO_BASENAME
+! flag3 : PATHINFO_EXTENSION
+! flag4 : PATHINFO_FILENAME
 #-------------------------------------------------------------------------------------
 ?, the variables Scope : its the place that you can use the variable in without any error.
 // there are three scopes:

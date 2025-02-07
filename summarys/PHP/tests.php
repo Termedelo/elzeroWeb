@@ -6,5 +6,16 @@
 // echo "<h1>";
 // echo filter_id("boolean");
 // echo "</h1>";
-$var = "xah ma d8 95@gma ¥ il.c om";
-var_dump(filter_var($var,FILTER_SANITIZE_NUMBER_INT));
+// $var = "xah ma d8 95@gma ¥ il.c om";
+// var_dump(filter_var($var,FILTER_SANITIZE_NUMBER_INT));
+echo dirname(__FILE__,1);
+echo "<br>";
+echo dirname(__FILE__,2);
+echo "<br>";
+echo dirname(__FILE__,3);
+echo "<pre><h1>";
+print_r(pathinfo(__FILE__));
+echo "</pre></h1>";
+echo "<pre><h1>";
+print_r(pathinfo(__FILE__, PATHINFO_DIRNAME));
+echo "</pre></h1>";
