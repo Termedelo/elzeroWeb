@@ -668,7 +668,6 @@
 * Digits and symbols (+ , -).
 ~ FILTER_SANITIZE_NUMBER_FLOAT
 * this filter sanitizes the float and returns a string and the count of characters on the float.
-And Optionally [.,eE]
 * it sanitizes by removing all characters except: 
 * Digits, symbols (+ , -) and Optionally ([, ., ,, e, E, ]).
 ! Flags1: FILTER_FLAG_ALLOW_THOUSAND
@@ -688,7 +687,7 @@ And Optionally [.,eE]
 // you can also use Filters and Options as we learned previously.
 ! important note : it will not return any data in case of the failure of filters.
 #-------------------------------------------------------------------------------------
-? File System Functions:
+? All About File System Functions:
 ~ disk_total_space("diskName:");
 // Get Total Space In Bytes.
 ~ disk_free_space("diskName:") 
@@ -747,6 +746,169 @@ And Optionally [.,eE]
 ! flag2 : PATHINFO_BASENAME
 ! flag3 : PATHINFO_EXTENSION
 ! flag4 : PATHINFO_FILENAME
+~ Fopen(FileName (Req), Mode (Req), IncludePath (Opt), Context (Opt))
+// this function opens a file that can be read from or written on.
+// The Mode has four different values:
+// 1) "r" this value allows Read only, the Pointer will be At The Beginning of the file.
+// 2) "r+" this value allows Read and Write, the Pointer will be At The Beginning of the file.
+// 3) "w" this value allows Write only:
+* the Pointer will be At The Beginning of the file. 
+* it will clear the file by Truncating it To 0 Length. 
+* it will Create the file If the file does Not Exists.
+* if the file does exists it will return a warning.
+// 4) "w+" this value allows Read and Write:
+* the Pointer will be At The Beginning of the file.
+* it will clear the file by Truncating it To 0 Length. 
+* it will Create the file If the file does Not Exists.
+* if the file does exists it will return a warning.
+// 5) "a" this value allows Write only:
+* the Pointer will be At The End of the file. 
+* it will Create the file If the file does Not Exists.
+* if the file does exists it will return a warning.
+// 6) "a+" this value allows Read and Write:
+* the Pointer will be At The End of the file. 
+* it will Create the file If the file does Not Exists.
+* if the file does exists it will return a warning.
+// 7) "x" this value Opens the file For Write only: 
+* the Pointer will be At The Beginning of the file.
+* it will Create the file If the file does Not Exists.
+* if the file does exists it will return a warning.
+// 8) "x+" this value Opens the file For Read and Write:
+* the Pointer will be At The Beginning of the file.
+* it will Create the file If the file does Not Exists.
+* if the file does exists it will return a warning.
+// 9) "c" this value Opens the file For Write only:
+* it will Create the file If the file does Not Exists.
+* if the file does exists it will not return a warning.
+* it will not clear the existing file that means (No Truncation).
+* the Pointer will be At The Beginning of the file.
+// 10) "c+" this value Opens the file For Read and Write:
+* it will Create the file If the file does Not Exists.
+* if the file does exists it will not return a warning.
+* it will not clear the existing file that means (No Truncation).
+* the Pointer will be At The Beginning of the file.
+~ fgets(File (Req), Length (Opt))
+// this function Gets A Line From An Opened File with a given length in Bytes.
+// The Length is a Number Of Bytes To Read or it reads to the End Of Line If you didn't give a length.
+~ fread(File (Req), Length (Req))
+// this function Gets Data From An Opened File with a given length in Bytes.
+// the length can be any value in bytes but if it was grater that the file size it will read it all. 
+~ fclose(File (Req))
+// this function Closes An Opened File Pointer you need to use it at the end.
+~ fwrite(File (Req), String (Req), Length (Opt))
+// this function Writes To An Opened File.
+// the Length is the value that need to be written to the file
+// if you didn't give the length it will write all of the givin string.
+~ file(File (Req), Flag (Opt), Context (Opt))
+// this function Reads the entire file into an array.
+// where each line of the file becomes an element in the array.
+// it returns false if the file does not exists or when a failure occurs.
+// this function can have a number of flags:
+! flag1: FILE_IGNORE_NEW_LINES : Removes newline characters (\n, \r) from each array element.
+! flag2: FILE_SKIP_EMPTY_LINES : Skips empty lines.
+! flag3: FILE_USE_INCLUDE_PATH : Searches for the file in the include path.
+~ feof(File (Req))
+// this function checks whether the end-of-file (EOF) has been reached for an open file.
+~ rewind(File (Req))
+// this function Returns The Pointer (Cursor) To The Beginning Of The File.
+~ ftell(File (Req))
+// this function Returns the Current Position Of The Pointer (Cursor).
+// it Returns the current position of the file pointer in bytes from the beginning of the file.
+~ fseek(File (Req), Offset (Req), Whence (Opt))
+// this function moves the Pointer (Cursor) anyWhere in the file.
+// the Offset is the needed value for moving on the file and its In Bytes.
+// Determines how the $offset is applied, Possible values:
+! SEEK_SET (default): Moves to $offset bytes from the beginning of the file.
+! SEEK_CUR: Moves $offset bytes from the current position.
+! SEEK_END: Moves $offset bytes from the end of the file (negative values go backward).
+~ glob(Pattern (Req), Flags (Opt))
+// this function Finds All Path Names that Matches A Pattern And Return Array.
+% e.g. glob("Path/FileName.Extension");
+% e.g. glob("elzeroWeb/summarys/PHP/*.*");
+% e.g. glob("elzeroWeb/summarys/PHP/FileName.*");
+% e.g. glob("elzeroWeb/summarys/PHP/FileName.php");
+~ rename(Old (Req), New (Req))
+// this function Renames A File Or Directory.
+// you can cut a file from one directory to another as well as rename it.
+% e.g. rename("oldPath/oldName", "oldPath/newName") -> "Rename".
+% e.g. rename("oldPath/oldName", "newPath/oldName") -> "Cut".
+% e.g. rename("oldPath/oldName", "newPath/newName") -> "Cut and Rename".
+~ copy(Old (Req), New (Req), Context (Opt))
+// this function creates a copy of a file or a directory into another path.
+// it can also rename the copied file or directory. 
+~ unlink(File (Req), Context (Opt))
+// this function deletes a file or directory.
+~ file_get_contents(File (Req), Include_Path (Opt), Context (Opt), Start (Opt), MaxLength (Opt))
+// this function Reads the Entire File and return it Into A String.
+// the include_path:
+* the include_path is a configuration setting in PHP that specifies a list of directories. 
+* this list of directories where PHP will look for files when using functions like ours.
+* we can get or set the include_path using get_include_path(), set_include_path("Path").
+// the Start and the MaxLEngth parameters represents the position of the Pointer (Cursor) in Bytes.  
+~ file_put_contents(File (Req), Data (Req), Mode (Opt), Context (Opt))
+// this function writes data to a file and it truncates the old content.
+// to keep the old content change Mode to "FILE_APPEND".
+// this function Opens And Closes the file and Creates it If it is not existed.
+// it Returns the Number Of Bytes that have been written to the file.
+#-------------------------------------------------------------------------------------
+? All About Date And Time System Functions:
+~ date_default_timezone_get()
+// this function gets the server's Timezone.
+~ date_default_timezone_set(timezone (Req))
+// this function sets the server's Timezone.
+~ date_create(Date/Time (Opt), Timezone (Opt))
+// this function creates an object of date that we can use.
+* if the (Date/Time) was String it will set it as you give it.
+* if the (Date/Time) was NULL it will set it to the Current Time (default "now").
+* if the (Timezone) was String it will set it as you give it.
+* if the (Timezone) was NULL it will set it to the Current Timezone.
+~ timezone_open(Timezone)
+// this function creates an object of a givin Timezone.
+~ checkdate(Month (Req), Day (Req), Year (Req))
+// this function checks the Validity of a A Gregorian Date.
+~ date_format(DateObj, "Format")
+// the formats: 
+// Year:
+* "Y" : formats the Year in Four Digits. -> e.g.(2025)
+* "y" : formats the Year in Two Digits. -> e.g.(25)
+// Month:
+* "m" : formats the Month as a numbers (01-12).
+* "M" : formats the Month as a Text of 3 Letters. -> e.g.(Mar)
+* "F" : formats the Month as a Full Text. -> e.g.(March)
+* "t" : it returns the Number Of Days In This Month. -> e.g.(31,30,29,28)
+// Day:
+* "d" : formats the Day as a numbers With a Leading Zero (01-31).
+* "j" : formats the Day as a number Without the Leading Zero. -> e.g.(4,7,9)
+* "D" : formats the Day as a Text Day of 3 Letters. (Sun, Mon).
+* "l" : formats the Day as a Full Text. e.g.(sunday, monday).
+* "z" : it returns the Day number in the year (0-365).
+* "S" : it puts a Suffix For Day Of The Month (st, rd, nth). -> e.g.(1st,3rd, 8th).
+// Time:
+* "a" : formats the am/pm in Small letters (am/pm).
+* "A" : formats the am/pm in Capital letters (AM/PM).
+// Hour:
+* "h" : formats the Hour as a numbers With a Leading Zero (01-12) in (am/pm) format.
+* "g" : formats the Hour as a numbers Without a Leading Zero (1-12) in (am/pm) format.
+* "H" : formats the Hour as a numbers With a Leading Zero (00-23) in (24) format. 
+* "G" : formats the Hour as a numbers Without a Leading Zero (0-23) in (24) format.
+// Minutes, Seconds, Micro:
+* "i" : this is for the Minutes (00-59).
+* "s" : this is for the Seconds (00-59).
+* "u" : this is for the Microseconds.
+~ date_interval_create_from_date_string()
+// this function creates a DateInterval object from a string representation of an interval.
+// this function is used when we need to add or subtract something Dates.
+% e.g. date_interval_create_from_date_string("1 year 2 months 7 days"); 
+~ date_add(DateObj, DateIntervalObj)
+// this function Adds a date to your given date.
+~ date_sub(DateObj, DateIntervalObj)
+// this function Subtracts a date from your given date.
+~ date_modify(DateObj, "String")
+// this function modifies the date directly.
+% e.g. date_modify(DateObj, "+20 months");
+% e.g. date_modify(DateObj, "-10 months");
+% e.g. date_modify(DateObj, "+1 year 10 months 18 days");
+% e.g. date_modify(DateObj, "-2 year 7 months 20 days");
 #-------------------------------------------------------------------------------------
 ?, the variables Scope : its the place that you can use the variable in without any error.
 // there are three scopes:
