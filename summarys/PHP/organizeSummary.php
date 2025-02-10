@@ -1180,6 +1180,115 @@
 ! Use exit(); after redirects to stop further script execution.
 ! Use header_remove() to remove previously set headers.
 #--------------------------------------------------------------------------------------------------
+? Uploading Files in Php:
+// Html Needed things:  
+* 1- form with an action = "action.php", method = "Post", enctype = "multipart/form-data".
+* 2- an input with the type = "file" Optionally multiple and accept = "...". 
+* the multiple attribute is to allow user to upload more then one file.
+* the accept attribute in the allowed type of files it could take:
+* (.anyFileExtension , .anyFileExtension , (image/*) , (video/*) , (audio/*))
+* 3- you can find the uploaded files in the superGlobal array called $_FILES.
+! $_FILES SuperGlobal The $_FILES array contains the uploaded file's data it contains:
+* $_FILES["UploadedFileName"]["name"]: The original file name as it was uploaded by the user.
+* $_FILES["UploadedFileName"]["type"]: The Extensions type of the uploaded file.
+* $_FILES["UploadedFileName"]["tmp_name"]: 
+* The temporary file path where PHP stores the uploaded file before moving it to its final destination.
+* $_FILES["UploadedFileName"]["error"]: The error code associated with the file upload:
+! Error Code: "UPLOAD_ERR_OK" -> Numeric Value = 0	
+* Error Meaning: No error file uploaded successfully.
+! Error Code: "UPLOAD_ERR_INI_SIZE" -> Numeric Value = 1	
+* Error Meaning: The uploaded file exceeds the upload_max_filesize directive in php.ini.
+! Error Code: "UPLOAD_ERR_FORM_SIZE" -> Numeric Value = 2	
+* Error Meaning: The uploaded file exceeds the MAX_FILE_SIZE directive specified in the HTML form.
+! Error Code: "UPLOAD_ERR_PARTIAL" -> Numeric Value = 3	
+* Error Meaning: The file was only partially uploaded.
+! Error Code: "UPLOAD_ERR_NO_FILE" -> Numeric Value = 4	
+* Error Meaning: No file was uploaded.
+! Error Code: "UPLOAD_ERR_NO_TMP_DIR" -> Numeric Value = 6	
+* Error Meaning: Missing a temporary folder.
+! Error Code: "UPLOAD_ERR_CANT_WRITE"	 -> Numeric Value = 7	
+* Error Meaning: Failed to write the file to disk.
+! Error Code: "UPLOAD_ERR_EXTENSION" -> Numeric Value = 8	
+* Error Meaning: A PHP extension stopped the file upload.
+* $_FILES["UploadedFileName"]["size"]: The size of the uploaded file in bytes.
+~ move_uploaded_file($file["tmp_name"], $target_file);
+// this function Moves the uploaded File to the Desired Location.
+// this function moves the file from its temporary location to the desired location on the server.
+? an important Function when dealing with file uploading:
+~ pathinfo($path (Req), $flags = PATHINFO_ALL (Opt))
+// this function is used to retrieve information about a file path. 
+// It returns an associative array (or a string, depending on the Flag argument).
+// this function has a number of flags:
+! flag1: PATHINFO_DIRNAME 
+* this flag Returns only the directory name.
+! flag2: PATHINFO_BASENAME 
+* this flag Returns only the file name with the extension.
+! flag3: PATHINFO_EXTENSION 
+* this flag Returns only the file extension.
+! flag4: PATHINFO_FILENAME 
+* this flag Returns only the file name without the extension.
+! flag5: PATHINFO_ALL (default) 
+* this flag Returns an associative array with all parts.
+#--------------------------------------------------------------------------------------------------
+? working with Json Files in Php:
+// PHP provides built-in functions for working with JSON (JavaScript Object Notation). 
+// these functions allows you to encode (convert PHP to JSON) and decode (convert JSON to PHP) easily.
+? json Encoding:
+~ json_encode($value (Req), $flags = 0 (Opt), $depth = 512 (Opt))
+// this function in PHP converts PHP arrays or objects into a JSON string.
+* value: The PHP array or object to convert into JSON.
+* flags: this is the Formatting options.
+! you can use "JSON_PRETTY_PRINT" to make JSON more readable for debugging.
+% e.g. json_encode($arr, JSON_PRETTY_PRINT).
+* depth: this is the Maximum recursion depth.
+! we can encode Associative/Indexed Arrays as well as Objects.
+? json decoding:
+~ json_decode($json (Req), $associative = false (Opt), $depth = 512 (Opt), $flags = 0 (Opt))
+// this function in PHP converts a JSON string into a PHP object or an index array.
+* json: The JSON string to decode.
+! this json can be String of an external file you need to use file_get_contents("jsonFilePath").
+* associative: its true for an associative array, false for an object.
+* depth: this is the Maximum depth (default: 512).
+* flags: this is the Special decoding options.
+? Handling Errors in JSON Processing (PHP):
+// When working with JSON data in PHP using json_encode() and json_decode() errors can occur.
+// errors can occur especially when the JSON string is malformed.
+// also when there are issues in encoding/decoding large numbers:
+// like invalid UTF-8 characters, or exceeding recursion depth. 
+! It's essential to handle these errors gracefully to ensure the program functions as expected.
+~ json_last_error()
+// Returns the last error code after json_encode() or json_decode().
+~ json_last_error_msg()
+// Returns a string with the description of the last error.
+# we have different types of errors each error has a code and a message:
+* Description: No error occurred.	
+! Error Code: "JSON_ERROR_NONE" -> Numeric Value = 0
+! json_last_error_msg() Output: "No error"
+* Description: Exceeded the maximum stack depth.
+! Error Code: "JSON_ERROR_DEPTH" -> Numeric Value = 1		
+! json_last_error_msg() Output: "Maximum stack depth exceeded"
+* Description: Invalid or malformed JSON state.
+! Error Code: "JSON_ERROR_STATE_MISMATCH" -> Numeric Value = 2		
+! json_last_error_msg() Output: "State mismatch"
+* Description: Unexpected control character.
+! Error Code: "JSON_ERROR_CTRL_CHAR" -> Numeric Value = 3		
+! json_last_error_msg() Output: "Unexpected control character"
+* Description: Syntax error in the JSON.
+! Error Code: "JSON_ERROR_SYNTAX" -> Numeric Value = 4		
+! json_last_error_msg() Output: "Syntax error"
+* Description: Malformed UTF-8 characters.
+! Error Code: "JSON_ERROR_UTF8" -> Numeric Value = 5
+! json_last_error_msg() Output: "Malformed UTF-8 characters"
+* Description: Recursive reference detected.
+! Error Code: "JSON_ERROR_RECURSION" -> Numeric Value = 6		
+! json_last_error_msg() Output: "Recursive reference"
+* Description: Encoded value is INF or NaN.
+! Error Code: "JSON_ERROR_INF_OR_NAN"	-> Numeric Value = 7	
+! json_last_error_msg() Output: "Inf and NaN cannot be JSON encoded"
+* Description: Unsupported data type for encoding.
+! Error Code: "JSON_ERROR_UNSUPPORTED_TYPE"	-> Numeric Value = 8	
+! json_last_error_msg() Output: Unsupported type"
+#--------------------------------------------------------------------------------------------------
 ? to creating a dataBase and manipulate data within it:
 ! we use phpMyAdmin webpage to do so with mySQL language.
 ! you know how to create a DB and how to do all the operations by the phpMyAdmin wizard GUI.
