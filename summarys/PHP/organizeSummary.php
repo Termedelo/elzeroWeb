@@ -1,6 +1,3 @@
-<?php
-
-?>
 /*
 ? why do we need the PHP scripts : to process data collected on the web pages e.g. forms
 // if the php file isn't uploaded on the server it won't work.
@@ -9,9 +6,7 @@
 // the component responsible for executing php code is (php interpreter).
 // the server executes the php code.
 // the browser executes the javaScript code.
-*/
-
-/*
+#-------------------------------------------------------------------------------------------------- 
 ? php basics : 
 // the skeleton of the php code is <?php "script" ?>
 // we need to save the file in ".php" extension even if it has (html , css , js) codes.
@@ -20,7 +15,7 @@
 % the previous note we are talking about only the PHP files.
 ? how to add comment is php? :
 // you can use (//) or (#) for single line comments and for multi lines comments you can use (/"*"*"/).
-#--------------------------------------------------------------------------------------------------    
+#-------------------------------------------------------------------------------------------------- 
 ? how to print any thing on the Php? : 
 // you can use echo(anyThing) or you can use print.
 // the echo doesn't brake a new line so keep that in mind.
@@ -36,29 +31,20 @@
 // - this function mainly Dumps information about a variable dataType.
 // Boolean False,Integer Zero,Float Zero,Empty String,String "0",NULL,Empty Array.
 #--------------------------------------------------------------------------------------------------
-? Escaping characters: (\', \" , \\, \$, \n, \r, \t, \f, \ooo, \xhh, \u{xxxx}).
-? nl2br("Text") : it inserts html <br> tag before each new line in the string.
-? the heredoc and nowdoc:
-~ Heredoc: syntax allows you to define a string that behaves like a double-quoted string. 
-// This means it supports variable interpolation and escape sequences.
-// - Variables within the heredoc are expanded.
-// - Escape sequences (like \n, \t) are interpreted.
-// - Strings can span multiple lines without needing concatenation or escaping quotes.
-  $var1 = <<<Heredoc 
-  this is the heredoc <br>
-  im not happy with my self.
-  Heredoc;
-~ Nowdoc syntax is similar to heredoc but behaves like a single-quoted string. 
-// It does not support variable interpolation or escape sequences.
-// - No variable expansion, everything is treated as plain text.
-// - Escape sequences are not interpreted.
-   $var2 = <<<'Nowdoc' 
-   this is the Nowdoc <br>
-   im not happy with my self.
-   Nowdoc;
+? how to concatenate things in php?:
+// we concat using the dot (.)
+// e.g. (echo 10 . "ahmad";)
+// one of the concatenation sides must be a String Value.
+// we can use an echo to just concatenate strings but some times its not possible.
+// we can incrementally concatenate strings using (.=) e.g. : 
+% $var1 = "String1";
+% $var2 = "String2";
+% $var3 = "String3";
+% $var1 .= $var2; => $var1 = $var1 . $var2; -> "String1String2"
+% $var1 .= $var3; => $var1 = $var1 . $var3; "String1String2String3"
 #--------------------------------------------------------------------------------------------------
+? how to create a variable in php:
 ? the Php language is not case sensitive language except for the Variables names.
-? how to create a variable in php? : $x = 10;
 // fun fact : variables in php doesn't has a dataType.
 // the value of the variable specifics the var dataType.
 // the variable can be (String , Integer , Float (also called double) , Boolean , Array , Object , NULL).
@@ -86,7 +72,7 @@
 ~ $var1 = "String1"; 
 ~ $var2 = "String2";
 ~ $var2 = &$var1;
-% any change to var2 will affect var1 always and visa versa.
+% any change to var2 will affect var1 always and visa versa
 #--------------------------------------------------------------------------------------------------
 ? how to create a constant in php? : define("a" ,1 ,false);
 // the constant value can't be changed during the code.
@@ -101,7 +87,40 @@
 ~ https://www.php.net/manual/en/reserved.constants.php.
 // we have also what is called as magic constants in php follow the link: --> not caseSensitive
 ~ https://www.php.net/manual/en/language.constants.magic.php.
-## don't forget about Reserved Keywords. 
+## don't forget about Reserved Keywords.
+#--------------------------------------------------------------------------------------------------
+? the variables Scope : its the place that you can use the variable in without any error.
+// there are three scopes:
+~ local scope: the variable here is initialized inside (function , if statement , for loop).
+~ Global scope: any variable outside the (function , if statement , for loop)
+// we have two ways to call the global variables inside the local block:
+~ use the key word global : Global $var1 , $var2 , ... .
+~ use the GLOBALS array : 
+// when defining variables at the first of the php body you can do the following:
+// $GLOBALS['VARNAME']
+~ static scope : its like the global variables in keeping the last value
+// but here we use it inside any local block (function , if  , loops).
+#--------------------------------------------------------------------------------------------------
+? Escaping characters: (\', \" , \\, \$, \n, \r, \t, \f, \ooo, \xhh, \u{xxxx}).
+? nl2br("Text") : it inserts html <br> tag before each new line in the string.
+? the heredoc and nowdoc:
+~ Heredoc: syntax allows you to define a string that behaves like a double-quoted string. 
+// This means it supports variable interpolation and escape sequences.
+// - Variables within the heredoc are expanded.
+// - Escape sequences (like \n, \t) are interpreted.
+// - Strings can span multiple lines without needing concatenation or escaping quotes.
+  $var1 = <<<Heredoc 
+  this is the heredoc <br>
+  im not happy with my self.
+  Heredoc;
+~ Nowdoc syntax is similar to heredoc but behaves like a single-quoted string. 
+// It does not support variable interpolation or escape sequences.
+// - No variable expansion, everything is treated as plain text.
+// - Escape sequences are not interpreted.
+   $var2 = <<<'Nowdoc' 
+   this is the Nowdoc <br>
+   im not happy with my self.
+   Nowdoc;
 #--------------------------------------------------------------------------------------------------
 ? the arithmetic operates in php:
 ~ $a + $b => Addition
@@ -116,6 +135,43 @@
 ~  $a-- => post decrement
 ~  ++$a => pre increment
 ~  --$a => per decrement
+#--------------------------------------------------------------------------------------------------
+? All about Math build In functions:
+~ abs(Number (Req))
+// this function returns the absolute value of a number.
+~ mt_rand(min (Opt), max (Opt) 
+~ rand(min (Opt), max (Opt)
+// these two functions are the same returns a random number within a specific range.
+// we use "mt_getrandmax()" function to Show Largest Possible Random Value.
+// mt_rand : Generates Random Value Via The Mersenne Twister Random Number Generator Algorithm.
+~ intdiv(dividend (Req), divisor (Req))
+// this function applies an integer division to two values.
+// its not the same as the division operator (/). 
+~ fmod(dividend (Req), divisor (Req))
+// this function applies a float modules on two values.
+// its not the same as the modules operator (%). 
+~ ceil(Number (Req))
+// Round Up To Integer
+~ floor(Number (Req))
+// Round Down To Integer
+~ round(Number (Req), Precision (Opt), Mode (Opt))
+// this function Rounds Up To Integer value according to some rules.
+// the optional Mode value takes four different values.
+// 1) PHP_ROUND_HALF_UP : the default value.
+// 2) PHP_ROUND_HALF_DOWN
+// 3) PHP_ROUND_HALF_EVEN
+// 4) PHP_ROUND_HALF_ODD
+! note: ceil, floor, round Return Double values.
+! keep the note of negative numbers in the ceil, floor, round functions.
+~ sqrt(Number (Req))
+// this function returns the Square Root of a given number.
+~ min(array (Req)) 
+~ min(Values (Req)
+// this function Finds Lowest Value in an array.
+~ max(array (Req)) 
+~ min(Values (Req))
+// this function Finds Highest Value in an array.
+! the min and max can compare two arrays as a whole.
 #--------------------------------------------------------------------------------------------------
 ? the Assignment Operators:     
 ~ $a += $b => Addition
@@ -209,15 +265,6 @@
 // forEach($arrayName as $KeyVar => $ValueVar){} 
 % we can use the alternative syntax also in the loops (for(...): BlockOfCode; endfor;)
 * you know what is the break and continue.
-#--------------------------------------------------------------------------------------------------
-? the include and require:
-! mainly we use these two to have another file inside the script.
-// include("file Path") , require(file Path) are the same but there are one difference:
-~ when having some error in the include it will not stop the script. -> (just warnings).
-~ when having some error in the require it will stop the script. -> (warnings and die).
-* at the end you will notice that the include doesn't restrict like the require.
-// include_once("file Path") , require_once(file Path):
-* the main difference here is that it checks if you included or required the file before it will not work.
 #--------------------------------------------------------------------------------------------------
 ? how to create a function in Php? : we have three ways:
 ~ function FunName1(){}
@@ -408,6 +455,36 @@
 % e.g. echo number_format(10000000.19999, 3, "@"); -> 10,000,000@200 
 % e.g. echo number_format(10000000.19999, 3, "@","~"); -> 10~000~000@200 
 #--------------------------------------------------------------------------------------------------
+? how to create an array in PHP? : we have two types of arrays
+! the array in php is a dynamic generic (it accepts any dataType in the array) array.
+// 1) indexed array: its a zero based array
+// $var = array('' , '' , '' , ....);
+// $x = array(1 , 2 , 3 , "ahmad" , true , 3.6 ,...);
+// we have two ways to fill in the array elements:
+// A) $x = array(... , ... , ....);
+// B) $x;
+//    $x[0] = 2;
+//    $x[1] = "ahmad";
+//    $x[2] = true;
+//    $x[...] = ...;
+// 2) associative array : its a key based array (like a hash map).
+//    the key here can be a number or a string.
+// $var = array(key => value , key => value , key => value , ...); 
+// we have two ways to fill in the array elements:
+// A) $y = array("name" => "ahmad" , 1 => 300 , "age" => 21);
+// B) $y;
+//    $y['name'] = "ahmad";
+//    $y[1] = 300;
+//    $y['age'] = 21; 
+// if your one element in th associative array doesn't have a key it will follow the indexing rules.
+? Array Operators:
+~ $a +   $b => Union
+~ $a ==  $b => Equal => Same Key And Value
+~ $a !=  $b => Not Equal
+~ $a <>  $b => Not Equal
+~ $a === $b => Identical => Same Key And Value, Same Order, Same Type
+~ $a !== $b => Not Identical
+#--------------------------------------------------------------------------------------------------
 ? All about Arrays build In functions: 
 ~ array_chunk(Array (Req), Length (Req), Preserve_Key (Opt))
 // this function Splits An Array Into Chunks and Returns A Multidimensional Indexed Array.
@@ -585,43 +662,6 @@
 % iteration1: carry = 8 and item = 9 -> returns 9
 % iteration1: carry = 9 and item = 10 -> returns 10
 % iteration1: carry = 10 and item = 100 -> returns 100
-#--------------------------------------------------------------------------------------------------
-? All about Math build In functions:
-~ abs(Number (Req))
-// this function returns the absolute value of a number.
-~ mt_rand(min (Opt), max (Opt) 
-~ rand(min (Opt), max (Opt)
-// these two functions are the same returns a random number within a specific range.
-// we use "mt_getrandmax()" function to Show Largest Possible Random Value.
-// mt_rand : Generates Random Value Via The Mersenne Twister Random Number Generator Algorithm.
-~ intdiv(dividend (Req), divisor (Req))
-// this function applies an integer division to two values.
-// its not the same as the division operator (/). 
-~ fmod(dividend (Req), divisor (Req))
-// this function applies a float modules on two values.
-// its not the same as the modules operator (%). 
-~ ceil(Number (Req))
-// Round Up To Integer
-~ floor(Number (Req))
-// Round Down To Integer
-~ round(Number (Req), Precision (Opt), Mode (Opt))
-// this function Rounds Up To Integer value according to some rules.
-// the optional Mode value takes four different values.
-// 1) PHP_ROUND_HALF_UP : the default value.
-// 2) PHP_ROUND_HALF_DOWN
-// 3) PHP_ROUND_HALF_EVEN
-// 4) PHP_ROUND_HALF_ODD
-! note: ceil, floor, round Return Double values.
-! keep the note of negative numbers in the ceil, floor, round functions.
-~ sqrt(Number (Req))
-// this function returns the Square Root of a given number.
-~ min(array (Req)) 
-~ min(Values (Req)
-// this function Finds Lowest Value in an array.
-~ max(array (Req)) 
-~ min(Values (Req))
-// this function Finds Highest Value in an array.
-! the min and max can compare two arrays as a whole.
 #--------------------------------------------------------------------------------------------------
 ? All about filter build In functions:
 // we use filter functions to validate and sanitize external data gained from user.
@@ -985,59 +1025,14 @@
 % e.g. strtotime("Tomorrow", strtotime("2003/5/31")); ->
 % the output represents "2003/6/1" you added one day to the base.
 #--------------------------------------------------------------------------------------------------
-? the variables Scope : its the place that you can use the variable in without any error.
-// there are three scopes:
-~ local scope: the variable here is initialized inside (function , if statement , for loop).
-~ Global scope: any variable outside the (function , if statement , for loop)
-// we have two ways to call the global variables inside the local block:
-~ use the key word global : Global $var1 , $var2 , ... .
-~ use the GLOBALS array : 
-// when defining variables at the first of the php body you can do the following:
-// $GLOBALS['VARNAME']
-~ static scope : its like the global variables in keeping the last value
-// but here we use it inside any local block (function , if  , loops).
-#-------------------------------------------------------------------------------------------------- 
-? how to concatenate things in php?:
-// we concat using the dot (.)
-// e.g. (echo 10 . "ahmad";)
-// one of the concatenation sides must be a String Value.
-// we can use an echo to just concatenate strings but some times its not possible.
-// we can incrementally concatenate strings using (.=) e.g. : 
-% $var1 = "String1";
-% $var2 = "String2";
-% $var3 = "String3";
-% $var1 .= $var2; => $var1 = $var1 . $var2; -> "String1String2"
-% $var1 .= $var3; => $var1 = $var1 . $var3; "String1String2String3"
-#--------------------------------------------------------------------------------------------------
-? how to create an array in PHP? : we have two types of arrays
-! the array in php is a dynamic generic (it accepts any dataType in the array) array.
-// 1) indexed array: its a zero based array
-// $var = array('' , '' , '' , ....);
-// $x = array(1 , 2 , 3 , "ahmad" , true , 3.6 ,...);
-// we have two ways to fill in the array elements:
-// A) $x = array(... , ... , ....);
-// B) $x;
-//    $x[0] = 2;
-//    $x[1] = "ahmad";
-//    $x[2] = true;
-//    $x[...] = ...;
-// 2) associative array : its a key based array (like a hash map).
-//    the key here can be a number or a string.
-// $var = array(key => value , key => value , key => value , ...); 
-// we have two ways to fill in the array elements:
-// A) $y = array("name" => "ahmad" , 1 => 300 , "age" => 21);
-// B) $y;
-//    $y['name'] = "ahmad";
-//    $y[1] = 300;
-//    $y['age'] = 21; 
-// if your one element in th associative array doesn't have a key it will follow the indexing rules.
-? Array Operators:
-~ $a +   $b => Union
-~ $a ==  $b => Equal => Same Key And Value
-~ $a !=  $b => Not Equal
-~ $a <>  $b => Not Equal
-~ $a === $b => Identical => Same Key And Value, Same Order, Same Type
-~ $a !== $b => Not Identical
+? the include and require:
+! mainly we use these two to have another file inside the script.
+// include("file Path") , require(file Path) are the same but there are one difference:
+~ when having some error in the include it will not stop the script. -> (just warnings).
+~ when having some error in the require it will stop the script. -> (warnings and die).
+* at the end you will notice that the include doesn't restrict like the require.
+// include_once("file Path") , require_once(file Path):
+* the main difference here is that it checks if you included or required the file before it will not work.
 #--------------------------------------------------------------------------------------------------
 ? Error Control Operator: 
 // some times we need to hide error or warning massages.  
@@ -1249,5 +1244,5 @@
 % some practical notes :
 % when you creating a dataBase make sure that its a completely new one.
 % when you inserting,... into a table make sure to use single quotations over the values.
-% after you are done with your code make sure to close your connection. 
+% after you are done with your code make sure to close your connection.      
 */
