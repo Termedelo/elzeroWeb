@@ -987,7 +987,7 @@
 // If no timestamp is provided, it defaults to the current system time "time()".
 // the contents of the Date associative array:
 * "seconds" => Seconds (0 to 59)
-* "minutes" =>	Minutes (0 to 59)
+* "minutes" => Minutes (0 to 59)
 * "hours" =>	Hours (0 to 23)
 * "mday" =>	Day of the month (1 to 31)
 * "wday" =>	Day of the week (0 = Sunday, 6 = Saturday)
@@ -1288,6 +1288,122 @@
 * Description: Unsupported data type for encoding.
 ! Error Code: "JSON_ERROR_UNSUPPORTED_TYPE"	-> Numeric Value = 8	
 ! json_last_error_msg() Output: Unsupported type"
+#--------------------------------------------------------------------------------------------------
+? working with APIs in Php:
+// notice that the User interface is for the user to use it needs to be human readable.
+// the API (Application Programming interface) is for programs it it doesn't needs to be human readable.
+? Requests And Response in HTTP protocol:
+// When a client communicates with a server:
+// the client sends an (HTTP request) and the server responds with an (HTTP response). 
+// the client can be for example a browser or an API client.
+// Both requests and responses contain three key components:
+~ 1- Method (for requests) or Status Code (for responses):
+! Request Methods:
+* - GET: Requests data from the server, Used for retrieving data.
+* - POST: Sends data to the server for processing, Used for form submissions.
+* - PUT: Updates a resource on the server.
+* - DELETE: Deletes a resource on the server.
+* - PATCH: Partially updates a resource on the server.
+* - HEAD: Similar to GET but retrieves only headers, not the body.
+* - OPTIONS: Asks the server which HTTP methods are supported.
+* - TRACE: Used for diagnostic purposes, returns the request as received by the server.
+* - CONNECT: Establishes a tunnel to the server (used in HTTPS).
+! Response Status Codes:
+* - Status Code: "1xx" 
+* - category: "Informational"	
+* - Description: The request is received, processing continues.
+* - Status Code: "2xx" (e.g. 200 OK, 201 Created,	204 No Content)
+* - category: "Success"	
+* - Description: The request was successfully received, understood, and accepted.
+* - Status Code: "3xx" (e.g. 301 Moved Permanently)
+* - category: "Redirection"	
+* - Description: The client must take additional actions (e.g., redirect).
+* - Status Code: "4xx" (e.g. 400 Bad Request, 401 Unauthorized, 403 Forbidden, 404 Not Found)
+* - category: "Client Errors"	
+* - Description: There was an error in the request from the client.
+* - Status Code: "5xx" (e.g. 500 Internal Server Error, 503 Service Unavailable)
+* - category: "Server Errors"	
+* - Description: The server encountered an issue. 
+~ 2- Headers:
+! Request Headers:
+* - Host: The domain name of the server.
+* - User-Agent: Information about the client (browser, app).
+* - Accept: Specifies the response format (application/json, text/html).
+* - Content-Type: Specifies the format of the request body (application/json, multipart/form-data).
+* - Authorization: Sends authentication credentials (e.g., Bearer token).
+! Response Headers:
+* - Content-Type:	Specifies the format of the response (application/json, text/html).
+* - Content-Length:	The size of the response body (in bytes).
+* - Set-Cookie:	Sends cookies to the client.
+* - Cache-Control:	Controls caching behavior (no-cache, max-age=3600).
+* - Location:	Used in redirects (e.g., 301 Moved Permanently).
+~ 3- Body (Optional)
+! Request Body:
+* The body is present in POST, PUT, and PATCH requests.
+* Contains data being sent to the server (e.g., JSON, form data).
+! Response Body:
+* Contains the actual data returned from the server.
+* May be HTML, JSON, XML, plain text, etc.
+? REST API (Representational State Transfer API):
+// A REST API is a way for systems to communicate over the web using HTTP requests.
+// we use it to perform operations on resources (data). 
+! recourses on the server Represents Resources represent entities.
+// It follows a stateless architecture and uses standard HTTP methods.
+? REST API Principles:
+* 1- Client-Server Architecture: The client (frontend) and server (backend) are separate.
+* 2- Statelessness: Each request is independent and contains all required information.
+* 3- Cacheability: Responses can be cached to improve performance.
+* 4- Uniform Interface: Uses standard HTTP methods and structured responses.
+* 5- Layered System: Can include proxies, load balancers, etc.
+* 6- Code on Demand (Optional): Servers can send executable code (e.g., JavaScript) to clients.
+? HTTP Methods in REST API: REST APIs use HTTP methods to perform actions on resources
+* - GET: Read data	
+% e.g. GET /EntityName (Get list of EntityName)
+* - POST: Create a new resource	
+% e.g. POST /EntityName (Create a EntityName)
+* - PUT: Update a resource	
+% e.g. PUT /EntityName/n (Update EntityName ID n)
+* - PATCH: Partially update a resource	
+% e.g. PATCH /EntityName/n (Update only part of the EntityName)
+* - DELETE: Remove a resource	
+% e.g. DELETE /EntityName/n (Delete EntityName ID n)
+? REST API Response Status Codes: The server responds with HTTP status codes to indicate success or failure.
+? How to call APIs from PHP:
+// we have several ways to call an api in Php:
+~ 1- Using the function file_get_contents():
+* $content = file_get_contents("API_URL");
+* this way sends a GET Request, if you need to change the method or put some headers:
+* we do it by using stream_context_create() function file_get_contents() or fopen():
+* this function allows you to customize HTTP requests (like setting headers, methods, and SSL options);
+# you have five php files that shows how this this works.
+! the disadvantages of this way:
+! - when it fails it does not return any messages that specifies the error.
+* it means that if the statesCode is not in "2xx" range its Impossible to get the response body.
+! - to send multiple request headers you need to concatenate them into one string.
+~ 2- cURL (client URL): this is a library with a predefined functions to help with APIs 
+! $CurlHandleObj = curl_init(): this function Initializes a new cURL session.
+* this function returns a CurlHandle Object. 
+! curl_setopt($CurlHandleObj, $option, $value): this function Sets an option for a cURL transfer.
+! the Options and there values:
+* - CURLOPT_URL it takes a String url.
+* - CURLOPT_HTTPGET: this option is for the GET method no need to CURLOPT_CUSTOMREQUEST.
+* - CURLOPT_POST: this option is for the POST method no need to CURLOPT_CUSTOMREQUEST.
+* - CURLOPT_RETURNTRANSFER it takes a boolean.
+* if it was true it Returns the response as a string instead of outputting it.
+* - CURLOPT_CUSTOMREQUEST it takes a string that represent the method.
+* - CURLOPT_POSTFIELDS it takes a json or an array when (POST,PUT,PATCH).
+* - CURLOPT_HTTPHEADER it takes an array of headers.
+* - CURLOPT_HEADER if it was true it Includes all response headers in the output.
+! curl_setopt_array($CurlHandleObj, [array]): 
+* this function Set multiple options for a cURL transfer as an associative array.
+! curl_exec($CurlHandleObj): this function Performs a cURL session.
+! curl_getinfo($CurlHandleObj, ...): this function Gets information regarding a specific transfer.
+% e.g. curl_getinfo($CurlHandleObj, CURLINFO_HTTP_CODE); this returns the status code.
+! curl_close($CurlHandleObj): this function Close a cURL session.
+~ 3- Guzzle:
+# getBack after studying OOP in PHP. 
+~ 4- SDKs:
+# i don't care about this.
 #--------------------------------------------------------------------------------------------------
 ? to creating a dataBase and manipulate data within it:
 ! we use phpMyAdmin webpage to do so with mySQL language.
