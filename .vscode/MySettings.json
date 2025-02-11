@@ -1,0 +1,135 @@
+{
+    "editor.fontSize": 20,
+    "terminal.integrated.cursorStyle": "line",
+    "terminal.integrated.allowMnemonics": true,
+    "terminal.integrated.fontSize": 20,
+    "workbench.iconTheme": "vscode-icons",
+    "vsicons.dontShowNewVersionMessage": true,
+    "explorer.confirmDelete": false,
+    "cSpell.userWords": [
+      "AAAABA",
+      "AAAABACA",
+      "Amjad",
+      "CURLOPT",
+      "CUSTOMREQUEST",
+      "ello",
+      "elzero",
+      "hstack",
+      "HTTPGET",
+      "HTTPHEADER",
+      "Khalil",
+      "Killable",
+      "mday",
+      "Mersenne",
+      "POSTFIELDS",
+      "RETURNTRANSFER",
+      "Strassen",
+      "Strassen's",
+      "summarys",
+      "unindexed",
+      "wday",
+      "XAMPP",
+      "yday",
+      "مرساة"
+    ],
+    "editor.bracketPairColorization.enabled": true,
+    "editor.unicodeHighlight.allowedCharacters": {
+      " ": true
+    },
+    "redhat.telemetry.enabled": true,
+    "window.zoomLevel": -0.5227038509879842,
+    "oracledevtools.bookmarkFileFolder": "C:\\Users\\2021\\Oracle\\oracle.oracledevtools",
+    "oracledevtools.download.otherFolder": "C:\\Users\\2021\\downloads",
+    "oracledevtools.connectionConfiguration.configFilesFolder": "C:\\Users\\2021\\Oracle\\network\\admin",
+    "[oraclesql]": {
+      "editor.suggest.showSnippets": true,
+      "editor.quickSuggestions": {
+        "comments": "on",
+        "strings": "on",
+        "other": "on"
+      }
+    },
+    "oracledevtools.connectionConfiguration.walletFileFolder": "C:\\Users\\2021\\Oracle\\network\\admin",
+    "files.autoSave": "afterDelay",
+    "liveServer.settings.donotShowInfoMsg": true,
+    "workbench.colorTheme": "JellyFish",
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+    "security.workspace.trust.untrustedFiles": "open",
+    "better-comments.tags": [
+      {
+        "tag": "!",
+        "color": "#FF2D00",
+        "strikethrough": false,
+        "underline": false,
+        "backgroundColor": "transparent",
+        "bold": false,
+        "italic": false
+      },
+      {
+        "tag": "?",
+        "color": "#3498DB",
+        "strikethrough": false,
+        "underline": false,
+        "backgroundColor": "transparent",
+        "bold": true,
+        "italic": false
+      },
+      {
+        "tag": "//",
+        "color": "#70e000",
+        "strikethrough": false,
+        "underline": false,
+        "backgroundColor": "transparent",
+        "bold": false,
+        "italic": false
+      },
+      {
+        "tag": "~",
+        "color": "#FF8C00",
+        "strikethrough": false,
+        "underline": false,
+        "backgroundColor": "transparent",
+        "bold": false,
+        "italic": false
+      },
+      {
+        "tag": "*",
+        "color": "#98C379",
+        "strikethrough": false,
+        "underline": false,
+        "backgroundColor": "transparent",
+        "bold": false,
+        "italic": false
+      },
+      {
+        "tag": "%",
+        "color": "#8338ec",
+        "strikethrough": false,
+        "underline": false,
+        "backgroundColor": "transparent",
+        "bold": false,
+        "italic": false
+      },
+      {
+        "tag": "#",
+        "color": "#ffd60a",
+        "strikethrough": false,
+        "underline": false,
+        "backgroundColor": "transparent",
+        "bold": true,
+        "italic": false
+      }
+    ],
+    "hediet.vscode-drawio.resizeImages": null,
+    "git.enableSmartCommit": true,
+    "bracket-pair-colorizer-2.depreciation-notice": false,
+    "indentRainbow.colors": [
+      "rgba(247, 37, 133,0.4)",
+      "rgba(114, 9, 183,0.4)",
+      "rgba(58, 12, 163,0.4)",
+      "rgba(67, 97, 238,0.4)",
+      "rgba(76, 201, 240,0.4)"
+    ]
+  }
+  
