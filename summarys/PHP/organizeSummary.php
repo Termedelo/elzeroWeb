@@ -1,4 +1,5 @@
 /*
+# PHP (Personal Home Pages) stands for: Hypertext Preprocessor.
 ? why do we need the PHP scripts : to process data collected on the web pages e.g. forms
 // if the php file isn't uploaded on the server it won't work.
 // the php code is executed on the (client server model).
@@ -229,7 +230,7 @@
 ? alternative syntax of the conditional statements:
 ~ <?php if(10 > 10): ?> ....any code..... <?php endif; ?> -> you can use elseif and else.
 ? ternary syntax of conditional statements:
-~ if condition ? true : false;
+~ condition ? true : false;
 ? switch statement:
 ~ switch(expression){ 
 ~   Case 1: BlockOfCode1; break;
@@ -1405,22 +1406,179 @@
 ~ 4- SDKs:
 # i don't care about this.
 #--------------------------------------------------------------------------------------------------
+? Object Oriented Programming in PHP:
+// OOP is a methodology that help us to structure the code.
+// OOP contains four main concepts: 
+~ 1- encapsulation
+~ 2- inheritance
+~ 3- Polymorphism
+~ 4- Abstraction
+// additionally it gives us some other things like:
+~ Magic methods.
+~ Collections.
+~ Namespaces.  
+? Classes in php:
+// to create a class use the following syntax:
+% class ClassName{
+# Properties....
+# Methods....
+% } 
+* note that when you need to create a class name it with the same name of the file.
+* before learning Namespaces and autoload we need to use the require_once function to include classes.
+? Objects in php:
+// to create an object out of a class:   
+* without a constructor.
+% $varName = new ClassName;
+* with a constructor.
+% $varName = new ClassName(param1, param2, ...); 
+// to call some property or a method we use the (->) object operator.
+% $varName -> propertyName;
+% $varName -> functionName(...);
+// what are the rules for creating properties and methods in a class:
+  * 1- Properties Must Have an Access Modifier (public, protected, private).
+  * 2- Properties Cannot Have Default Values from Expressions or Function Calls (Static Values only).
+! to have Dynamic values as a default Value for some property use a constructor to set it.
+* 3- Properties Cannot Be Declared as const.
+* 4- Methods Must Have an Access Modifier (public, protected, private).
+* 5- Methods Names Are Case-Insensitive.
+* 6- Cannot Have Two Methods with the Same Name.
+* 7- Static Methods Can Be Called Without an Object.
+? $this Keyword in PHP
+// The "$this" keyword in PHP is a special variable.
+// its used inside a class to refer to the current object instance.
+* Access properties	
+* e.g. $this -> propertyName
+* Call methods	
+* e.g. $this -> methodName()
+* Use in constructor	
+* e.g. $this -> property = $value;
+* Scope	Inside class methods only
+? Typed Properties in PHP:
+// Typed properties in PHP allow you to specify the data type of class properties, ensuring type safety. 
+// This feature was introduced in PHP 7.4.
+// Typed properties support both scalar and non-scalar:
+! 1- scalar types (Single-Value Types): 
+* Scalar types hold a single value at a time, These are the simplest data types in PHP.
+~ 1.1- int (Integer):	(e.g. 10, -5, 1000).
+~ 1.2- float (Double): (e.g. 3.14, -2.5, 1.0e3).
+~ 1.3- string (Text): (e.g. "Hello", 'PHP').
+~ 1.4- bool (Boolean): (e.g. true, false).
+! 2- non-scalar (non-Single-Value Types):
+* Non-scalar types are Complex Data Structures that stores multiple values or objects.
+~ 2.1- array:	(e.g. [1, 2, 3] or ["a" => "apple"]).
+~ 2.2- object: (e.g. new DateTime()).
+~ 2.3- callable: (e.g. function() { return "Hello"; }).
+~ 2.4- iterable: (e.g. array, Traversable).
+~ 2.5- resource (special): (e.g.	fopen(), curl_init()).
+~ 2.6- null (special): (e.g. null).
+// Typed properties: 
+// AccessModifier Type $PropertyName = Value;
+% e.g. public string $name = "ahmad"; 
+* You can initialize typed properties when declaring them. 
+* But uninitialized properties will cause an error when accessed
+// Nullable Typed Properties: If a property can be null, you must use (?Type).
+% e.g. public ?sting $name = "ahmad";
+! notice that the default values for uninitialized variables is NULL.
+! notice that when calling an uninitialized typed variable it will throw an error.
+? self and static keywords:
+// the self keyword is the same as "$this" but it refers to the current class instead of current Obj.
+// its typically used to access static properties and static methods within the same class.
+! note that (Parent::) refers to the parent extended class.
+*--------------------------------------------------------------------------------------------------
+// The static keyword is used to declare static properties and methods within a class. 
+// Static members belong to the class itself rather than to instances of the class.
+// This means static properties and methods are shared among all instances of that class.
+! Scope Resolution Operator (::):
+* It is used to access static properties, static methods, and constants within a class.
+* It can also be used to access parent class methods and properties.
+% Accessing static properties: (e.g. ClassName::$property)
+% Calling static methods: (e.g. ClassName::method())
+% Accessing class constants: (e.g. ClassName::CONSTANT)
+% Referring to parent class methods: (e.g. parent::method())
+! note that you can use (self) keyword instead of the ClassName it case you change it later.
+? Access modifiers in PHP :
+// define the visibility of properties (variables) and methods (functions) inside a class. 
+// PHP provides three main access modifiers:
+~ public (Default): properties and methods are Accessible from anywhere.
+~ protected: properties and methods are Accessible only inside the class and its child classes.
+~ private: properties and methods are Accessible only inside the class.
+? The Inheritance In PHP:
+% class ChildClass extends ParentClass{
+# Properties....
+# Methods....
+% } 
+* The childClass (Subclass) inherits from the parentClass (Superclass).
+* The child class can:
+* Use the parent's properties and methods.
+* Override parent methods (method overriding).
+* Extend its functionalities by adding new properties/methods.
+! We can use (parentClass::) to Call Parent Methods.
+! if the ParentClass and ChildClass both had constructors: 
+~ Problem: the childClass constructor does NOT automatically call the parentClass constructor. 
+~ solution: You must call it explicitly using parentClass::__construct().
+! The Problem is that PHP Does Not Support Multiple Inheritance and the solution is to use Traits.
+? final Keyword in PHP:
+% final Class className{...}
+* it Prevents the class from being extended by any other class.
+% final function FunName(...){....}
+* it Prevents the method from being overridden by another class.
+? Interfaces in PHP:
+* An interface in PHP defines a contract that classes must follow. 
+* It specifies which methods a class must implement, but without defining their behavior.
+% interface interfaceName{
+# (public,private,protected) $var1 = value;❌  
+# (public,private,protected) $var2;❌  
+# public function fun1(...){};✅   
+# public function fun2(...){};✅   
+# private function fun3(...){};❌  
+# protected function fun3(...){};❌  
+%}
+% class className implements interfaceName{ 
+# any class that implements an interface it needs to implement every inherited function.
+%}
+~ the interfaces cannot have implementation only method signatures.
+~ the interfaces cannot have properties.
+~ the interfaces can Supports multiple interface inheritance.
+~ interfaces can have public Access Modifier only.
+? Abstractions in PHP:
+% abstract abstractClassName{
+# (public,private,protected) $var1 = value; 
+# (public,private,protected) $var2;  
+# (public,private,protected) function funName(...){....}  
+# abstract (public,private,protected) function funName(...){};  
+%}
+% class className extends abstractClassName{ 
+# any class that extends the abstract class it needs to implement every abstract inherited function.
+%}
+~ the abstract classes functions with implementation and function without implementation.
+~ the abstract classes can have properties.
+~ the abstract classes cannot Support multiple interface inheritance.
+~ the abstract classes can all of the Access Modifier.
+!!!! important note interfaces and abstract classes cannot have instances !!!!
+? Polymorphism in PHP:
+* it allows different classes to be treated as instances of the same parent class or interface. 
+* This means one function or method can have different behaviors depending on the object calling it.
+* usages of this concept:
+~ Method Overriding (Inheritance).
+~ Interface Implementation.
+~ Method Overloading (Magic Methods).
+#--------------------------------------------------------------------------------------------------
 ? to creating a dataBase and manipulate data within it:
 ! we use phpMyAdmin webpage to do so with mySQL language.
 ! you know how to create a DB and how to do all the operations by the phpMyAdmin wizard GUI.
 ! now lets do a revision to some of the basic mySql Queries:
 // 1) creating a dataBase : 
-~     create database DataBaseName;
+~ create database DataBaseName;
 // 2) creating a table into the dataBase:
-~     create table table name (columnName dataType constant , ....);  
-~     data types that we need is : VARCHAR(Length) , INT(Length) , CHAR(1).
-~     constants that we need is : NOT NULL , UNIQUE , PRIMARY KEY , AUTO_INCREMENT.
+~ create table table name (columnName dataType constant , ....);  
+~ data types that we need is : VARCHAR(Length) , INT(Length) , CHAR(1).
+~ constants that we need is : NOT NULL , UNIQUE , PRIMARY KEY , AUTO_INCREMENT.
 // 3) how to insert data into the table : we have two ways
-~     insert into TableName (column1 , column2 , ...) values (column1Value , column2Value , ....);
-~     insert into TableName values (column1Value , column2Value , ...);
+~ insert into TableName (column1 , column2 , ...) values (column1Value , column2Value , ....);
+~ insert into TableName values (column1Value , column2Value , ...);
 % you need to be aware that the order of the columns is required in these two ways 
 // if you need to change the columns order just do the following:
-~     insert into TableName (column2 , column1 , ...) values (column2Value , column1Value , ....);
+~ insert into TableName (column2 , column1 , ...) values (column2Value , column1Value , ....);
 // 4) how to update a record in the table: 
 ~ update TableName set columnName = newValue , columnName = newValue , ... Where (.....);
 % if there is no where clause all the records in the table will be updated.
