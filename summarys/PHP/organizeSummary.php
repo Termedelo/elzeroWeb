@@ -1520,6 +1520,7 @@
 ? final Keyword in PHP:
 % final Class className{...}
 * it Prevents the class from being extended by any other class.
+! but you can have an object of this class and call anything in it.
 % final function FunName(...){....}
 * it Prevents the method from being overridden by another class.
 ? Interfaces in PHP:
@@ -1531,7 +1532,7 @@
 # public function fun1(...){};✅   
 # public function fun2(...){};✅   
 # private function fun3(...){};❌  
-# protected function fun3(...){};❌  
+# protected function fun4(...){};❌  
 %}
 % class className implements interfaceName{ 
 # any class that implements an interface it needs to implement every inherited function.
@@ -1562,6 +1563,120 @@
 ~ Method Overriding (Inheritance).
 ~ Interface Implementation.
 ~ Method Overloading (Magic Methods).
+? Encapsulation in PHP:
+// the concept of restricting direct access to an object's data. 
+// it allows access and modification through controlled methods (getters and setters).
+! the access to the data is done with a criteria that you define.
+? Overloading vs Overriding in PHP:
+~ Method Overriding (Replacing Parent Methods):
+* Method Overriding happens when a child class redefines a method from its parent class.
+* you redefine the parent methods with the same name, parameters, and return type.
+* The overridden method in the child class replaces the parent method.
+! Rules of Method Overriding:
+* The method must have the same name as in the parent class.
+* The method must have the same or compatible parameter types.
+* The method must have the same return type (if specified).
+* The access modifier cannot be more restrictive: 
+* -> e.g. if the parent method is public, the child method cannot be private.
+~ Method Overloading (Handling Multiple Calls Dynamically):
+* Method Overloading in PHP is not like other languages (like Java).
+* Problem: PHP does not support traditional method overloading that means: 
+* -> multiple methods with the same name but different parameters.
+* Solution: Instead, PHP provides overloading via magic methods (__call() and __callStatic()).
+? Traits in PHP:
+* Traits are a way to reuse code in PHP without using inheritance.
+* They allow multiple classes to share methods without extending the same class.
+* They solve PHP's lack of multiple inheritance by allowing a class to "inherit" multiple traits.
+! you cant have objects or instances from traits. 
+% trait traitName1{
+# (public,private,protected) $var1; 
+# (public,private,protected) function funName1(...){....}  
+# abstract (public,private,protected) function absFunName1(...){};
+# public function sameName(....){....} 
+% }
+% trait traitName2{
+# (public,private,protected) $var2; 
+# (public,private,protected) function funName2(...){....}  
+# abstract (public,private,protected) function absFunName2(...){};
+# public function sameName(....){....} 
+% }
+% class index{
+  # use traitName1, traitName2, ...;
+  # now all the Properties and Methods of traitName1 and traitName2 are available in index.  
+% }
+% class index{
+  # to handle properties and methods with the same name in different trait:
+  # use traitName1, traitName2{
+    # traitName1::sameName insteadof traitName2; 
+    ! Keeps sameName() from traitName1 and removes sameName() from traitName2.
+    # traitName2::sameName as traitName2Fun; 
+    ! Since traitName2::Name is removed by insteadof, we rename it to traitName2Fun().
+  #}
+  ! $obj->sameName() calls traitName1::sameName().
+  ! $obj->traitName2Fun() calls traitName2::sameName().
+% }
+? Magic Methods in php:
+* Magic methods in PHP are special methods that start with __ (double underscore). 
+* They are automatically called in specific situations.
+~ __construct()
+* Called when an object is created (Constructor).
+! you still have the ability to name create a function with the class name and it will be the Constructor.
+~ __destruct()
+* Called when an object is destroyed (Destructor).
+! the object is destroyed when the script ends or unset($object) is used.
+! it will be called when you assign a NULL value to it.
+#-----------------methods overloading----------------------
+~ __call($name, $arguments)
+~ __callStatic($name, $arguments)
+* Handles calls to undefined or inaccessible static methods or static.
+% e.g. normal undefined method -> $obj -> normalMethodName(.....); 
+% e.g. normal undefined method -> className :: StaticMethodName(.....);
+* these two functions will be called if the methods are undefined or inaccessible.
+* the $name will be the function name (normalMethodName, StaticMethodName) you can check it.
+* the $arguments is an associative array that contains every thing in the undefined or inaccessible method.
+#-----------------Properties overloading----------------------
+~ __set($property, $value)
+* Handles writing inaccessible or non-existing properties.
+* this function is called when:
+* you try to add a non-existing new property.
+* you try to modify an inaccessible (private, protected) property.
+~ __get($property)
+* Handles reading inaccessible or non-existing properties.
+* this function is called when:
+* you try to get a non-existing new property.
+* you try to get an inaccessible (private, protected) property.
+~ __isset($property)
+* Called when isset() or empty() is used on an inaccessible property.
+~ __unset($property)
+* Called when unset() is used on an inaccessible property.
+#--------------------------------------------------------------
+~ __toString()
+* Allows an object to be converted into a string (e.g., echo $object;).
+~ __invoke()
+* Allows an object to be called like a function.
+~ __clone()
+* Called when an object is cloned (clone $object;).
+~ __sleep()
+* Used before serialization (serialize($object);).
+~ __wakeup()
+* Used after non-serialization (unserialize($data);).
+~ __serialize()
+* Customizes serialization in PHP 7.4+.
+~ __unserialize()
+* Customizes non-serialization in PHP 7.4+.
+~ __debugInfo()
+* Called when var_dump($object) is used.
+? Dependency Injection in PHP
+* Dependency: Any object or resource a class needs to work.
+* For example, if a class relies on another class to function, that second class is a dependency.
+* Dependency Injection (DI) is a design pattern used to remove hard dependencies in a class: 
+* by passing dependencies from outside rather than creating them inside the class.
+! when working Without Dependency Injection your code will be Tightly Coupled. 
+! when working With Dependency Injection your code will be Loosely Coupled. 
+* Types of Dependency Injection in PHP
+~ Constructor Injection (Most common).
+~ Setter Injection (Using a setter method).
+~ Method Injection (Passing dependency through a method).
 #--------------------------------------------------------------------------------------------------
 ? to creating a dataBase and manipulate data within it:
 ! we use phpMyAdmin webpage to do so with mySQL language.
